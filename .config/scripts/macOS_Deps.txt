@@ -5,6 +5,11 @@ Running list of deps I need to make a script to install eventually...
 
 brew install --cask 1password
 brew install --cask 1password-cli
+brew install gh
+
+// Configure Github CLI + 1Password
+https://developer.1password.com/docs/cli/shell-plugins/github/
+
 
 brew install --cask iterm2
 brew install nvm
