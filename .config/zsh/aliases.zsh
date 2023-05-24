@@ -56,7 +56,8 @@ alias t-config="code ~/.config/tmux/tmux.conf"
 alias clearorig="find . -name '*.orig' -delete"
 alias clearignored="git rm -r --cached . && git add ."
 alias repo="npx openup"
-alias gcb="git checkout \$(git branch | fzf) && clear || clear"
+#alias gcb="git checkout \$(git branch | fzf) && clear || clear"
+alias gcb="\$(git fetch --prune && git checkout \$(node ~/.config/scripts/branch.js \$(git branch -a) | fzf) && git pull) && clear || clear"
 alias gdb="git branch -D \$(git branch | fzf)"
 
 # iOS
