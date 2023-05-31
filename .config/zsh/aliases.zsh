@@ -66,8 +66,8 @@ alias gdb="git branch -D \$(git branch | fzf)"
 alias xcw="open -a '/Applications/Xcode.app' *.xcworkspace"
 alias xcp="open -a '/Applications/Xcode.app' *.xcodeproj"
 alias deriveddata="cd $HOME/Library/Developer/Xcode/DerivedData; open ."
-alias nukedd="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
-alias nukespm="rm -rf $HOME/Library/Caches/org.swift.swiftpm"
+alias nukedd="sudo rm -rf $HOME/Library/Developer/Xcode/DerivedData"
+alias nukespm="sudo rm -rf $HOME/Library/Caches/org.swift.swiftpm"
 
 # Android
 alias ktlint="./gradlew ktlintFormat"
