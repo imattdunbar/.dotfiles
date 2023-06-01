@@ -19,7 +19,7 @@ alias zr="source $HOME/.zshrc"
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles-reset='dotfiles reset --hard'
 alias dotfiles-squash='dotfiles reset $(dotfiles commit-tree HEAD^{tree} -m "Squashed")'
-alias dotfiles-push='dotfiles commit -a -m "Updates"; dotfiles push'
+alias dotfiles-update='dotfiles commit -a -m "Updates"; dotfiles push'
 
 # Repos
 alias update-repos='$HOME/.config/scripts/repo/update_repos.sh'
