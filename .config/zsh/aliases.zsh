@@ -19,6 +19,7 @@ alias zr="source $HOME/.zshrc"
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles-reset='dotfiles reset --hard'
 alias dotfiles-squash='dotfiles reset $(dotfiles commit-tree HEAD^{tree} -m "Squashed")'
+alias dotfiles-push='dotfiles commit -a -m "Updates" && git push'
 
 # Repos
 alias update-repos='$HOME/.config/scripts/repo/update_repos.sh'
@@ -58,7 +59,7 @@ alias t-config="code ~/.config/tmux/tmux.conf"
 # Git Utils
 alias clearorig="find . -name '*.orig' -delete"
 alias clearignored="git rm -r --cached . && git add ."
-alias repo="npx openup"
+alias repo="npx -y openup"
 alias gcb="\$(git fetch --prune; git checkout \$(node ~/.config/scripts/branch.js \$(git branch -a) | fzf); git pull); clear"
 alias gdb="git branch -D \$(git branch | fzf)"
 
@@ -79,7 +80,7 @@ alias ts-playground="cd $HOME/Dev/Playground/Web/ts-playground"
 # npm
 alias npmlinks="npm ls -g --depth=0 --link=true"
 alias updatesnapshots="npm test -- -u"
-alias nuke-nm="rm -rf node_modules && rm -rf package-lock.json"
+alias rrnm="rm -rf node_modules"
 
 # Vite
 alias cva="npm create vite@latest"
