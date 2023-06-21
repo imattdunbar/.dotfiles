@@ -44,3 +44,8 @@ alias tiap="cd ~/Dev/Testing/TestIonicApp/TestPlugin"
 # Reference
 alias ionic-commands='echo "$(<~/Dev/Reference/ionic_commands.txt)"'
 alias android-api='echo "$(<~/Dev/Reference/android_api_levels.txt)"'
+
+# Kubernetes + Built Dev Environment
+export KUBECTL_VERSION=v1.24.13
+alias k="kubectl"
+alias built-k="cd ~/BuiltSource/kubernetes-developer-environment"
