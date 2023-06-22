@@ -20,6 +20,9 @@ brew install nvm
 brew install rbenv
 brew install pyenv
 
+// git difftool/mergetool setup
+brew install --cask kaleidoscope
+
 
 brew install ansible
 
