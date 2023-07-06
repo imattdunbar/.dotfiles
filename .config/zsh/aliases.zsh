@@ -82,5 +82,8 @@ alias npmlinks="npm ls -g --depth=0 --link=true"
 alias updatesnapshots="npm test -- -u"
 alias rrnm="rm -rf node_modules"
 
+# pnpm
+alias pnpx="pnpm dlx"
+
 # Vite
 alias cva="npm create vite@latest"
