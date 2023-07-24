@@ -49,3 +49,6 @@ alias android-api='echo "$(<~/Dev/Reference/android_api_levels.txt)"'
 export KUBECTL_VERSION=v1.24.13
 alias k="kubectl"
 alias built-k="cd ~/BuiltSource/kubernetes-developer-environment"
+
+# awslogin credentials
+export AWS_SHARED_CREDENTIALS_FILE="~/.aws/prod-developer"
