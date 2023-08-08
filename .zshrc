@@ -47,3 +47,10 @@ OP_FILE=$HOME/.config/op/plugins.sh
 if [[ -f "$OP_FILE" ]]; then
     source $OP_FILE
 fi
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
