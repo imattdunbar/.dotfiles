@@ -22,7 +22,8 @@ source $HOME/.cargo/env
 export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-11.0.18/Contents/Home"
 
 # Capacitor
-export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/Applications/JetBrains Toolbox/Android Studio.app"
+export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/Applications/Android Studio.app"
+
 
 # Jetbrains Toolbox Scripts
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
