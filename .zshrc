@@ -58,3 +58,5 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+export LC_ALL=en_US.UTF-8
