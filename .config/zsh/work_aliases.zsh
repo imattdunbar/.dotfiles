@@ -6,6 +6,7 @@ alias bcm="cd ~/BuiltSource/built-core-mobile-plugin"
 alias inpapi="cd ~/BuiltSource/inspections-product-api"
 alias bia-vite="cd ~/Dev/Testing/bia-vite"
 alias mobile-inpapi="cd ~/BuiltSource/mobile-inpapi"
+alias ipapi="cd ~/BuiltSource/ima-product-api"
 
 # Built Token
 alias built-token="node ~/BuiltSource/built-token/index.js"
