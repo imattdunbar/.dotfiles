@@ -12,6 +12,9 @@ export NVM_DIR="$HOME/.nvm"
 # rbenv
 eval "$(rbenv init - zsh)"
 
+# Cocoapods
+export LC_ALL=en_US.UTF-8
+
 # pyenv
 eval "$(pyenv init -)"
 
@@ -58,5 +61,3 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-
-export LC_ALL=en_US.UTF-8

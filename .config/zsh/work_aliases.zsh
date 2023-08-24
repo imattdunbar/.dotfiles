@@ -8,6 +8,9 @@ alias bia-vite="cd ~/Dev/Testing/bia-vite"
 alias mobile-inpapi="cd ~/BuiltSource/mobile-inpapi"
 alias ipapi="cd ~/BuiltSource/ima-product-api"
 
+# BIT
+alias bit="cd ~/BuiltSource/bit"
+
 # Built Token
 alias built-token="node ~/BuiltSource/built-token/index.js"
 alias built-token-dir="cd ~/BuiltSource/built-token"
