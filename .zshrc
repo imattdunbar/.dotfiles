@@ -37,7 +37,7 @@ export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 # Expo
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
-if [[ $(echo $HOST) == "DunbarMBP.local" || $(echo $HOST) == "DunbarMBP" ]]; then
+if [[ $HOST == *"DunbarMBP"* ]]; then
     source $HOME/.config/zsh/personal_aliases.zsh
 else
     source $HOME/.config/zsh/work_aliases.zsh
