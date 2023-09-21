@@ -25,6 +25,7 @@ alias stash="code ~/BuiltSource/Stash"
 
 # BIA Native
 alias bia-ios="cd ~/BuiltSource/built-inspection-app-ios"
+alias bia-ios2="cd ~/BuiltSource/built-inspection-app-ios2"
 alias bia-android="cd ~/BuiltSource/built-inspection-app-android"
 alias bia-android2="cd ~/BuiltSource/built-inspection-app-android2"
 alias bia-android3="cd ~/BuiltSource/built-inspection-app-android3"

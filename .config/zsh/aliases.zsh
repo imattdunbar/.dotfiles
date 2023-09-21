@@ -1,6 +1,6 @@
 # Open in VSCode
 alias zshrc="code $HOME/.zshrc"
-alias aliases="code $HOME/.config/zsh && code $HOME/.zshrc"
+alias aliases="code $HOME/.config/zsh"
 alias config="code $HOME/.config"
 alias ssh-config="code $HOME/.ssh/config"
 alias edithosts="code /etc/hosts"
@@ -69,6 +69,7 @@ alias xcp="open -a '/Applications/Xcode.app' *.xcodeproj"
 alias deriveddata="cd $HOME/Library/Developer/Xcode/DerivedData; open ."
 alias nukedd="sudo rm -rf $HOME/Library/Developer/Xcode/DerivedData"
 alias nukespm="sudo rm -rf $HOME/Library/Caches/org.swift.swiftpm"
+alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
 
 # Android
 alias ktlint="./gradlew ktlintFormat"
