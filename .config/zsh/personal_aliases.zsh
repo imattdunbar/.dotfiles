@@ -1,7 +1,6 @@
 # Playground
 alias playground="cd $HOME/Dev/Playground"
 alias dunbar-rust="cd $HOME/Dev/Learning/Rust"
-alias android-map="cd $HOME/Dev/Github/MAP"
 
 # Github
 alias dunbar-web="cd $HOME/Dev/Resume/dunbar-web"
