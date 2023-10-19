@@ -70,6 +70,7 @@ alias deriveddata="cd $HOME/Library/Developer/Xcode/DerivedData; open ."
 alias nukedd="sudo rm -rf $HOME/Library/Developer/Xcode/DerivedData"
 alias nukespm="sudo rm -rf $HOME/Library/Caches/org.swift.swiftpm"
 alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
+alias ios-playground="cd ~/Dev/Playground/iOS/ios-playground"
 
 # Android
 alias ktlint="./gradlew ktlintFormat"

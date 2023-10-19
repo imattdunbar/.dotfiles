@@ -22,5 +22,9 @@ alias epoch="cd $HOME/Dev/Github/epoch-guru"
 # Advent of Code
 alias aoc="cd $HOME/Dev/Github/aoc"
 
+# Season View
+alias sv-web="cd $HOME/Dev/Github/seasonview-web"
+alias sv-ios="cd $HOME/Dev/Github/seasonview-ios"
+
 # Default ESLint
 alias setup-eslint-react="npm i -D eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin && cp $HOME/Dev/Reference/lint/.eslintrc .eslintrc && cp $HOME/Dev/Reference/lint/.prettierrc .prettierrc"
