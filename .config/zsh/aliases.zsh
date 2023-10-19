@@ -76,6 +76,7 @@ alias ios-playground="cd ~/Dev/Playground/iOS/ios-playground"
 alias ktlint="./gradlew ktlintFormat"
 alias kill-ae="kill \$(pgrep -f qemu-system-aarch64) && echo 'Android emulator killed.'"
 alias android-playground="cd ~/Dev/Playground/Android/android-playground"
+alias nukebuild="sudo rm -rf $PWD/app/build"
 
 # TypeScript
 alias ts-playground="cd $HOME/Dev/Playground/Web/ts-playground"
