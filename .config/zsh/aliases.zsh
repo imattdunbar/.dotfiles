@@ -34,6 +34,12 @@ alias pushtags="git push origin --tags"
 alias grc="git rebase --continue"
 alias squash-all='git reset $(git commit-tree HEAD^{tree} -m "Squashed")'
 
+# git reset --soft BRANCH or COMMIT
+# commit changes back for clean 1 commit
+
+# git tag -a SOME_TAG_NAME e3afd034(commit-hash) -m "TAG_MESSAGE"
+# then pushtags
+
 # Utilities
 alias getpath="pwd|pbcopy"
 alias gotopath="cd pbpaste"
