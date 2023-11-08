@@ -11,6 +11,7 @@ alias ep="code package.json"
 alias egi="code .gitignore"
 alias editpodfile="code Podfile"
 alias starshipconfig="code $HOME/.config/starship.toml"
+alias dotconfig="code ~/.config"
 
 # Reload zshrc
 alias zr="source $HOME/.zshrc"
@@ -61,6 +62,7 @@ alias t-ks="tmux kill-server"
 alias t-ls="tmux list-sessions"
 alias td="tmux detach"
 alias t-config="code ~/.config/tmux/tmux.conf"
+alias t-plugins="sh ~/.config/tmux/plugins/tpm/scripts/install_plugins.sh"
 
 # Git Utils
 alias clearorig="find . -name '*.orig' -delete"
