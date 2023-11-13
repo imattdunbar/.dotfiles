@@ -65,6 +65,8 @@ alias t-ls="tmux list-sessions"
 alias split-h="tmux split-window -h"
 alias split-v="tmux split-window -v"
 alias td="tmux detach"
+alias t-ns="tmux rename-session"
+alias t-nw="tmux rename-window"
 alias t-config="code ~/.config/tmux/tmux.conf"
 alias t-plugins="sh ~/.config/tmux/plugins/tpm/scripts/install_plugins.sh"
 
