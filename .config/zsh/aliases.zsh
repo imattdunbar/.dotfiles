@@ -1,6 +1,6 @@
 # Open in VSCode
 alias zshrc="code $HOME/.zshrc"
-alias aliases="code $HOME/.config/zsh"
+alias aliases="code $HOME/.config/zsh; code $HOME/.config/zsh/aliases.zsh"
 alias config="code $HOME/.config"
 alias ssh-config="code $HOME/.ssh/config"
 alias edithosts="code /etc/hosts"
@@ -69,6 +69,7 @@ alias t-ns="tmux rename-session"
 alias t-nw="tmux rename-window"
 alias t-config="code ~/.config/tmux/tmux.conf"
 alias t-plugins="sh ~/.config/tmux/plugins/tpm/scripts/install_plugins.sh"
+alias t-cheat="open https://tmuxcheatsheet.com"
 
 # Git Utils
 alias clearorig="find . -name '*.orig' -delete"
