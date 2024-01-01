@@ -111,3 +111,4 @@ alias cva="npm create vite@latest"
 
 # Go
 alias json2go="open https://transform.tools/json-to-go"
+alias air="$HOME/go/bin/air"
