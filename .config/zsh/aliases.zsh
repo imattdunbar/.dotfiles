@@ -101,7 +101,7 @@ alias ts-playground="cd $HOME/Dev/Playground/Web/ts-playground"
 alias npmlinks="npm ls -g --depth=0 --link=true"
 alias updatesnapshots="npm test -- -u"
 alias nukenm="rm -rf node_modules"
-alias nukepl="rm -rf package-lock.json && rm -rf pnpm-lock.yaml"
+alias nukepl="rm -rf package-lock.json && rm -rf pnpm-lock.yaml && rm -rf bun.lockb"
 
 # pnpm
 alias pnpx="pnpm dlx"
