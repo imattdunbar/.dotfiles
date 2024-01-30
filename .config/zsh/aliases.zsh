@@ -46,7 +46,10 @@ alias getpath="pwd|pbcopy"
 alias gotopath="cd pbpaste"
 alias path="pwd"
 alias localip="ipconfig getifaddr en0"
-alias externalip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias externalip="curl --silent ifconfig.me"
+alias whereami="echo $HOST, LAN: $(localip), WAN: $(externalip)"
+
+alias homeips="ifconfig | grep -o 'inet 10\.10\.[0-9]*\.[0-9]*' | grep -o '10\.10\.[0-9]*\.[0-9]*'"
 
 # ls
 alias ls="colorls"
@@ -71,6 +74,9 @@ alias t-nw="tmux rename-window"
 alias t-config="code ~/.config/tmux/tmux.conf"
 alias t-plugins="sh ~/.config/tmux/plugins/tpm/scripts/install_plugins.sh"
 alias t-cheat="open https://tmuxcheatsheet.com"
+
+# Terraform
+alias tf="terraform"
 
 # Git Utils
 alias clearorig="find . -name '*.orig' -delete"
