@@ -78,6 +78,9 @@ alias t-cheat="open https://tmuxcheatsheet.com"
 # Terraform
 alias tf="terraform"
 
+# Kubernetes
+alias k="kubectl"
+
 # Git Utils
 alias clearorig="find . -name '*.orig' -delete"
 alias clearignored="git rm -r --cached . && git add ."
