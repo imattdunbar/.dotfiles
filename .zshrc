@@ -64,3 +64,6 @@ esac
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# Go
+export PATH="$PATH:$(go env GOPATH)/bin"
