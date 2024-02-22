@@ -18,3 +18,12 @@ format = ''
 
 [battery]
 disabled = true
+
+[nodejs]
+detect_extensions = []
+detect_files = [ ".nvmrc", "yarn.lock", "package-lock.json", "pnpm-lock.yaml" ]
+detect_folders = []
+
+[bun]
+detect_files = [ "bun.lockb", "bunfig.toml" ]
+style = "bold green"
