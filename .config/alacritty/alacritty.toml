@@ -4,12 +4,12 @@
 live_config_reload = true
 
 [env]
-TERM = "xterm-256color"
+term = "xterm-256color"
 
 [window]
 decorations = "buttonless"
 dynamic_padding = false
-opacity = 0.93
+opacity = 0.85
 
 [window.padding]
 x = 16
@@ -24,8 +24,10 @@ x = 32
 y = 96
 
 [colors]
+# transparent_background_colors = true
 primary = { foreground = "#41FF00"}
 cursor = { text = "#000000", cursor = "#ffffff" }
+
 
 [font]
 size = 13.0

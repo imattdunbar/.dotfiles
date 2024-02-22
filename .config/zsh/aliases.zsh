@@ -58,12 +58,16 @@ alias ls="colorls"
 alias vim="nvim"
 alias v="nvim"
 
+# Zoxide
+alias z="zoxide"
+
 # tmux
 alias t="tmux attach || tmux"
 alias t-source="tmux source-file $HOME/.config/tmux/tmux.conf"
 alias t-kserver="tmux kill-server"
 alias t-ks="tmux kill-session"
 alias t-kp="tmux kill-pane"
+alias t-kw="tmux kill-window"
 alias t-ls="tmux list-sessions"
 alias split-h="tmux split-window -h"
 alias split-v="tmux split-window -v"
@@ -74,6 +78,7 @@ alias t-nw="tmux rename-window"
 alias t-config="code ~/.config/tmux/tmux.conf"
 alias t-plugins="sh ~/.config/tmux/plugins/tpm/scripts/install_plugins.sh"
 alias t-cheat="open https://tmuxcheatsheet.com"
+alias nuke-tmux="rm -rf ~/.config/tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm && t-plugins && t-source"
 
 # Terraform
 alias tf="terraform"
