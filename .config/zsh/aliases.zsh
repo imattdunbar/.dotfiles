@@ -58,9 +58,6 @@ alias ls="colorls"
 alias vim="nvim"
 alias v="nvim"
 
-# Zoxide
-alias z="zoxide"
-
 # tmux
 alias t="tmux attach || tmux"
 alias t-source="tmux source-file $HOME/.config/tmux/tmux.conf"
