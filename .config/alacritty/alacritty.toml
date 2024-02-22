@@ -1,0 +1,47 @@
+# Docs - https://alacritty.org/config-alacritty.html
+# YAML example - https://gist.github.com/sts10/df620672662fe4c6f03ac296a02b8e72 
+
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 0.93
+
+[window.padding]
+x = 16
+y = 16
+
+[window.dimensions]
+columns = 160
+lines = 48
+
+[window.position]
+x = 32
+y = 96
+
+[colors]
+primary = { foreground = "#41FF00"}
+cursor = { text = "#000000", cursor = "#ffffff" }
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Heavy"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Heavy Italic"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Medium"
