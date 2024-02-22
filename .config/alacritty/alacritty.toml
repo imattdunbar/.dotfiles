@@ -6,6 +6,9 @@ live_config_reload = true
 [env]
 term = "xterm-256color"
 
+[scrolling]
+history = 100000
+
 [window]
 decorations = "buttonless"
 dynamic_padding = false
