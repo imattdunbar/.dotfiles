@@ -37,6 +37,9 @@ size = 14.0
 normal = { family = "FiraCode Nerd Font Mono", style = "Medium" }
 # normal = { family = "Hack Nerd Font" }
 
+# brew search font- | grep fira
+# brew install --cask font-fira-code-nerd-font
+
 # [font.normal]
 # family = "FiraCode Nerd Font"
 # style = "Medium"
