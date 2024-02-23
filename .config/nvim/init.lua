@@ -1,22 +1,21 @@
-require("matt.plugins-setup")
-require("matt.core.options")
-require("matt.core.keymaps")
-require("matt.core.colorscheme")
+require "core"
 
-require("matt.plugins.comment")
-require("matt.plugins.nvim-tree")
-require("matt.plugins.lualine")
-require("matt.plugins.telescope")
-require("matt.plugins.nvim-cmp")
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
-require("matt.plugins.lsp.mason")
+if custom_init_path then
+  dofile(custom_init_path)
+end
 
--- Require saga before config
-require("matt.plugins.lsp.lsp-saga")
-require("matt.plugins.lsp.lsp-config")
-require("matt.plugins.lsp.null-ls")
+require("core.utils").load_mappings()
 
-require("matt.plugins.autopairs")
-require("matt.plugins.treesitter")
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-require("matt.plugins.gitsigns")
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
+
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"

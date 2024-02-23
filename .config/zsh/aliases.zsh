@@ -57,6 +57,7 @@ alias ls="colorls"
 # Neovim
 alias vim="nvim"
 alias v="nvim"
+alias nuke-nvim="rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim"
 
 # tmux
 alias t="tmux attach || tmux"
