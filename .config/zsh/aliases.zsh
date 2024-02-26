@@ -92,8 +92,9 @@ alias gcb="\$(git fetch --prune; git checkout \$(node ~/.config/scripts/branch.j
 alias gdb="git branch -D \$(git branch | fzf)"
 
 # iOS
-alias xcw="open -a '/Applications/Xcode.app' *.xcworkspace"
-alias xcp="open -a '/Applications/Xcode.app' *.xcodeproj"
+alias xcw="find . -maxdepth 2 -name '*.xcworkspace' -exec open -a '/Applications/Xcode.app' {} \;"
+alias xcp="find . -maxdepth 2 -name '*.xcodeproj' -exec open -a '/Applications/Xcode.app' {} \;"
+
 alias deriveddata="cd $HOME/Library/Developer/Xcode/DerivedData; open ."
 alias nukedd="sudo rm -rf $HOME/Library/Developer/Xcode/DerivedData"
 alias nukespm="sudo rm -rf $HOME/Library/Caches/org.swift.swiftpm"

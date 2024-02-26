@@ -27,3 +27,7 @@ detect_folders = []
 [bun]
 detect_files = [ "bun.lockb", "bunfig.toml" ]
 style = "bold green"
+
+[swift]
+detect_extensions = []
+detect_files = [ "Package.swift" ]
