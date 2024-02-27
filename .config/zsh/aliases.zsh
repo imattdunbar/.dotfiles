@@ -33,13 +33,20 @@ alias hardclean="git clean -fd && git reset --hard"
 alias lastcommit="git reset --hard HEAD^"
 alias pushtags="git push origin --tags"
 alias grc="git rebase --continue"
-alias squash-all='git reset $(git commit-tree HEAD^{tree} -m "Squashed")'
 
 # git reset --soft BRANCH or COMMIT
 # commit changes back for clean 1 commit
 
 # git tag -a SOME_TAG_NAME e3afd034(commit-hash) -m "TAG_MESSAGE"
 # then pushtags
+
+# Git Utils
+alias clearorig="find . -name '*.orig' -delete"
+alias clearignored="git rm -r --cached . && git add ."
+alias repo="npx -y openup"
+alias gcb="\$(git fetch --prune; git checkout \$(node ~/.config/scripts/branch.js \$(git branch -a) | fzf); git pull); clear"
+alias gdb="git branch -D \$(git branch | fzf)"
+alias squash-all='git reset $(git commit-tree HEAD^{tree} -m "Squashed")'
 
 # Utilities
 alias getpath="pwd|pbcopy"
@@ -83,13 +90,6 @@ alias tf="terraform"
 
 # Kubernetes
 alias k="kubectl"
-
-# Git Utils
-alias clearorig="find . -name '*.orig' -delete"
-alias clearignored="git rm -r --cached . && git add ."
-alias repo="npx -y openup"
-alias gcb="\$(git fetch --prune; git checkout \$(node ~/.config/scripts/branch.js \$(git branch -a) | fzf); git pull); clear"
-alias gdb="git branch -D \$(git branch | fzf)"
 
 # iOS
 alias xcw="find . -maxdepth 2 -name '*.xcworkspace' -exec open -a '/Applications/Xcode.app' {} \;"
