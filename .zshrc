@@ -21,9 +21,6 @@ export LC_ALL=en_US.UTF-8
 # pyenv
 eval "$(pyenv init -)"
 
-# Cargo / Rust
-source $HOME/.cargo/env
-
 # Java 11
 #export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-11.0.18/Contents/Home"
 
@@ -32,7 +29,6 @@ export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/jbr-17.0.8/Contents/Hom
 
 # Capacitor
 export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/Applications/Android Studio.app"
-
 
 # Jetbrains Toolbox Scripts
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
