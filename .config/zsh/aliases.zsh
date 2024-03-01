@@ -103,8 +103,8 @@ alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
 alias ios-playground="cd ~/Dev/Playground/iOS/ios-playground"
 
 # Xcode
-alias xcode-backup="sh ~/.config/xcode/backup.sh"
-alias xcode-restore="sh ~/.config/xcode/restore.sh"
+alias xcode-backup="go run ~/.config/xcode/xcode-sync.go --backup"
+alias xcode-restore="go run ~/.config/xcode/xcode-sync.go --restore"
 
 # Android
 alias ktlint="./gradlew ktlintFormat"
