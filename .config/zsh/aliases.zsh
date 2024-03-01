@@ -60,6 +60,7 @@ alias homeips="ifconfig | grep -o 'inet 10\.10\.[0-9]*\.[0-9]*' | grep -o '10\.1
 
 # ls
 alias ls="colorls"
+alias lc="colorls -lA --sd"
 
 # Neovim
 alias vim="nvim"
@@ -100,6 +101,10 @@ alias nukedd="sudo rm -rf $HOME/Library/Developer/Xcode/DerivedData"
 alias nukespm="sudo rm -rf $HOME/Library/Caches/org.swift.swiftpm"
 alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
 alias ios-playground="cd ~/Dev/Playground/iOS/ios-playground"
+
+# Xcode
+alias xcode-backup="sh ~/.config/xcode/backup.sh"
+alias xcode-restore="sh ~/.config/xcode/restore.sh"
 
 # Android
 alias ktlint="./gradlew ktlintFormat"
