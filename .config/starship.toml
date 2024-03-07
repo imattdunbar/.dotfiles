@@ -31,3 +31,11 @@ style = "bold green"
 [swift]
 detect_extensions = []
 detect_files = [ "Package.swift" ]
+
+[ruby]
+detect_files = [ ".ruby-version" ]
+
+[docker_context]
+detect_files = [ "docker-compose.yml", "docker-compose.yaml", "Dockerfile" ]
+format = "[$symbol]($style) "
+symbol = "🐳"
