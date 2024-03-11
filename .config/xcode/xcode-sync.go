@@ -27,6 +27,7 @@ func main() {
 
 	moveKeybinds(homeDir, *backup)
 	moveTheme(homeDir, *backup)
+	copySnippets(homeDir, *backup)
 
 	if *backup {
 		println("Xcode settings backed up")
@@ -64,6 +65,20 @@ func moveTheme(homeDir string, backup bool) {
 
 	deleteExistingFile(dest)
 	moveFile(src, dest)
+}
+
+func copySnippets(homeDir string, backup bool) {
+	src := filepath.Join(homeDir, "Library/Developer/Xcode/UserData/CodeSnippets")
+	dest := filepath.Join(homeDir, ".config/xcode/CodeSnippets")
+
+	// Flip them if it's restore
+	if !backup {
+		temp := src
+		src = dest
+		dest = temp
+	}
+
+	copyDir(src, dest)
 }
 
 func deleteExistingFile(path string) {
@@ -120,4 +135,59 @@ func moveFile(src string, dest string) {
 	if err != nil {
 		log.Fatalf("Error moving file: %v", err)
 	}
+}
+
+// copyFile copies a single file from src to dst
+func copyFile(src, dst string) error {
+	sourceFile, err := os.Open(src)
+	if err != nil {
+		return err
+	}
+	defer sourceFile.Close()
+
+	destFile, err := os.Create(dst)
+	if err != nil {
+		return err
+	}
+	defer destFile.Close()
+
+	_, err = io.Copy(destFile, sourceFile)
+	if err != nil {
+		return err
+	}
+
+	sourceInfo, err := os.Stat(src)
+	if err != nil {
+		return err
+	}
+
+	return os.Chmod(dst, sourceInfo.Mode())
+}
+
+// copyDir recursively copies a directory from src to dst
+func copyDir(src string, dst string) error {
+	src = filepath.Clean(src)
+	dst = filepath.Clean(dst)
+
+	err := filepath.Walk(src, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		// Calculate the proper destination path
+		relPath, err := filepath.Rel(src, path)
+		if err != nil {
+			return err
+		}
+		dstPath := filepath.Join(dst, relPath)
+
+		if info.IsDir() {
+			// Create the directory
+			return os.MkdirAll(dstPath, info.Mode())
+		} else {
+			// Copy the file
+			return copyFile(path, dstPath)
+		}
+	})
+	return err
 }
