@@ -13,7 +13,7 @@
     try &lt;#Placeholder#&gt;
 }
 catch {
-    print("&lt;#Error Message#&gt;:\(error)")
+    print("&lt;#Error Message#&gt;: \(error)")
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5934EFBC-653B-45A2-8BA0-B5A108F99BDE</string>
@@ -26,6 +26,6 @@ catch {
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
