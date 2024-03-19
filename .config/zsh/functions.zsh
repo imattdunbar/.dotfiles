@@ -12,6 +12,10 @@ killport() {
   kill -9 $(lsof -ti:$1)
 }
 
+checkport() {
+  lsof -i :$1
+}
+
 # Push New Branch
 pushnewb() {
     BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
