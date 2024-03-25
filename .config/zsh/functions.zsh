@@ -19,7 +19,7 @@ checkport() {
 patchalacritty() {
   cp ~/.config/alacritty/alacritty.icns /Applications/Alacritty.app/Contents/Resources/alacritty.icns
   touch /Applications/Alacritty.app
-  sudo killall Finder && sudo killall Finder
+  sudo sh -c 'killall Finder && killall Dock'
 }
 
 # Push New Branch
