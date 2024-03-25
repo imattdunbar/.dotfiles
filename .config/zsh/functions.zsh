@@ -16,6 +16,12 @@ checkport() {
   lsof -i :$1
 }
 
+patchalacritty() {
+  cp ~/.config/alacritty/alacritty.icns /Applications/Alacritty.app/Contents/Resources/alacritty.icns
+  touch /Applications/Alacritty.app
+  sudo killall Finder && sudo killall Finder
+}
+
 # Push New Branch
 pushnewb() {
     BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
