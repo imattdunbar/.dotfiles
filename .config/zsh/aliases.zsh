@@ -66,6 +66,15 @@ alias homeips="ifconfig | grep -o 'inet 10\.10\.[0-9]*\.[0-9]*' | grep -o '10\.1
 alias ls="colorls"
 alias lc="colorls -lA --sd"
 
+# macOS
+alias disablegatekeeper="sudo spctl --master-disable"
+
+# xattr file_path
+# to check if app has com.apple.quarantine
+
+# sudo xattr -r -d com.apple.quarantine file_path
+# to remove quarantine
+
 # Neovim
 alias vim="nvim"
 alias v="nvim"
