@@ -47,6 +47,7 @@ source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/docker.zsh
 source $HOME/.config/zsh/functions.zsh
 source $HOME/.config/zsh/keybinds.zsh
+source $HOME/.config/zsh/local.zsh
 
 # 1Password
 OP_FILE=$HOME/.config/op/plugins.sh
