@@ -1,5 +1,11 @@
 # Brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $(uname -m) == "x86_64" ]]; then
+    # Intel
+    eval "$(/usr/local/bin/brew shellenv)"
+else
+    # Apple Silicon
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Starship
 eval "$(starship init zsh)"
