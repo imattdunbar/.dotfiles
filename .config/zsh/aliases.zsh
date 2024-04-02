@@ -1,5 +1,5 @@
 # Open in VSCode
-alias zshrc="code $HOME/.zshrc"
+alias zshrc="code $HOME/.config/zsh/zshrc.zsh"
 alias aliases="code $HOME/.config/zsh; code $HOME/.config/zsh/aliases.zsh"
 alias config="code $HOME/.config"
 alias ssh-config="code $HOME/.ssh/config"
