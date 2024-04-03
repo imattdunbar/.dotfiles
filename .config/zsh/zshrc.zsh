@@ -35,12 +35,6 @@ export LC_ALL=en_US.UTF-8
 # pyenv
 eval "$(pyenv init -)"
 
-# Java 11
-#export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-11.0.18/Contents/Home"
-
-# Java 17
-export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/jbr-17.0.8/Contents/Home"
-
 # Capacitor
 export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/Applications/Android Studio.app"
 

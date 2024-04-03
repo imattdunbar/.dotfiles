@@ -3,3 +3,6 @@
 
 alias setup-local-zsh="dotfiles update-index --skip-worktree ~/.config/zsh/local.zsh"
 alias disable-local-zsh="dotfiles update-index --no-skip-worktree ~/.config/zsh/local.zsh"
+
+# Java
+# export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/jbr-17.0.8/Contents/Home"
