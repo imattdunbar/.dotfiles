@@ -10,8 +10,6 @@ alias editpackage="code package.json"
 alias ep="code package.json"
 alias egi="code .gitignore"
 alias editpodfile="code Podfile"
-alias starshipconfig="code $HOME/.config/starship.toml"
-alias dotconfig="code ~/.config"
 
 # Reload zshrc
 alias zr="source $HOME/.zshrc"
@@ -21,9 +19,6 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles-reset='dotfiles reset --hard'
 alias dotfiles-squash='dotfiles reset $(dotfiles commit-tree HEAD^{tree} -m "Squashed")'
 alias dotfiles-update='dotfiles commit -a -m "Updates"; dotfiles push'
-
-# Repos
-alias update-repos='$HOME/.config/scripts/repo/update_repos.sh'
 
 # Git
 alias initsubmodules="git submodule update --init --recursive"
@@ -112,7 +107,7 @@ alias k="kubectl"
 alias xcw="find . -maxdepth 2 -name '*.xcworkspace' -exec open -a '/Applications/Xcode.app' {} \;"
 alias xcp="find . -maxdepth 2 -name '*.xcodeproj' -exec open -a '/Applications/Xcode.app' {} \;"
 
-alias deriveddata="cd $HOME/Library/Developer/Xcode/DerivedData; open ."
+alias opendd="open $HOME/Library/Developer/Xcode/DerivedData"
 alias nukedd="sudo rm -rf $HOME/Library/Developer/Xcode/DerivedData"
 alias nukespm="sudo rm -rf $HOME/Library/Caches/org.swift.swiftpm"
 alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
@@ -128,9 +123,6 @@ alias kill-ae="kill \$(pgrep -f qemu-system-aarch64) && echo 'Android emulator k
 alias android-playground="cd ~/Dev/Playground/Android/android-playground"
 alias nukebuild="sudo rm -rf $PWD/app/build"
 
-# TypeScript
-alias ts-playground="cd $HOME/Dev/Playground/Web/ts-playground"
-
 # npm
 alias npmlinks="npm ls -g --depth=0 --link=true"
 alias updatesnapshots="npm test -- -u"
@@ -139,9 +131,6 @@ alias nukepl="rm -rf package-lock.json && rm -rf pnpm-lock.yaml && rm -rf bun.lo
 
 # pnpm
 alias pnpx="pnpm dlx"
-
-# Vite
-alias cva="npm create vite@latest"
 
 # Go
 alias json2go="open https://transform.tools/json-to-go"
