@@ -14,9 +14,17 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
+if [[ $(uname -m) == "x86_64" ]]; then
+    # Intel
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+else
+    # Apple Silicon
+    export NVM_DIR="$HOME/.nvm"
     [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
     [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+fi
 
 # rbenv
 eval "$(rbenv init - zsh)"
