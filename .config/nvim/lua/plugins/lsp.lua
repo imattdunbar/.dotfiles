@@ -11,7 +11,7 @@ return {
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "gopls", "astro", "eslint", "jsonls", "svelte" },
+				ensure_installed = { "lua_ls", "tsserver", "gopls", "astro", "eslint", "jsonls" },
 				automatic_installation = true,
 			})
 		end,
