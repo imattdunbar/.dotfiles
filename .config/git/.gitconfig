@@ -1,6 +1,18 @@
+# User specific
 [user]
 	name = Matt Dunbar
 	email = me@mattdunbar.io
+	signingkey = ~/.ssh/id_imattdunbar_sign
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+
+# Underneath not user specific
 [diff]
 	#tool = opendiff
 	tool = Kaleidoscope
