@@ -1,0 +1,28 @@
+[user]
+	name = Matt Dunbar
+	email = me@mattdunbar.io
+	signingkey = ~/.ssh/id_imattdunbar_sign
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+	sshCommand = "ssh -i ~/.ssh/id_imattdunbar"
+[remote "origin"]
+	url = git@github.com:imattdunbar/.dotfiles.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[status]
+	showUntrackedFiles = no
