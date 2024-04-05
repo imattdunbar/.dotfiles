@@ -125,7 +125,26 @@ func urlFromBBSSH(sshURL string) string {
 		return ""
 	}
 
-	httpsURL := "https://" + parsedURL.Host + strings.TrimSuffix(parsedURL.Path, ".git")
+	// Split to make sure there's no port attached to the host
+	parts := strings.Split(parsedURL.Host, ":")
+	host := parts[0]
+
+	pathParts := strings.Split(parsedURL.Path, "/")
+	var finalPath = ""
+	count := len(pathParts)
+	for i, part := range pathParts {
+		if part == "" {
+			continue
+		}
+
+		if i == count-1 {
+			finalPath += "/repos"
+		}
+		finalPath = fmt.Sprintf("%v/%v", finalPath, part)
+
+	}
+
+	httpsURL := "https://" + host + "/projects" + strings.TrimSuffix(finalPath, ".git")
 	return httpsURL
 }
 
