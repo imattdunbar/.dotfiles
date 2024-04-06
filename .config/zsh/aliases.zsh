@@ -58,11 +58,17 @@ alias whereami="echo $HOST, LAN: $(localip), WAN: $(externalip)"
 alias homeips="ifconfig | grep -o 'inet 10\.10\.[0-9]*\.[0-9]*' | grep -o '10\.10\.[0-9]*\.[0-9]*'"
 
 # ls
-alias ls="colorls"
-alias lc="colorls -lA --sd"
+alias ls="lsd"
+alias lc="ls -a"
+
+# cat
+alias cat="bat"
 
 # macOS
 alias disablegatekeeper="sudo spctl --master-disable"
+alias brew-bundle-install="cd ~/.config/other; brew bundle install"
+alias brew-bundle-dump="cd ~/.config/other; brew bundle dump --force; sed -i '' '/^vscode/d' Brewfile
+"
 
 # xattr file_path
 # to check if app has com.apple.quarantine
