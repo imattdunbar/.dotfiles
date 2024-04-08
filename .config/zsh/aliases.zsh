@@ -59,7 +59,7 @@ alias homeips="ifconfig | grep -o 'inet 10\.10\.[0-9]*\.[0-9]*' | grep -o '10\.1
 
 # ls
 alias ls="lsd"
-alias lc="ls -a"
+alias lsa="ls -a --tree --depth 1"
 
 # cat
 alias cat="bat"
