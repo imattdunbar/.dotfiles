@@ -49,7 +49,10 @@ source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/docker.zsh
 source $HOME/.config/zsh/functions.zsh
 source $HOME/.config/zsh/keybinds.zsh
-source $HOME/.config/zsh/local.zsh
+
+if [[ -f $HOME/.config/zsh/local.zsh ]]; then
+    source $HOME/.config/zsh/local.zsh
+fi
 
 # 1Password
 OP_FILE=$HOME/.config/op/plugins.sh

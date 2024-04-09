@@ -32,6 +32,7 @@ alias gc="git commit -a -m"
 alias ga="git add ."
 alias gp="git push"
 alias gs="git status"
+alias gdt="git difftool"
 
 # git reset --soft BRANCH or COMMIT
 # commit changes back for clean 1 commit
@@ -141,6 +142,9 @@ alias pnpx="pnpm dlx"
 # Go
 alias json2go="open https://transform.tools/json-to-go"
 alias air="$HOME/go/bin/air" # go install github.com/cosmtrek/air@latest
+
+# Markdown
+alias mdcheat="open https://www.markdownguide.org/cheat-sheet/"
 
 # Utils
 alias myports="sudo lsof -i -P | grep -i 'listen' | grep '$USER'"
