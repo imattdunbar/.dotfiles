@@ -46,3 +46,6 @@ render.experimental.xml
 
 # Go / Air
 tmp/
+
+# Git patch files
+*.patch

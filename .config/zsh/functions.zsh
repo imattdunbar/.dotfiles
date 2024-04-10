@@ -11,6 +11,18 @@ grf() {
   git restore --source=HEAD --staged --worktree $1
 }
 
+gpatch() {
+  git add . && git diff --cached > $1.patch
+}
+
+gapply() {
+  git apply $1.patch
+}
+
+unstage() {
+  git restore --staged $1
+}
+
 # Kill process on port
 killport() {
   kill -9 $(lsof -ti:$1)
