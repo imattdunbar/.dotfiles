@@ -7,6 +7,10 @@ gtt() {
   git commit --amend --no-edit --date "$(date)"
 }
 
+grf() {
+  git restore --source=HEAD --staged --worktree $1
+}
+
 # Kill process on port
 killport() {
   kill -9 $(lsof -ti:$1)
