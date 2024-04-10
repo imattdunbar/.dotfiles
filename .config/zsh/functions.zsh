@@ -12,11 +12,11 @@ grf() {
 }
 
 gpatch() {
-  git add . && git diff --cached > $1.patch
+  git add . && git diff --cached --binary > $1
 }
 
 gapply() {
-  git apply $1.patch
+  git apply $1
 }
 
 unstage() {
