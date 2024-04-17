@@ -49,3 +49,6 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
 # Nuke Volumes
 alias dnv='docker volume prune -f'
+
+# System Prune
+alias dprune='docker system prune'
