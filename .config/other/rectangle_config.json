@@ -28,6 +28,9 @@
     "alwaysAccountForStage" : {
       "int" : 0
     },
+    "alwaysAllowThrow" : {
+      "int" : 0
+    },
     "analogAdjacentResizing" : {
       "int" : 0
     },
@@ -35,7 +38,7 @@
       "int" : 0
     },
     "appSpecs" : {
-      "string" : "[{\"children\":[{\"bundleId\":\"com.tinyspeck.slackmacgap\",\"id\":19,\"loc\":9,\"y\":\"107\",\"w\":\"1247\",\"h\":\"902\",\"display\":-3,\"x\":\"351\"},{\"h\":\"901\",\"y\":\"108\",\"bundleId\":\"com.apple.MobileSMS\",\"x\":\"584\",\"loc\":9,\"w\":\"1144\",\"id\":102,\"display\":-3},{\"y\":\"63\",\"h\":\"1016\",\"x\":\"0\",\"w\":\"1242\",\"display\":-3,\"loc\":9,\"bundleId\":\"org.alacritty\",\"id\":184},{\"h\":\"1016\",\"id\":200,\"display\":-3,\"loc\":9,\"y\":\"63\",\"w\":\"1628\",\"bundleId\":\"com.microsoft.VSCode\",\"x\":\"100\"},{\"id\":205,\"bundleId\":\"company.thebrowser.Browser\",\"display\":-3,\"x\":\"57\",\"loc\":9,\"w\":\"1671\",\"y\":\"63\",\"h\":\"1016\"}],\"loc\":0,\"id\":20,\"shortcut\":{\"modifierFlags\":655360,\"keyCode\":18},\"isGroup\":true,\"name\":\"LaptopScreen\"},{\"isGroup\":true,\"children\":[{\"display\":-3,\"loc\":9,\"id\":76,\"y\":\"0\",\"bundleId\":\"com.google.Chrome\",\"x\":\"2560\",\"w\":\"2560\",\"h\":\"1415\"},{\"y\":\"63\",\"h\":\"1352\",\"w\":\"2394\",\"display\":-3,\"id\":107,\"loc\":9,\"x\":\"166\",\"bundleId\":\"com.google.android.studio\"},{\"h\":\"1351\",\"y\":\"64\",\"x\":\"168\",\"bundleId\":\"com.apple.dt.Xcode\",\"loc\":9,\"display\":-3,\"id\":114,\"w\":\"2391\"},{\"display\":-3,\"h\":\"1351\",\"w\":\"2075\",\"y\":\"64\",\"x\":\"485\",\"loc\":9,\"bundleId\":\"company.thebrowser.Browser\",\"id\":138},{\"h\":\"901\",\"y\":\"331\",\"loc\":9,\"w\":\"1144\",\"x\":\"-1144\",\"bundleId\":\"com.apple.MobileSMS\",\"display\":-3,\"id\":150},{\"bundleId\":\"com.tinyspeck.slackmacgap\",\"display\":-3,\"loc\":9,\"w\":\"1230\",\"id\":156,\"x\":\"-1279\",\"h\":\"902\",\"y\":\"330\"},{\"id\":165,\"loc\":9,\"y\":\"0\",\"h\":\"1415\",\"bundleId\":\"com.spotify.client\",\"w\":\"1280\",\"x\":\"-2560\",\"display\":-3},{\"w\":\"1280\",\"id\":171,\"loc\":9,\"bundleId\":\"org.alacritty\",\"x\":\"0\",\"h\":\"1351\",\"y\":\"64\",\"display\":-3},{\"h\":\"979\",\"y\":\"64\",\"bundleId\":\"md.obsidian\",\"id\":208,\"w\":\"1828\",\"x\":\"333\",\"display\":-3,\"loc\":9}],\"shortcut\":{\"modifierFlags\":655360,\"keyCode\":19},\"name\":\"3Monitors\",\"loc\":0,\"id\":54}]"
+      "string" : "[{\"name\":\"LaptopScreen\",\"isGroup\":true,\"shortcut\":{\"modifierFlags\":655360,\"keyCode\":18},\"loc\":0,\"id\":20,\"children\":[{\"y\":\"107\",\"w\":\"1247\",\"h\":\"902\",\"id\":19,\"loc\":9,\"bundleId\":\"com.tinyspeck.slackmacgap\",\"display\":-3,\"x\":\"351\"},{\"id\":102,\"w\":\"1144\",\"x\":\"584\",\"display\":-3,\"bundleId\":\"com.apple.MobileSMS\",\"loc\":9,\"y\":\"108\",\"h\":\"901\"},{\"x\":\"0\",\"h\":\"1016\",\"id\":184,\"bundleId\":\"org.alacritty\",\"y\":\"63\",\"display\":-3,\"loc\":9,\"w\":\"1242\"},{\"display\":-3,\"y\":\"63\",\"h\":\"1016\",\"id\":200,\"loc\":9,\"bundleId\":\"com.microsoft.VSCode\",\"x\":\"100\",\"w\":\"1628\"},{\"x\":\"57\",\"id\":205,\"bundleId\":\"company.thebrowser.Browser\",\"w\":\"1671\",\"h\":\"1016\",\"loc\":9,\"y\":\"63\",\"display\":-3}]},{\"shortcut\":{\"keyCode\":19,\"modifierFlags\":655360},\"id\":236,\"children\":[{\"y\":\"573\",\"w\":\"655\",\"h\":\"633\",\"x\":\"2257\",\"loc\":9,\"title\":\"rnggGYFChqjahLa4Cg\\\/Jo6MiTIRrG42Ip3WlTIsYL1+vEKIFyErNn4BdWL1oOFKgHOno7jY=\",\"bundleId\":\"com.knollsoft.Hookshot\",\"display\":-3,\"id\":225},{\"id\":226,\"loc\":9,\"y\":\"63\",\"display\":-3,\"w\":\"2126\",\"bundleId\":\"com.google.android.studio\",\"x\":\"2994\",\"h\":\"1352\",\"title\":\"VgaR1z4n0aPIqfh86nbd5yUtBFLbEbA6+cERfaGdPCeQKhq1+058u2YXHo0QGu3yetNxp4b7S951N2olhyqatO+UzNGI4mqmlDLRVHbwvhM=\"},{\"bundleId\":\"md.obsidian\",\"display\":-3,\"y\":\"65\",\"w\":\"1828\",\"h\":\"979\",\"title\":\"nWtTTMNlkl29ayeNCumznX6aogKo3OAC\\\/5FO5rz9gUnywHP3BCOIO15r2ZyRfOt5NWvLob70j00+zTJW53B5Xg==\",\"x\":\"2560\",\"id\":227,\"loc\":9},{\"loc\":9,\"id\":228,\"bundleId\":\"com.apple.dt.Xcode\",\"display\":-3,\"w\":\"2127\",\"title\":\"c37h73dHS5qBkDW4ijhdbon\\\/xYGAzdZbIFV0APTlKM\\\/RQqgi4dMytgqyCAuPFBIB6mXa1IAxP8ziN5W33w==\",\"y\":\"64\",\"h\":\"1351\",\"x\":\"2992\"},{\"w\":\"1506\",\"h\":\"1351\",\"y\":\"64\",\"loc\":9,\"x\":\"2556\",\"display\":-3,\"bundleId\":\"org.alacritty\",\"title\":\"z4QPLzM4KUv9W5z5+58DI1MdQHYpUKASiKS\\\/JH\\\/R9bwAJTXE8fnJ29CJn1s=\",\"id\":229},{\"x\":\"0\",\"id\":230,\"display\":-3,\"bundleId\":\"com.spotify.client\",\"y\":\"63\",\"w\":\"1274\",\"h\":\"1352\",\"title\":\"zxcq0KrE2\\\/ITYMgL+mu9ba3\\\/KzRj\\\/U2yZpYyCLCWTV8RqxiMdlv5kvUBHw==\",\"loc\":9},{\"bundleId\":\"com.tinyspeck.slackmacgap\",\"y\":\"219\",\"x\":\"1275\",\"id\":231,\"w\":\"1230\",\"loc\":9,\"h\":\"902\",\"display\":-3,\"title\":\"KyfsgANeV9Ej69E0niiU+am3tp0zZiEVkT0PGSiBuMvjretrnDiAke+TF4pdqB0YnCUGgyrGbj7lyx1cvTMT\"},{\"w\":\"1144\",\"y\":\"221\",\"h\":\"901\",\"x\":\"1411\",\"title\":\"B+urGsm7I1BDMkTzjOVc8rRLgFLrKQ8o4ow6j7w\\\/UCE\\\/me20dxMPYfnmYZeC\",\"display\":-3,\"id\":232,\"bundleId\":\"com.apple.MobileSMS\",\"loc\":9},{\"id\":234,\"title\":\"JkXaS\\\/89eBMPEMsMSDc0PfsFLQ4xOZlYXexVksDO+DBLn8X6UGbGyi4=\",\"bundleId\":\"com.readdle.smartemail-Mac\",\"display\":-3,\"x\":\"0\",\"h\":\"1351\",\"y\":\"64\",\"w\":\"1496\",\"loc\":9},{\"x\":\"2560\",\"display\":-3,\"id\":235,\"title\":\"TyGho+Q7yLLjI0yAJtfemE1akdumPcnnqDofTb5xxH9iMES5+NzGAuP2Shbmj6kwmDEeIgIHXMMsMsscBZ4RX536eXgNesET\",\"h\":\"1352\",\"loc\":9,\"bundleId\":\"company.thebrowser.Browser\",\"y\":\"63\",\"w\":\"2560\"},{\"loc\":9,\"id\":245,\"h\":\"1415\",\"y\":\"0\",\"display\":-3,\"w\":\"2560\",\"x\":\"5120\",\"bundleId\":\"com.google.Chrome\",\"title\":\"Pk5\\\/uGXWq7MWE9ayuFUSxCNSjnKY4h8TCBlEeIvHRK4JVr77XrZEInschmIib5rrTInPZEPrWvI2SUsaB9EgUQ3v2NBhwAnYt++SD\\\/KU4yy\\\/r8U10aCyGJkDC0ptCSiVTew\\\/B5U=\"}],\"name\":\"Docked\",\"loc\":0,\"isGroup\":true}]"
     },
     "attemptMatchOnNextPrevDisplay" : {
       "int" : 0
@@ -169,6 +172,18 @@
     "maximizeAcrossDisplays" : {
       "int" : 0
     },
+    "menuActionVisibility" : {
+
+    },
+    "menuAppSpecVisibility" : {
+
+    },
+    "menuCategoryVisibility" : {
+
+    },
+    "menuCustomSpecVisibility" : {
+
+    },
     "minimumWindowHeight" : {
       "float" : 0.25
     },
@@ -192,6 +207,9 @@
     },
     "multiWindowRespectsIgnore" : {
       "int" : 0
+    },
+    "nextPrevSpaceFrontWindowDelay" : {
+      "int" : 300
     },
     "nsClickListen" : {
       "int" : 0
@@ -239,7 +257,7 @@
       "int" : 2
     },
     "reticleColor" : {
-      "string" : "{\"green\":0.3,\"blue\":0.2,\"alpha\":0.5,\"red\":0.8}"
+      "string" : "{\"green\":0.3,\"alpha\":0.5,\"red\":0.8,\"blue\":0.2}"
     },
     "reticleDisplayMinDist" : {
       "float" : 0
@@ -376,6 +394,9 @@
     "systemWideMouseDown" : {
       "int" : 0
     },
+    "systemWideMouseDownApps" : {
+
+    },
     "throwFrontmost" : {
       "int" : 0
     },
@@ -449,12 +470,16 @@
       "modifierFlags" : 786432
     },
     "centerThird" : {
-      "keyCode" : 3,
-      "modifierFlags" : 786432
+      "keyCode" : 125,
+      "modifierFlags" : 655360
+    },
+    "centerTwoThirds" : {
+      "keyCode" : 126,
+      "modifierFlags" : 655360
     },
     "firstThird" : {
       "keyCode" : 123,
-      "modifierFlags" : 1572864
+      "modifierFlags" : 655360
     },
     "firstTwoThirds" : {
       "keyCode" : 14,
@@ -465,8 +490,8 @@
       "modifierFlags" : 786432
     },
     "lastThird" : {
-      "keyCode" : 5,
-      "modifierFlags" : 786432
+      "keyCode" : 124,
+      "modifierFlags" : 655360
     },
     "lastTwoThirds" : {
       "keyCode" : 124,
@@ -517,6 +542,6 @@
       "modifierFlags" : 786432
     }
   },
-  "timestamp" : 733513053.926716,
-  "version" : "156"
+  "timestamp" : 735075784.914952,
+  "version" : "162"
 }
