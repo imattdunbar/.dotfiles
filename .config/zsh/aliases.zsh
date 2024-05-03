@@ -68,8 +68,8 @@ alias cat="bat"
 
 # macOS
 alias disablegatekeeper="sudo spctl --master-disable"
-alias brew-bundle-install="cd ~/.config/other; brew bundle install"
-alias brew-bundle-dump="cd ~/.config/other; brew bundle dump --force; sed -i '' '/^vscode/d' Brewfile
+alias brew-bundle-install="brew bundle install --file ~/.config/other/Brewfile"
+alias brew-bundle-dump="brew bundle dump --force --file ~/.config/other/Brewfile; sed -i '' '/^vscode/d' ~/.config/other/Brewfile
 "
 
 # xattr file_path
