@@ -15,6 +15,25 @@ gpatch() {
   git add . && git diff --cached --binary > $1
 }
 
+gsp() {
+  git stash push -m "$1"
+}
+
+gsa() {
+  stash=$(git stash list | fzf)
+  [[ -z "$stash" ]] && return # If no stash is selected, exit the function
+  stash_index=$(echo "$stash" | sed -E 's/stash@\{([0-9]+)\}.*/\1/') # Extract the stash reference
+  git stash apply "$stash_index" # Apply index
+}
+
+gsl() {
+  git stash list
+}
+
+gsd() {
+  git stash drop $1
+}
+
 gapply() {
   git apply $1
 }
