@@ -16,7 +16,7 @@ gpatch() {
 }
 
 gsp() {
-  git stash push -m "$1"
+  git stash push --include-untracked -m "$1"
 }
 
 gsa() {
@@ -31,7 +31,11 @@ gsl() {
 }
 
 gsd() {
-  git stash drop $1
+  # Same as gsa() but for deleting
+  stash=$(git stash list | fzf)
+  [[ -z "$stash" ]] && return
+  stash_index=$(echo "$stash" | sed -E 's/stash@\{([0-9]+)\}.*/\1/')
+  git stash drop "$stash_index"
 }
 
 gapply() {
