@@ -49,7 +49,7 @@ alias gdb="git branch -D \$(git branch | fzf)"
 alias squash-all='git reset $(git commit-tree HEAD^{tree} -m "Squashed")'
 
 # Utilities
-alias getpath="pwd|pbcopy"
+alias pwdcopy="pwd|pbcopy"
 alias gotopath="cd pbpaste"
 alias path="pwd"
 alias localip="ipconfig getifaddr en0"
