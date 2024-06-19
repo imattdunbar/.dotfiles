@@ -39,3 +39,9 @@ detect_files = [ ".ruby-version" ]
 detect_files = [ "docker-compose.yml", "docker-compose.yaml", "Dockerfile" ]
 format = "[$symbol]($style) "
 symbol = "🐳"
+
+[package]
+disabled = true
+
+[python]
+detect_files = []
