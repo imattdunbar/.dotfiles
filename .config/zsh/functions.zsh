@@ -67,11 +67,21 @@ pushnewb() {
     git push --set-upstream origin "${BRANCH}"
 }
 
-# iTerm Tab Naming
+# Tab Naming
 DISABLE_AUTO_TITLE="true"
-precmd() {
-    echo -ne "\e]1;${PWD##*/}\a"
+
+# Set terminal tab title to folder name
+set_terminal_title() {
+    local folder_name=$(basename "$PWD")
+    echo -ne "\033]0;${folder_name}\007"
 }
+
+# Set terminal tab title if not inside tmux
+if [[ -z "$TMUX" ]]; then
+    autoload -Uz add-zsh-hook
+    add-zsh-hook chpwd set_terminal_title
+    set_terminal_title
+fi
 
 # Auto nvm use
 autoload -U add-zsh-hook
