@@ -32,7 +32,7 @@ alias gc="git commit -a"
 alias ga="git add ."
 alias gp="git push"
 alias gs="git status"
-alias gdt="git difftool"
+alias gdt="git difftool HEAD"
 alias gmt="git mergetool"
 
 # git reset --soft BRANCH or COMMIT
