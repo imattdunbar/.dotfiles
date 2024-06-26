@@ -121,6 +121,7 @@ alias nukedd="sudo rm -rf $HOME/Library/Developer/Xcode/DerivedData"
 alias nukespm="sudo rm -rf $HOME/Library/Caches/org.swift.swiftpm"
 alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
 alias nukesc="sudo rm -rf $HOME/Library/Developer/CoreSimulator/Caches"
+alias nukeios="nukedd && nukespm && nukecc && nukesc"
 alias ios-playground="cd ~/Dev/Playground/iOS/ios-playground"
 
 # Xcode
