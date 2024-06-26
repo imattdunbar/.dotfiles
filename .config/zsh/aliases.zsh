@@ -67,6 +67,10 @@ alias ogls="\ls"
 # cat
 alias cat="bat"
 
+# cd
+alias cd="z"
+alias ogcd="\cd"
+
 # macOS
 alias disablegatekeeper="sudo spctl --master-disable"
 alias brew-bundle-install="brew bundle install --file ~/.config/other/Brewfile"

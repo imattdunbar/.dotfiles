@@ -13,6 +13,9 @@ eval "$(starship init zsh)"
 # Zoxide
 eval "$(zoxide init zsh)"
 
+# asdf
+source "$(brew --prefix asdf)/libexec/asdf.sh"
+
 # nvm
 if [[ $(uname -m) == "x86_64" ]]; then
     # Intel
