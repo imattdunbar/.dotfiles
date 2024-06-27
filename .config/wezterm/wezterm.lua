@@ -123,6 +123,11 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.SplitHorizontal,
 	},
+	{
+		key = ".",
+		mods = "CMD",
+		action = wezterm.action({ ActivatePaneDirection = "Next" }),
+	},
 }
 
 return config
