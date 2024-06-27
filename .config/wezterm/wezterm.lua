@@ -1,16 +1,48 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+local mux = wezterm.mux
 
 -- inspiration -- https://github.com/joshmedeski/dotfiles/blob/main/.config/wezterm/wezterm.lua
 
-config.color_scheme = "AdventureTime"
+config.color_scheme = "Catppuccin Mocha"
+
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():set_position(32, 128)
+end)
+
+config.initial_rows = 48
+config.initial_cols = 160
+
+config.window_padding = {
+	left = 32,
+	right = 16,
+	top = 24,
+	bottom = 16,
+}
+
+-- For fancy tab bar only
+config.window_frame = {
+	-- The size of the font in the tab bar.
+	-- Default to 10.0 on Windows but 12.0 on other systems
+	font_size = 14.0,
+
+	-- The overall background color of the tab bar when
+	-- the window is focused
+	active_titlebar_bg = "rgba(0,0,0,0)",
+
+	-- The overall background color of the tab bar when
+	-- the window is not focused
+	inactive_titlebar_bg = "rgba(0,0,0,0)",
+}
 
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.8
 
 config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
+
 config.colors = {
 	tab_bar = {
 		-- The color of the strip that goes along the top of the window
@@ -89,7 +121,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local pane = tab.active_pane
 	-- local title = tab.tab_index + 1 .. " | " .. pane.title .. " "
 
-	local title = tab.tab_index + 1 .. " "
+	local title = " " .. tab.tab_index + 1
 
 	-- You can customize the title further here if needed
 	-- Example: use the current working directory as the tab title
