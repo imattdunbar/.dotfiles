@@ -61,6 +61,12 @@ patchalacritty() {
   sudo sh -c 'killall Finder && killall Dock'
 }
 
+patchwezterm() {
+  cp ~/.config/wezterm/wezterm.icns /Applications/WezTerm.app/Contents/Resources/terminal.icns
+  touch /Applications/WezTerm.app
+  sudo sh -c 'killall Finder && killall Dock'
+}
+
 # Push New Branch
 pushnewb() {
     BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
