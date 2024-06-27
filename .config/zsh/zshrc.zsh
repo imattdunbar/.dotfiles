@@ -1,5 +1,5 @@
-# asdf
-source "$(brew --prefix asdf)/libexec/asdf.sh"
+# Prefer asdf paths over brew paths
+export PATH=$HOME/.asdf/shims:$PATH
 
 # Brew
 if [[ $(uname -m) == "x86_64" ]]; then
@@ -9,8 +9,10 @@ else
     # Apple Silicon
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-
 export HOMEBREW_NO_ENV_HINTS=TRUE
+
+# asdf
+source "$(brew --prefix asdf)/libexec/asdf.sh"
 
 # Starship
 eval "$(starship init zsh)"
