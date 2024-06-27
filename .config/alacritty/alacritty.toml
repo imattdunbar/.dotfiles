@@ -28,9 +28,23 @@ y = 96
 
 [colors]
 # transparent_background_colors = true
-primary = { foreground = "#41FF00"}
+primary = { foreground = "#41FF00" }
 cursor = { text = "#000000", cursor = "#ffffff" }
 
+# inspiration: https://github.com/joshmedeski/dotfiles/blob/main/.config/alacritty/alacritty.toml
+[keyboard]
+bindings = [
+    { key = "Key1", mods = "Command", chars = "\u00021" },
+    { key = "Key2", mods = "Command", chars = "\u00022" },
+    { key = "Key3", mods = "Command", chars = "\u00023" },
+    { key = "Key4", mods = "Command", chars = "\u00024" },
+    { key = "Key5", mods = "Command", chars = "\u00025" },
+    { key = "Key6", mods = "Command", chars = "\u00026" },
+    { key = "Key7", mods = "Command", chars = "\u00027" },
+    { key = "Key8", mods = "Command", chars = "\u00028" },
+    { key = "Key9", mods = "Command", chars = "\u00029" },
+    { key = "E", mods = "Command", chars = "\u0002e" },
+]
 
 [font]
 size = 14.0
@@ -55,4 +69,3 @@ normal = { family = "FiraCode Nerd Font Mono", style = "Medium" }
 # [font.italic]
 # family = "FiraCode Nerd Font"
 # style = "Medium Italic"
-
