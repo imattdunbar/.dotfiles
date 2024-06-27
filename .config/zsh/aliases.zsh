@@ -34,6 +34,7 @@ alias gp="git push"
 alias gs="git status"
 alias gdt="git difftool HEAD"
 alias gmt="git mergetool"
+alias gl="git log --oneline"
 
 # git reset --soft BRANCH or COMMIT
 # commit changes back for clean 1 commit
