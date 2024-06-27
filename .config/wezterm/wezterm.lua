@@ -19,9 +19,9 @@ config.initial_rows = 48
 config.initial_cols = 160
 
 config.window_padding = {
-	left = 32,
+	left = 16,
 	right = 16,
-	top = 24,
+	top = 16,
 	bottom = 16,
 }
 
