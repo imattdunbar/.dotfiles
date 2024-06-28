@@ -128,6 +128,15 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action({ ActivatePaneDirection = "Next" }),
 	},
+	{
+		key = "d",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.EmitEvent("gdb"),
+	},
 }
+
+wezterm.on("gdb", function(window, pane)
+	window:perform_action(wezterm.action.SendString("gdb\n"), pane)
+end)
 
 return config
