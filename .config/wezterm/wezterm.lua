@@ -133,10 +133,19 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action.EmitEvent("gdb"),
 	},
+	{
+		key = "d",
+		mods = "CMD",
+		action = wezterm.action.EmitEvent("td"),
+	},
 }
 
 wezterm.on("gdb", function(window, pane)
 	window:perform_action(wezterm.action.SendString("gdb\n"), pane)
+end)
+
+wezterm.on("td", function(window, pane)
+	window:perform_action(wezterm.action.SendString("td\n"), pane)
 end)
 
 return config
