@@ -19,10 +19,10 @@ config.initial_rows = 48
 config.initial_cols = 160
 
 config.window_padding = {
-	left = 16,
-	right = 16,
-	top = 16,
-	bottom = 16,
+	left = 24,
+	right = 24,
+	top = 24,
+	bottom = 24,
 }
 
 -- For fancy tab bar only
