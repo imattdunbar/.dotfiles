@@ -22,7 +22,7 @@ config.window_padding = {
 	left = 24,
 	right = 24,
 	top = 24,
-	bottom = 24,
+	bottom = 0,
 }
 
 -- For fancy tab bar only
