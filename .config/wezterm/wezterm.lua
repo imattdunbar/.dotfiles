@@ -34,12 +34,14 @@ config.window_frame = {
 
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.93
 
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = true
 
 config.colors = {
+	background = "rgba(0,0,0,0.8)",
+	foreground = "#41FF00",
 	tab_bar = {
 		-- The color of the strip that goes along the top of the window
 		-- (does not apply when fancy tab bar is in use)
