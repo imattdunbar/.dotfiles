@@ -32,4 +32,18 @@ M.cmd_to_tmux_prefix = function(key, tmux_key)
 	)
 end
 
+M.option_key = function(key, action)
+	return M.key_table("ALT", key, action)
+end
+
+M.option_to_tmux_prefix = function(key, tmux_key)
+	return M.option_key(
+		key,
+		wt_action.Multiple({
+			wt_action.SendKey({ mods = "CTRL", key = "b" }),
+			wt_action.SendKey({ key = tmux_key }),
+		})
+	)
+end
+
 return M
