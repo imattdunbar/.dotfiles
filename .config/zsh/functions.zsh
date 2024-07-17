@@ -46,6 +46,14 @@ unstage() {
   git restore --staged $1
 }
 
+cds() {
+    local dir
+    dir=$(ogls | fzf)
+    if [[ -n "$dir" ]]; then
+        cd "$dir"
+    fi
+}
+
 # Kill process on port
 killport() {
   kill -9 $(lsof -ti:$1)
