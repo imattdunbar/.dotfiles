@@ -1,0 +1,12 @@
+% first cheat
+
+# print something
+echo "My name is <name>!"
+
+$ name: whoami
+
+% second cheat
+
+# print something else
+echo "Test Cheat 2"
+

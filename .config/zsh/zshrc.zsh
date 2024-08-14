@@ -20,6 +20,9 @@ eval "$(starship init zsh)"
 # Zoxide
 eval "$(zoxide init zsh)"
 
+# Navi
+eval "$(navi widget zsh)"
+
 # nvm
 if [[ $(uname -m) == "x86_64" ]]; then
     # Intel
