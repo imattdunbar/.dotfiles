@@ -19,6 +19,7 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles-reset='dotfiles reset --hard'
 alias dotfiles-squash='dotfiles reset $(dotfiles commit-tree HEAD^{tree} -m "Squashed")'
 alias dotfiles-update='dotfiles commit -a -m "Updates"; dotfiles push'
+alias ddt="dotfiles difftool"
 
 # Git
 alias initsubmodules="git submodule update --init --recursive"
