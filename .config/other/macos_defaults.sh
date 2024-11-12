@@ -116,5 +116,9 @@ defaults -currentHost write com.apple.controlcenter Sound -int 18
 defaults write com.apple.Siri StatusMenuVisible -bool false
 defaults write com.apple.assistant.support "Assistant Enabled" -bool false
 
-echo "If something failed, make sure to give Alacritty full disk access. Settings -> Privacy & Security -> Full Disk Access"
+# Dock Icon size
+defaults write com.apple.dock tilesize -int 48
+killall Dock
+
+echo "If something failed, make sure to give Wezterm full disk access. Settings -> Privacy & Security -> Full Disk Access"
 echo "Done. Should probably restart now."
