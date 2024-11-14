@@ -45,38 +45,8 @@
       }
     }
   },
-  // "language_servers": ["vtsls", "typescript-language-server", "eslint"],
-  // "language_server_options": {
-  //   "vtsls": {
-  //     "language_ids": ["typescript", "javascript", "typescriptreact", "javascriptreact"]
-  //   },
-  //   "typescript-language-server": {
-  //     "language_ids": ["typescript", "javascript", "typescriptreact", "javascriptreact"],
-  //     "initialization_options": {
-  //       "preferences": {
-  //         "includeInlayParameterNameHints": "all",
-  //         "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
-  //         "includeInlayFunctionParameterTypeHints": true,
-  //         "includeInlayVariableTypeHints": true,
-  //         "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
-  //         "includeInlayPropertyDeclarationTypeHints": true,
-  //         "includeInlayFunctionLikeReturnTypeHints": true,
-  //         "includeInlayEnumMemberValueHints": true
-  //       }
-  //     }
-  //   },
-  //   "eslint": {
-  //     "language_ids": ["typescript", "javascript", "typescriptreact", "javascriptreact"],
-  //     "initialization_options": {
-  //       "run_formatter": true
-  //     }
-  //   }
-  // },
-  // "formatter": {
-  //   "code_actions": {
-  //     "source.fixAll.eslint": true
-  //   }
-  // },
+  // "language_servers": ["..."], // Default, eslint on
+  "language_servers": ["!eslint", "..."], // eslint off
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": false
@@ -88,7 +58,6 @@
     "activate_on_close": "neighbour"
   },
   "toolbar": {
-    // "show": false
     "breadcrumbs": false,
     "quick_actions": false
   },
