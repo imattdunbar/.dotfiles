@@ -9,17 +9,41 @@
 {
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "Rosé Pine Moon"
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
   },
   "vim_mode": false,
-  "format_on_save": "off",
+  "format_on_save": "on",
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "buffer_font_family": "FiraCode Nerd Font Mono",
+  "restore_on_startup": "none",
   "terminal": {
     "font_family": "FiraCode Nerd Font Mono",
     "blinking": "off"
+  },
+  "formatter": "auto",
+  "prettier": {
+    "allowed": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "semi": false,
+    "printWidth": 120,
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
+  },
+  "languages": {
+    "Go": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "format_on_save": {
+        "external": {
+          "command": "gofmt",
+          "arguments": []
+        }
+      }
+    }
   },
   // "language_servers": ["vtsls", "typescript-language-server", "eslint"],
   // "language_server_options": {
@@ -48,39 +72,26 @@
   //     }
   //   }
   // },
-  // "languages": {
-  //   "TypeScript": {
-  //     "formatter": "prettier",
-  //     "code_actions_on_format": {
-  //       "source.fixAll.eslint": true
-  //     },
-  //     "format_on_save": {
-  //       "external": {
-  //         "command": "prettier",
-  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
-  //       }
-  //     }
-  //   },
-  //   "TSX": {
-  //     "formatter": "prettier",
-  //     "code_actions_on_format": {
-  //       "source.fixAll.eslint": true
-  //     },
-  //     "format_on_save": "on"
-  //   },
-  //   "JavaScript": {
-  //     "formatter": "prettier",
-  //     "code_actions_on_format": {
-  //       "source.fixAll.eslint": true
-  //     },
-  //     "format_on_save": "on"
-  //   }
-  // },
   // "formatter": {
   //   "code_actions": {
   //     "source.fixAll.eslint": true
   //   }
   // },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true,
+    "activate_on_close": "neighbour"
+  },
+  "toolbar": {
+    // "show": false
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
   "features": {
     "inline_completion_provider": "none",
     "copilot": false
@@ -103,8 +114,12 @@
     "dock": "left"
   },
   "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
     "version": "2",
-    "button": false,
+    "button": true,
     "dock": "left"
   },
   "collaboration_panel": {

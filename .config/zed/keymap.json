@@ -10,5 +10,11 @@
     "bindings": {
       "cmd-shift-o": "file_finder::Toggle"
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-s": "workspace::SaveWithoutFormat"
+    }
   }
 ]
