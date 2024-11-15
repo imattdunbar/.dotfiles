@@ -51,6 +51,9 @@
     "show": true,
     "show_nav_history_buttons": false
   },
+  "diagnostics": {
+    "include_warnings": false
+  },
   "tabs": {
     "close_position": "right",
     "file_icons": true,
