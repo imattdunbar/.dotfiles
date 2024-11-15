@@ -157,3 +157,7 @@ alias mdcheat="open https://www.markdownguide.org/cheat-sheet/"
 
 # Utils
 alias myports="sudo lsof -i -P | grep -i 'listen' | grep '$USER'"
+
+# Node Modules
+alias find-nm-dir='find . -name "node_modules" -type d -prune -print | xargs du -chs'
+alias nuke-nm-dir='find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;'
