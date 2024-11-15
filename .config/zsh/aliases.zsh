@@ -57,8 +57,9 @@ alias path="pwd"
 alias localip="ipconfig getifaddr en0"
 alias externalip="curl --silent ifconfig.me"
 alias whereami="echo $HOST, LAN: $(localip), WAN: $(externalip)"
-
+alias myports="sudo lsof -i -P | grep -i 'listen' | grep '$USER'"
 alias homeips="ifconfig | grep -o 'inet 10\.10\.[0-9]*\.[0-9]*' | grep -o '10\.10\.[0-9]*\.[0-9]*'"
+alias dirSize="du -sh"
 
 # ls
 alias ls="lsd"
@@ -154,9 +155,6 @@ alias air="$HOME/go/bin/air" # go install github.com/cosmtrek/air@latest
 
 # Markdown
 alias mdcheat="open https://www.markdownguide.org/cheat-sheet/"
-
-# Utils
-alias myports="sudo lsof -i -P | grep -i 'listen' | grep '$USER'"
 
 # Node Modules
 alias find-nm-dir='find . -name "node_modules" -type d -prune -print | xargs du -chs'
