@@ -7,6 +7,18 @@ gtt() {
   git commit --amend --no-edit --date "$(date)"
 }
 
+function fsb() {
+    local pattern=$*
+        local branches branch
+        branches=$(git branch --all | awk 'tolower($0) ~ /'"$pattern"'/') &&
+        branch=$(echo "$branches" |
+                fzf-tmux -p --reverse -1 -0 +m) &&
+        if [ "$branch" = "" ]; then
+            echo "[$0] No branch matches the provided pattern"; return;
+    fi;
+    git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
+}
+
 grf() {
   git restore --source=HEAD --staged --worktree $1
 }
