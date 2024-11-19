@@ -8,6 +8,7 @@ gtt() {
 }
 
 function fsb() {
+    git fetch
     local pattern=$*
         local branches branch
         branches=$(git branch --all | awk 'tolower($0) ~ /'"$pattern"'/') &&
@@ -17,6 +18,7 @@ function fsb() {
             echo "[$0] No branch matches the provided pattern"; return;
     fi;
     git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
+    git pull
 }
 
 grf() {
