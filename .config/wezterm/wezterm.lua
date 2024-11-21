@@ -145,6 +145,11 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.EmitEvent("td"),
 	},
+	{
+		key = "x",
+		mods = "CMD",
+		action = wezterm.action.EmitEvent("exit-shell"),
+	},
 }
 
 wezterm.on("gdb", function(window, pane)
@@ -157,6 +162,10 @@ end)
 
 wezterm.on("td", function(window, pane)
 	window:perform_action(wezterm.action.SendString("td\n"), pane)
+end)
+
+wezterm.on("exit-shell", function(window, pane)
+	window:perform_action(wezterm.action.SendString("exit\n"), pane)
 end)
 
 return config
