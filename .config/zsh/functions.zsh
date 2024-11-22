@@ -8,7 +8,7 @@ gtt() {
 }
 
 function fsb() {
-    git fetch
+    git fetch --prune
     local pattern=$*
         local branches branch
         branches=$(git branch --all | awk 'tolower($0) ~ /'"$pattern"'/') &&

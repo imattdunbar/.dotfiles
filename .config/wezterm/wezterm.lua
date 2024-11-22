@@ -147,7 +147,7 @@ config.keys = {
 	},
 	{
 		key = "x",
-		mods = "CMD",
+		mods = "CTRL",
 		action = wezterm.action.EmitEvent("exit-shell"),
 	},
 }
