@@ -20,6 +20,7 @@ alias dotfiles-reset='dotfiles reset --hard'
 alias dotfiles-squash='dotfiles reset $(dotfiles commit-tree HEAD^{tree} -m "Squashed")'
 alias dotfiles-update='dotfiles commit -a -m "Updates"; dotfiles push'
 alias dfdt="dotfiles difftool"
+alias dfs="dotfiles status"
 
 # Git
 alias initsubmodules="git submodule update --init --recursive"
