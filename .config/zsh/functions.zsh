@@ -7,6 +7,15 @@ gtt() {
   git commit --amend --no-edit --date "$(date)"
 }
 
+function tsc() {
+  if [ -f ./node_modules/.bin/tsc ]; then
+  ./node_modules/.bin/tsc "$@"
+  else
+    # Use npx to resolve the global `tsc` without recursion
+    npx -p typescript tsc "$@"
+  fi
+}
+
 function fsb() {
     git fetch --prune
     local pattern=$*
