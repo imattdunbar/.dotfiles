@@ -161,3 +161,6 @@ alias mdcheat="open https://www.markdownguide.org/cheat-sheet/"
 # Node Modules
 alias find-nm-dir='find . -name "node_modules" -type d -prune -print | xargs du -chs'
 alias nuke-nm-dir='find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;'
+
+# Package
+alias package-scripts="jq -r '.scripts | to_entries[] | \"\(.key): \(.value)\"' package.json | fzf"
