@@ -62,7 +62,7 @@
   },
   "toolbar": {
     "breadcrumbs": false,
-    "quick_actions": false
+    "quick_actions": false // inline assist button is here
   },
   "features": {
     "inline_completion_provider": "none",

@@ -16,5 +16,11 @@
     "bindings": {
       "alt-s": "workspace::SaveWithoutFormat"
     }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "cmd-i": "assistant::InlineAssist"
+    }
   }
 ]
