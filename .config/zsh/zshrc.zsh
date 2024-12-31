@@ -5,14 +5,20 @@ export PATH=$HOME/.asdf/shims:$PATH
 if [[ $(uname -m) == "x86_64" ]]; then
     # Intel
     eval "$(/usr/local/bin/brew shellenv)"
+    export HOMEBREW_PREFIX="/usr/local"
 else
     # Apple Silicon
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    export HOMEBREW_PREFIX="/opt/homebrew"
 fi
 export HOMEBREW_NO_ENV_HINTS=TRUE
 
 # asdf
 source "$(brew --prefix asdf)/libexec/asdf.sh"
+
+# Solves an issue with asdf + postgres
+export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"
+
 
 # Starship
 eval "$(starship init zsh)"
