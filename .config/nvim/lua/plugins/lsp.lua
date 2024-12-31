@@ -11,7 +11,7 @@ return {
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "gopls", "astro", "eslint", "jsonls" },
+				ensure_installed = { "lua_ls", "ts_ls", "gopls", "astro", "eslint", "jsonls" },
 				automatic_installation = true,
 			})
 		end,
@@ -23,7 +23,7 @@ return {
 
 			local lspconfig = require("lspconfig")
 
-			lspconfig.tsserver.setup({ capabilities = capabilities })
+			lspconfig.ts_ls.setup({ capabilities = capabilities })
 
 			lspconfig.lua_ls.setup({})
 			lspconfig.gopls.setup({
