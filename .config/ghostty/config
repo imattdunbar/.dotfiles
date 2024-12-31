@@ -1,21 +1,43 @@
-font-family = "FiraCode Nerd Font Mono" 
+# Font
+font-family = "FiraCode Nerd Font Mono"
+font-thicken = true
 font-variation = wght=500
-
 font-size = 14
-mouse-hide-while-typing = true
+font-feature = -liga
+font-feature = -calt
+font-feature = -dlig
 
-# you don't want this, disables tabs
-# window-decoration = false
+mouse-hide-while-typing = true
 
 background-opacity = 0.7
 background = #000000
 foreground = #41FF00
 background-blur-radius = 5
-# macos-titlebar-style = "hidden"
-window-padding-x = 16
-window-padding-y = 16
 
+macos-titlebar-style = tabs
+
+window-padding-x = 16
+window-padding-y = 4
+
+cursor-color = #FFFFFF
 cursor-style = block
 cursor-style-blink = false
+shell-integration-features = no-cursor
 
 confirm-close-surface = false 
+
+window-save-state = always
+window-height = 48
+window-width = 160
+
+keybind = cmd+e=text:\x02e
+keybind = cmd+shift+b=text:fsb\n
+keybind = cmd+shift+d=text:gdb\n
+keybind = ctrl+x=text:exit\n
+
+# Quick Terminal
+keybind = global:opt+q=toggle_quick_terminal
+quick-terminal-animation-duration=0
+quick-terminal-position=center
+
+
