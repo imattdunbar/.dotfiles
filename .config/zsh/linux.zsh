@@ -1,1 +1,1 @@
-echo "I'm Linux"
+# Anything specific to Linux (likely nixOS) goes in here
