@@ -68,14 +68,7 @@ function whereami() {
 
 
 # ls
-function ls() {
-  if command -v lsd >/dev/null 2>&1; then
-    lsd "$@"
-  else
-    command ls "$@"
-  fi
-}
-
+alias ls="lsd"
 alias lsa="ls -a --tree --depth 1"
 alias ogls="\ls"
 
@@ -83,13 +76,7 @@ alias ogls="\ls"
 alias cat="bat"
 
 # cd
-function cd() {
-  if command -v zoxide >/dev/null 2>&1; then
-    z "$@"
-  else
-    builtin cd "$@"
-  fi
-}
+alias cd="z"
 alias ogcd="\cd"
 
 # macOS
