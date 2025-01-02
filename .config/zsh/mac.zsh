@@ -23,16 +23,11 @@ export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/
 eval "$(navi widget zsh)"
 
 # nvm
-if [[ $(uname -m) == "x86_64" ]]; then
-    # Intel
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-else
-    # Apple Silicon
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+export NVM_DIR="$HOME/.nvm"
+NVM_PATH="$(brew --prefix nvm 2>/dev/null || true)"
+if [[ -n "$NVM_PATH" ]]; then
+  [ -s "$NVM_PATH/nvm.sh" ] && \. "$NVM_PATH/nvm.sh"
+  [ -s "$NVM_PATH/etc/bash_completion.d/nvm" ] && \. "$NVM_PATH/etc/bash_completion.d/nvm"
 fi
 
 # rbenv
