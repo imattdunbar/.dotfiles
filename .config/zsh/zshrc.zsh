@@ -1,64 +1,16 @@
-# Prefer asdf paths over brew paths
-export PATH=$HOME/.asdf/shims:$PATH
-
-# Brew
-if [[ $(uname -m) == "x86_64" ]]; then
-    # Intel
-    eval "$(/usr/local/bin/brew shellenv)"
-    export HOMEBREW_PREFIX="/usr/local"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  # macOS
+  source $HOME/.config/zsh/mac.zsh
 else
-    # Apple Silicon
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    export HOMEBREW_PREFIX="/opt/homebrew"
+  # Linux
+  source $HOME/.config/zsh/linux.zsh
 fi
-export HOMEBREW_NO_ENV_HINTS=TRUE
-
-# asdf
-source "$(brew --prefix asdf)/libexec/asdf.sh"
-
-# Solves an issue with asdf + postgres
-export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"
-
 
 # Starship
 eval "$(starship init zsh)"
 
 # Zoxide
 eval "$(zoxide init zsh)"
-
-# Navi
-eval "$(navi widget zsh)"
-
-# nvm
-if [[ $(uname -m) == "x86_64" ]]; then
-    # Intel
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-else
-    # Apple Silicon
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-fi
-
-# rbenv
-eval "$(rbenv init - zsh)"
-
-# Cocoapods
-export LC_ALL=en_US.UTF-8
-
-# pyenv
-eval "$(pyenv init -)"
-
-# Capacitor
-export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/Applications/Android Studio.app"
-
-# Jetbrains Toolbox Scripts
-export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-
-# Expo
-export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # Source
 source $HOME/.config/zsh/aliases.zsh
@@ -69,19 +21,6 @@ source $HOME/.config/zsh/keybinds.zsh
 if [[ -f $HOME/.config/zsh/local.zsh ]]; then
     source $HOME/.config/zsh/local.zsh
 fi
-
-# 1Password
-OP_FILE=$HOME/.config/op/plugins.sh
-if [[ -f "$OP_FILE" ]]; then
-    source $OP_FILE
-fi
-
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

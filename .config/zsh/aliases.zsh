@@ -58,13 +58,24 @@ alias gotopath="cd pbpaste"
 alias path="pwd"
 alias localip="ipconfig getifaddr en0"
 alias externalip="curl --silent ifconfig.me"
-alias whereami="echo $HOST, LAN: $(localip), WAN: $(externalip)"
 alias myports="sudo lsof -i -P | grep -i 'listen' | grep '$USER'"
 alias homeips="ifconfig | grep -o 'inet 10\.10\.[0-9]*\.[0-9]*' | grep -o '10\.10\.[0-9]*\.[0-9]*'"
 alias dirSize="du -sh"
 
+function whereami() {
+  echo "$HOST, LAN: $(localip), WAN: $(externalip)"
+}
+
+
 # ls
-alias ls="lsd"
+function ls() {
+  if command -v lsd >/dev/null 2>&1; then
+    lsd "$@"
+  else
+    command ls "$@"
+  fi
+}
+
 alias lsa="ls -a --tree --depth 1"
 alias ogls="\ls"
 
@@ -72,7 +83,13 @@ alias ogls="\ls"
 alias cat="bat"
 
 # cd
-alias cd="z"
+function cd() {
+  if command -v zoxide >/dev/null 2>&1; then
+    z "$@"
+  else
+    builtin cd "$@"
+  fi
+}
 alias ogcd="\cd"
 
 # macOS
