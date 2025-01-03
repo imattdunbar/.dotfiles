@@ -41,6 +41,13 @@ confirm-close-surface = false
 # Sends ctrl+b then e -- used in tmux, see tmux.conf
 keybind = cmd+e=text:\x02e
 
+# Sends ctrl+b then opt+shift+p -- saves tmux pane log
+keybind = cmd+p=text:\x02\x1bP
+
+# Sends ctrl+b then opt+p -- starts writing tmux pane log
+keybind = cmd+l=text:\x02P
+
+
 keybind = cmd+shift+b=text:fsb\n
 keybind = cmd+shift+d=text:gdb\n
 keybind = ctrl+x=text:exit\n
