@@ -6,21 +6,57 @@
     }
   },
   {
-    "context": "Editor && mode == full",
-    "bindings": {
-      "cmd-shift-o": "file_finder::Toggle"
-    }
-  },
-  {
     "context": "Workspace",
     "bindings": {
       "alt-s": "workspace::SaveWithoutFormat"
     }
   },
   {
+    "context": "Workspace",
+    "bindings": {
+      "alt-l": "language_selector::Toggle"
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "cmd-shift-o": "file_finder::Toggle"
+    }
+  },
+  {
     "context": "Editor && mode == full",
     "bindings": {
       "cmd-i": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-k": "zed::OpenKeymap"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-1": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-2": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-3": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-x": "command_palette::Toggle"
     }
   }
 ]
