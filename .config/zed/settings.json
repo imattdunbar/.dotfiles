@@ -22,6 +22,7 @@
     "font_family": "FiraCode Nerd Font Mono",
     "blinking": "off"
   },
+  "soft_wrap": "editor_width",
   "formatter": "auto",
   "prettier": {
     "allowed": true,
@@ -45,6 +46,8 @@
       }
     }
   },
+  "show_inline_completions": false,
+  "show_completions_on_input": false,
   // "language_servers": ["..."], // Default, eslint on
   "language_servers": ["!eslint", "..."], // eslint off
   "tab_bar": {
@@ -65,7 +68,7 @@
     "quick_actions": false // inline assist button is here
   },
   "features": {
-    "inline_completion_provider": "none",
+    "inline_completion_provider": "supermaven",
     "copilot": false
   },
   "telemetry": {

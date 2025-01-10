@@ -58,5 +58,11 @@
     "bindings": {
       "cmd-shift-x": "command_palette::Toggle"
     }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "cmd-shift-c": "editor::ShowInlineCompletion"
+    }
   }
 ]
