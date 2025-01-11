@@ -33,6 +33,22 @@
     "printWidth": 120,
     "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
   },
+  // AI + Code Completion
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2",
+    "button": true,
+    "dock": "left"
+  },
+  "features": {
+    "inline_completion_provider": "supermaven"
+  },
+  "show_inline_completions": false,
+  "show_completions_on_input": true,
+  // ----- End of AI settings -----
   "languages": {
     "Go": {
       "code_actions_on_format": {
@@ -55,8 +71,6 @@
     //   }
     // }
   },
-  "show_inline_completions": false,
-  "show_completions_on_input": true,
   // "language_servers": ["..."], // Default, eslint on
   // Disable the typescript-language-server because by default vtsls is enabled
   // and enabling both gives double pop overs on code hints
@@ -78,10 +92,6 @@
     "breadcrumbs": false,
     "quick_actions": false // inline assist button is here
   },
-  "features": {
-    "inline_completion_provider": "supermaven",
-    "copilot": false
-  },
   "telemetry": {
     "metrics": false,
     "diagnostics": false
@@ -96,16 +106,7 @@
     "auto_reveal_entries": true
   },
   "chat_panel": {
-    "button": false,
-    "dock": "left"
-  },
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2",
-    "button": true,
+    "button": "never",
     "dock": "left"
   },
   "collaboration_panel": {
