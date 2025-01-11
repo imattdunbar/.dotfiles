@@ -64,5 +64,17 @@
     "bindings": {
       "cmd-shift-c": "editor::ShowInlineCompletion"
     }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "ctrl-l": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "ctrl-h": "pane::ActivatePrevItem"
+    }
   }
 ]

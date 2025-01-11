@@ -5,7 +5,7 @@
 //
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
+// command palette
 {
   "theme": {
     "mode": "system",
@@ -45,11 +45,22 @@
         }
       }
     }
+    // This almost works
+    // "Prisma": {
+    //   "format_on_save": {
+    //     "external": {
+    //       "command": "bunx",
+    //       "arguments": ["prisma", "format", "--schema", "{buffer_path}"]
+    //     }
+    //   }
+    // }
   },
   "show_inline_completions": false,
-  "show_completions_on_input": false,
+  "show_completions_on_input": true,
   // "language_servers": ["..."], // Default, eslint on
-  "language_servers": ["!eslint", "..."], // eslint off
+  // Disable the typescript-language-server because by default vtsls is enabled
+  // and enabling both gives double pop overs on code hints
+  "language_servers": ["!eslint", "!typescript-language-server", "..."], // eslint off
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": false
