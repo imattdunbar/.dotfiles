@@ -64,6 +64,15 @@
         }
       }
     }
+    // "TypeScript": {
+    //   "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
+    // },
+    // "TSX": {
+    //   "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
+    // },
+    // "JavaScript": {
+    //   "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
+    // }
     // This almost works
     // "Prisma": {
     //   "format_on_save": {
@@ -80,7 +89,7 @@
   "language_servers": ["!eslint", "!typescript-language-server", "..."], // eslint off
   "tab_bar": {
     "show": true,
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": true
   },
   "diagnostics": {
     "include_warnings": false
