@@ -76,5 +76,17 @@
     "bindings": {
       "ctrl-h": "pane::ActivatePrevItem"
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-r": ["task::Spawn", { "task_name": "Open VSCode" }]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-alt-s": ["task::Spawn", { "task_name": "Force Format" }]
+    }
   }
 ]

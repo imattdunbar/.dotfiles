@@ -13,12 +13,11 @@
     "dark": "Catppuccin Mocha"
   },
   "vim_mode": false,
-  "format_on_save": "on",
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "buffer_font_family": "FiraCode Nerd Font Mono",
   "buffer_font_features": {
-    "calt": false
+    "calt": false // disable ligatures
   },
   "restore_on_startup": "none",
   "terminal": {
@@ -26,6 +25,7 @@
     "blinking": "off"
   },
   "soft_wrap": "editor_width",
+  "format_on_save": "on",
   "formatter": "auto",
   "prettier": {
     "allowed": true,
@@ -47,7 +47,7 @@
     "dock": "left"
   },
   "features": {
-    "inline_completion_provider": "supermaven"
+    "inline_completion_provider": "none"
   },
   "show_inline_completions": false,
   "show_completions_on_input": true,
