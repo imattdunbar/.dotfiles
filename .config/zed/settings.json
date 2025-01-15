@@ -28,6 +28,8 @@
   "format_on_save": "on",
   "formatter": "auto",
   "prettier": {
+    // If these settings are not used by default, that means prettier is installed in the directory
+    // and a prettier config file for that directory must be added and used.
     "allowed": true,
     "singleQuote": true,
     "tabWidth": 2,
@@ -64,29 +66,16 @@
         }
       }
     }
-    // "TypeScript": {
-    //   "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
-    // },
-    // "TSX": {
-    //   "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
-    // },
-    // "JavaScript": {
-    //   "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
-    // }
-    // This almost works
-    // "Prisma": {
-    //   "format_on_save": {
-    //     "external": {
-    //       "command": "bunx",
-    //       "arguments": ["prisma", "format", "--schema", "{buffer_path}"]
-    //     }
-    //   }
-    // }
   },
-  // "language_servers": ["..."], // Default, eslint on
-  // Disable the typescript-language-server because by default vtsls is enabled
-  // and enabling both gives double pop overs on code hints
-  "language_servers": ["!eslint", "!typescript-language-server", "..."], // eslint off
+  "language_servers": ["!eslint", "!typescript-language-server", "vtsls", "..."], // eslint off
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": { "tsserver": { "maxTsServerMemory": 16184 } },
+        "javascript": { "tsserver": { "maxTsServerMemory": 16184 } }
+      }
+    }
+  },
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": true

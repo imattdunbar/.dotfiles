@@ -1,7 +1,22 @@
 // Static tasks configuration.
-//
-// Example:
 [
+  {
+    "label": "Open VSCode",
+    "command": "code $ZED_WORKTREE_ROOT $ZED_FILE",
+    "description": "Opens VSCode",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "never"
+  },
+  // {
+  //   "label": "Force Format",
+  //   "command": "bun $HOME/.bun/install/global/node_modules/prettier/bin/prettier.cjs --config ~/.config/other/.prettierrc --write $ZED_FILE",
+  //   "description": "Format with prettier",
+  //   "use_new_terminal": false,
+  //   "allow_concurrent_runs": false,
+  //   "reveal": "always"
+  // }
+  // Example:
   {
     "label": "Example task",
     "command": "for i in {1..5}; do echo \"Hello $i/5\"; sleep 1; done",
@@ -44,21 +59,5 @@
     //         }
     //     }
     "shell": "system"
-  },
-  {
-    "label": "Open VSCode",
-    "command": "code $ZED_WORKTREE_ROOT $ZED_FILE",
-    "description": "Opens VSCode",
-    "use_new_terminal": false,
-    "allow_concurrent_runs": false,
-    "reveal": "never"
   }
-  // {
-  //   "label": "Force Format",
-  //   "command": "bun $HOME/.bun/install/global/node_modules/prettier/bin/prettier.cjs --config ~/.config/other/.prettierrc --write $ZED_FILE",
-  //   "description": "Format with prettier",
-  //   "use_new_terminal": false,
-  //   "allow_concurrent_runs": false,
-  //   "reveal": "always"
-  // }
 ]

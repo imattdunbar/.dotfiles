@@ -14,6 +14,12 @@
   {
     "context": "Workspace",
     "bindings": {
+      "alt-shift-s": "workspace::SaveAll"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
       "alt-l": "language_selector::Toggle"
     }
   },
@@ -80,7 +86,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-r": ["task::Spawn", { "task_name": "Open VSCode" }]
+      "ctrl-shift-c": ["task::Spawn", { "task_name": "Open VSCode" }]
     }
   },
   {
