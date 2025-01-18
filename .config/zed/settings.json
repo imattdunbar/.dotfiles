@@ -51,7 +51,7 @@
   "features": {
     "inline_completion_provider": "none"
   },
-  "show_inline_completions": false,
+  "show_inline_completions": true,
   "show_completions_on_input": true,
   // ----- End of AI settings -----
   "languages": {
