@@ -32,6 +32,8 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
 window-new-tab-position = end
+window-inherit-working-directory = false
+working-directory = home
 
 # Ask before quitting
 confirm-close-surface = false 
