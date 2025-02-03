@@ -28,7 +28,7 @@ detect_files = [".nvmrc", "yarn.lock", "package-lock.json", "pnpm-lock.yaml"]
 detect_folders = []
 
 [bun]
-detect_files = ["bun.lockb", "bunfig.toml"]
+detect_files = ["bun.lockb", "bun.lock", "bunfig.toml"]
 style = "bold green"
 
 [swift]

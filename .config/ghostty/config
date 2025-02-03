@@ -19,7 +19,7 @@ background-blur-radius = 5
 # Window
 macos-titlebar-style = tabs
 window-padding-x = 16
-window-padding-y = 4
+window-padding-y = 0
 window-padding-color = extend
 window-height = 48
 window-width = 160
