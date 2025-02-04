@@ -164,69 +164,69 @@
 	<key>DVTSourceTextSyntaxFonts</key>
 	<dict>
 		<key>xcode.syntax.attribute</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.character</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.comment</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.comment.doc</key>
-		<string>FiraCodeNFM-Reg - 12.0</string>
+		<string>FiraCodeNFM-Reg - 14.0</string>
 		<key>xcode.syntax.comment.doc.keyword</key>
-		<string>FiraCodeNFM-Bold - 13.0</string>
+		<string>FiraCodeNFM-Bold - 14.0</string>
 		<key>xcode.syntax.declaration.other</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.declaration.type</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.class</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.class.system</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.constant</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.constant.system</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.function</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.function.system</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.macro</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.macro.system</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.type</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.type.system</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.variable</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.identifier.variable.system</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.keyword</key>
-		<string>FiraCodeNFM-Bold - 13.0</string>
+		<string>FiraCodeNFM-Bold - 14.0</string>
 		<key>xcode.syntax.mark</key>
-		<string>FiraCodeNFM-Bold - 13.0</string>
+		<string>FiraCodeNFM-Bold - 14.0</string>
 		<key>xcode.syntax.markup.code</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.number</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.plain</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.preprocessor</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.regex</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.regex.capturename</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.regex.charname</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.regex.number</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.regex.other</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.string</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 		<key>xcode.syntax.url</key>
-		<string>FiraCodeNFM-Med - 13.0</string>
+		<string>FiraCodeNFM-Med - 14.0</string>
 	</dict>
 </dict>
 </plist>
