@@ -12,6 +12,9 @@ eval "$(starship init zsh)"
 # Zoxide
 eval "$(zoxide init zsh)"
 
+# Atuin
+eval "$(atuin init zsh)"
+
 # Source
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/docker.zsh
