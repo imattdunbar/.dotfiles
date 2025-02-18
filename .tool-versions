@@ -4,3 +4,4 @@ helmfile 0.165.0
 k9s 0.32.4
 awscli 2.23.8
 postgres 16.6
+terraform 1.10.5

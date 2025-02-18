@@ -118,6 +118,10 @@ alias t-plugins="sh ~/.config/tmux/plugins/tpm/scripts/install_plugins.sh"
 alias t-cheat="open https://tmuxcheatsheet.com"
 alias nuke-tmux="rm -rf ~/.config/tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm && t-plugins && t-source"
 
+
+# AWS
+alias aws-whoami="aws sts get-caller-identity"
+
 # Terraform
 alias tf="terraform"
 
