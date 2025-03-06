@@ -49,7 +49,7 @@
     "dock": "left"
   },
   "features": {
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "zed"
   },
   "show_inline_completions": true,
   "show_completions_on_input": true,
