@@ -51,31 +51,31 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "show_inline_completions": true,
+  "show_edit_predictions": true,
   "show_completions_on_input": true,
   // ----- End of AI settings -----
-  "languages": {
-    "Go": {
-      "code_actions_on_format": {
-        "source.organizeImports": true
-      },
-      "format_on_save": {
-        "external": {
-          "command": "gofmt",
-          "arguments": []
-        }
-      }
-    }
-  },
-  "language_servers": ["!eslint", "!typescript-language-server", "vtsls", "..."], // eslint off
-  "lsp": {
-    "vtsls": {
-      "settings": {
-        "typescript": { "tsserver": { "maxTsServerMemory": 16184 } },
-        "javascript": { "tsserver": { "maxTsServerMemory": 16184 } }
-      }
-    }
-  },
+  // "languages": {
+  //   "Go": {
+  //     "code_actions_on_format": {
+  //       "source.organizeImports": true
+  //     },
+  //     "format_on_save": {
+  //       "external": {
+  //         "command": "gofmt",
+  //         "arguments": []
+  //       }
+  //     }
+  //   }
+  // },
+  // "language_servers": ["!eslint", "!typescript-language-server", "vtsls", "..."], // eslint off
+  // "lsp": {
+  //   "vtsls": {
+  //     "settings": {
+  //       "typescript": { "tsserver": { "maxTsServerMemory": 16184 } },
+  //       "javascript": { "tsserver": { "maxTsServerMemory": 16184 } }
+  //     }
+  //   }
+  // },
   "file_types": {
     "JSONC": ["tsconfig*.json"],
     "JSON": [".prettierrc"],

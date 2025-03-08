@@ -68,7 +68,7 @@
   {
     "context": "Editor && mode == full",
     "bindings": {
-      "cmd-shift-c": "editor::ShowInlineCompletion"
+      "cmd-shift-c": "editor::ShowEditPrediction"
     }
   },
   {
@@ -80,7 +80,7 @@
   {
     "context": "Editor && mode == full",
     "bindings": {
-      "ctrl-h": "pane::ActivatePrevItem"
+      "ctrl-h": "pane::ActivatePreviousItem"
     }
   },
   {

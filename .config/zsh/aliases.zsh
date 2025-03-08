@@ -10,6 +10,7 @@ alias editpackage="code package.json"
 alias ep="code package.json"
 alias egi="code .gitignore"
 alias editpodfile="code Podfile"
+alias c="code"
 
 # Reload zshrc
 alias zr="source $HOME/.zshrc"
