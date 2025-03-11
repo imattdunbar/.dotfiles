@@ -13,6 +13,9 @@ disabled = false
 [aws]
 format = ''
 
+[terraform]
+format = ''
+
 [gcloud]
 format = ''
 
