@@ -40,6 +40,10 @@ alias gmt="git mergetool"
 alias gl="git log --oneline"
 alias gf="git fetch"
 
+# Ignore local changes to a file that's already in git
+alias git-skip="git update-index --skip-worktree"
+alias git-unskip="git update-index --no-skip-worktree"
+
 # git reset --soft BRANCH or COMMIT
 # commit changes back for clean 1 commit
 
