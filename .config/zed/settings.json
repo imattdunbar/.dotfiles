@@ -20,6 +20,7 @@
     "calt": false // disable ligatures
   },
   "restore_on_startup": "none",
+  "confirm_quit": false,
   "terminal": {
     "font_family": "FiraCode Nerd Font Mono",
     "blinking": "off"
