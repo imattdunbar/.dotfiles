@@ -9,6 +9,9 @@ fi
 # Starship
 eval "$(starship init zsh)"
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # Zoxide
 eval "$(zoxide init zsh)"
 
