@@ -116,6 +116,13 @@ defaults -currentHost write com.apple.controlcenter Sound -int 18
 defaults write com.apple.Siri StatusMenuVisible -bool false
 defaults write com.apple.assistant.support "Assistant Enabled" -bool false
 
+# Free up Hyper+C
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Convert Text to Simplified Chinese" "nil"
+# CMD+Shift+L to Lock Screen
+# @ = Command, $ = Shift, L = L key
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Lock Screen" "@\$L"
+killall pbs
+
 # Dock Icon size
 defaults write com.apple.dock tilesize -int 48
 killall Dock
