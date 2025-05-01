@@ -116,12 +116,22 @@ defaults -currentHost write com.apple.controlcenter Sound -int 18
 defaults write com.apple.Siri StatusMenuVisible -bool false
 defaults write com.apple.assistant.support "Assistant Enabled" -bool false
 
+# Move windows by dragging any part of the window CMD+CTRL + Mouse
+defaults write -g NSWindowShouldDragOnGesture -bool true
+
 # Free up Hyper+C
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Convert Text to Simplified Chinese" "nil"
 # CMD+Shift+L to Lock Screen
 # @ = Command, $ = Shift, L = L key
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Lock Screen" "@\$L"
 killall pbs
+
+# Keycode C=8, Modifiers: Ctrl=262144, Opt=524288, Shift=131072, Cmd=1048576
+# Total Modifiers = 1966080
+# Symbolic Hotkey ID for "Move focus to next window" is typically 27
+# Hyper+C
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 '{enabled = YES; value = {parameters = (8, 1966080, 0); type = "standard";};}'
+killall cfprefsd
 
 # Dock Icon size
 defaults write com.apple.dock tilesize -int 48
