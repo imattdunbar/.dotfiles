@@ -9,7 +9,7 @@
 {
   "theme": {
     "mode": "system",
-    "light": "Catppuccin Mocha",
+    "light": "poimandres blurry",
     "dark": "Catppuccin Mocha"
   },
   "vim_mode": false,
@@ -40,7 +40,7 @@
     "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
   },
   // AI + Code Completion
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-5-sonnet-latest"
@@ -115,7 +115,7 @@
   },
   "chat_panel": {
     "button": "never",
-    "dock": "left"
+    "dock": "right"
   },
   "collaboration_panel": {
     "button": false,
