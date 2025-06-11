@@ -183,3 +183,11 @@ alias air="$HOME/go/bin/air" # go install github.com/cosmtrek/air@latest
 
 # Markdown
 alias mdcheat="open https://www.markdownguide.org/cheat-sheet/"
+
+# Caddy
+alias caddy-config="code /opt/homebrew/etc/caddy/Caddyfile"
+alias caddy-start="brew services start caddy"
+alias caddy-stop="brew services stop caddy"
+alias caddy-restart="brew services restart caddy"
+alias caddy-reload="caddy reload --config /opt/homebrew/etc/caddy/Caddyfile"
+alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfile"
