@@ -14,6 +14,9 @@ alias dpa="docker ps -a"
 # Get images
 alias di="docker images"
 
+# List containers (name and id)
+alias dlc="docker ps --format '{{.ID}}\t{{.Names}}'"
+
 # Get container IP
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 

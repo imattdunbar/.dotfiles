@@ -191,3 +191,6 @@ alias caddy-stop="brew services stop caddy"
 alias caddy-restart="brew services restart caddy"
 alias caddy-reload="caddy reload --config /opt/homebrew/etc/caddy/Caddyfile"
 alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfile"
+
+# OpenCode
+alias oc="opencode"
