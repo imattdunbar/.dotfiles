@@ -17,7 +17,7 @@ export HOMEBREW_NO_ENV_HINTS=TRUE
 export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"
 
 # Navi
-eval "$(navi widget zsh)"
+# eval "$(navi widget zsh)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
