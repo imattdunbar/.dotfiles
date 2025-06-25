@@ -194,3 +194,4 @@ alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfil
 
 # OpenCode
 alias oc="opencode"
+alias oc-auth="code ~/.local/share/opencode/auth.json"

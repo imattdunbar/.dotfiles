@@ -52,9 +52,10 @@ keybind = cmd+l=text:\x02P
 # Sends ctrl+b then z
 keybind = ctrl+z=text:\x02z
 
+# Keybind -> Text input
 keybind = cmd+shift+b=text:fsb\n
 keybind = cmd+shift+d=text:gdb\n
-keybind = ctrl+x=text:exit\n
+keybind = cmd+shift+x=text:exit\n
 
 # Quick Terminal
 keybind = global:opt+q=toggle_quick_terminal
