@@ -44,3 +44,5 @@ export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 # Expo
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+
+alias updates="brew update && brew upgrade"
