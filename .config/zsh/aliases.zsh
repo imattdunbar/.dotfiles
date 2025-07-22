@@ -156,7 +156,7 @@ alias android-playground="cd ~/Dev/Playground/Android/android-playground"
 alias nukebuild="sudo rm -rf $PWD/app/build"
 
 
-# -- JS/TS --
+# --- JS/TS ---
 
 # npm
 alias npmlinks="npm ls -g --depth=0 --link=true"
@@ -165,7 +165,7 @@ alias nukenm="rm -rf node_modules"
 alias nukepl="rm -rf package-lock.json && rm -rf pnpm-lock.yaml && rm -rf bun.lockb"
 
 alias dev='[ -f bun.lockb ] || [ -f bun.lock ] && bun dev || ([ -f package-lock.json ] && npm run dev || echo "No lock file found. Cannot determine dev command.")'
-
+alias tc="bunx tsc -b"
 
 # Package
 alias package-scripts="jq -r '.scripts | to_entries[] | \"\(.key): \(.value)\"' package.json | fzf"
@@ -176,6 +176,8 @@ alias pnpx="pnpm dlx"
 # Node Modules
 alias find-nm-dir='find . -name "node_modules" -type d -prune -print | xargs du -chs'
 alias nuke-nm-dir='find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;'
+
+# --- End JS/TS ---
 
 # Go
 alias json2go="open https://transform.tools/json-to-go"
