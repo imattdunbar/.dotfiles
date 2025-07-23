@@ -164,7 +164,9 @@ alias updatesnapshots="npm test -- -u"
 alias nukenm="rm -rf node_modules"
 alias nukepl="rm -rf package-lock.json && rm -rf pnpm-lock.yaml && rm -rf bun.lockb"
 
-alias dev='[ -f bun.lockb ] || [ -f bun.lock ] && bun dev || ([ -f package-lock.json ] && npm run dev || echo "No lock file found. Cannot determine dev command.")'
+alias dev='if [ -f bun.lockb ] || [ -f bun.lock ]; then (bun run | grep -q "dev:all" && bun dev:all ||
+bun dev); elif [ -f package-lock.json ]; then (npm run | grep -q "dev:all" && npm run dev:all || npm
+run dev); else echo "No lock file found. Cannot determine dev command."; fi'
 alias tc="bunx tsc -b"
 
 # Package

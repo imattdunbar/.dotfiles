@@ -1,5 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "tokyonight",
-  "model": "openrouter/anthropic/claude-4-sonnet-20250522"
+  "model": "anthropic/claude-sonnet-4-20250514"
 }
