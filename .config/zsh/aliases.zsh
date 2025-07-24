@@ -168,6 +168,8 @@ alias dev='if [ -f bun.lockb ] || [ -f bun.lock ]; then (bun run | grep -q "dev:
 bun dev); elif [ -f package-lock.json ]; then (npm run | grep -q "dev:all" && npm run dev:all || npm
 run dev); else echo "No lock file found. Cannot determine dev command."; fi'
 alias tc="bunx tsc -b"
+alias bb="bun run build"
+alias bli="bun local:init"
 
 # Package
 alias package-scripts="jq -r '.scripts | to_entries[] | \"\(.key): \(.value)\"' package.json | fzf"
