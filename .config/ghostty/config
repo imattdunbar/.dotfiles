@@ -63,3 +63,4 @@ keybind = global:opt+q=toggle_quick_terminal
 quick-terminal-animation-duration=0
 quick-terminal-position=center
 
+keybind = shift+enter=text:\n
