@@ -22,6 +22,7 @@
   "restore_on_startup": "none",
   "confirm_quit": false,
   "terminal": {
+    "dock": "bottom",
     "font_family": "FiraCode Nerd Font Mono",
     "blinking": "off"
   },
@@ -45,7 +46,6 @@
       "provider": "zed.dev",
       "model": "claude-sonnet-4"
     },
-    "version": "2",
     "button": true,
     "dock": "left"
   },
@@ -123,6 +123,12 @@
     "git_status": true,
     "indent_size": 20,
     "auto_reveal_entries": true
+  },
+  "git_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "button": false
   },
   "chat_panel": {
     "button": "never",

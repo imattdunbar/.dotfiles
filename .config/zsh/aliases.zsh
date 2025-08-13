@@ -126,6 +126,7 @@ alias nuke-tmux="rm -rf ~/.config/tmux/plugins && git clone https://github.com/t
 
 # AWS
 alias aws-whoami="aws sts get-caller-identity"
+alias aws-config="code ~/.aws"
 
 # Terraform
 alias tf="terraform"
