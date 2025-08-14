@@ -32,7 +32,7 @@ fi
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun global bin
-export PATH="$PATH:$(bun pm bin -g)"
+export PATH="$PATH:$HOME/.bun/bin"
 
 # Go
 export PATH="$PATH:$(go env GOPATH)/bin"
