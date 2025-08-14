@@ -31,5 +31,8 @@ fi
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
+# bun global bin
+export PATH="$PATH:$(bun pm bin -g)"
+
 # Go
 export PATH="$PATH:$(go env GOPATH)/bin"
