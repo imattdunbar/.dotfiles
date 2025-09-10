@@ -121,21 +121,39 @@ defaults write -g NSWindowShouldDragOnGesture -bool true
 
 # Free up Hyper+C
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Convert Text to Simplified Chinese" "nil"
+
 # CMD+Shift+L to Lock Screen
 # @ = Command, $ = Shift, L = L key
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Lock Screen" "@\$L"
 killall pbs
 
-# Keycode C=8, Modifiers: Ctrl=262144, Opt=524288, Shift=131072, Cmd=1048576
-# Total Modifiers = 1966080
-# Symbolic Hotkey ID for "Move focus to next window" is typically 27
-# Hyper+C
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 '{enabled = YES; value = {parameters = (8, 1966080, 0); type = "standard";};}'
-killall cfprefsd
+# Set "Move focus to next window" keyboard shortcut to Hyper + C
+# Hyper = Cmd + Ctrl + Opt + Shift
+# Key code for 'C' = 8
+# Combined modifier value = 1835008 (Cmd=1048576 + Ctrl=262144 + Opt=524288 + Shift=131072)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 "
+<dict>
+    <key>enabled</key>
+    <true/>
+    <key>value</key>
+    <dict>
+        <key>parameters</key>
+        <array>
+            <integer>99</integer>
+            <integer>8</integer>
+            <integer>1835008</integer>
+        </array>
+        <key>type</key>
+        <string>standard</string>
+    </dict>
+</dict>"
+
+# Restart the system UI server to apply changes
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 # Dock Icon size
 defaults write com.apple.dock tilesize -int 48
 killall Dock
 
-echo "If something failed, make sure to give Wezterm full disk access. Settings -> Privacy & Security -> Full Disk Access"
+echo "If something failed, make sure to give Ghostty full disk access. Settings -> Privacy & Security -> Full Disk Access"
 echo "Done. Should probably restart now."
