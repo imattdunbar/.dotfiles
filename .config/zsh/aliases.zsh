@@ -174,6 +174,8 @@ alias tc="bunx tsc -b"
 alias bb="bun run build"
 alias bli="bun local:init"
 
+alias setup-prettier="bun run $HOME/.config/other/setup-prettier.ts"
+
 # Package
 alias package-scripts="jq -r '.scripts | to_entries[] | \"\(.key): \(.value)\"' package.json | fzf"
 
