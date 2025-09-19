@@ -98,6 +98,11 @@ patchwezterm() {
   sudo sh -c 'killall Finder && killall Dock'
 }
 
+download-video() {
+    setopt localoptions noglob
+    yt-dlp --output "~/Desktop/%(title)s.%(ext)s" "$*"
+}
+
 # Push New Branch
 pushnewb() {
     BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
