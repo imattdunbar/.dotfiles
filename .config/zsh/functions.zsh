@@ -100,7 +100,7 @@ patchwezterm() {
 
 download-video() {
     setopt localoptions noglob
-    yt-dlp --output "~/Desktop/%(title)s.%(ext)s" "$*"
+    yt-dlp --format best --output "~/Desktop/%(title)s.%(ext)s" "$*"
 }
 
 # Push New Branch
