@@ -71,18 +71,15 @@ function whereami() {
   echo "$HOST, LAN: $(localip), WAN: $(externalip)"
 }
 
-
 # ls
-alias ls="lsd"
-alias lsa="ls -a --tree --depth 1"
-alias ogls="\ls"
+command -v lsd >/dev/null && alias ls="lsd"
+alias lsa="lsd -a --tree --depth 1"
 
 # cat
-alias cat="bat"
+command -v bat >/dev/null && alias cat="bat"
 
 # cd
-alias cd="z"
-alias ogcd="\cd"
+command -v z >/dev/null && alias cd="z"
 
 # macOS
 alias disablegatekeeper="sudo spctl --master-disable"
