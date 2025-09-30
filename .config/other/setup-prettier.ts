@@ -2,6 +2,8 @@
 
 import { $ } from 'bun'
 
-const prettierConfig = await Bun.file('./.prettierrc').text()
+
+
+const prettierConfig = await Bun.file(import.meta.dir + '/.prettierrc').text()
 await Bun.write(process.cwd() + '/.prettierrc', prettierConfig)
 await $`bun i -D prettier prettier-plugin-tailwindcss`
