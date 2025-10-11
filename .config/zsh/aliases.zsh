@@ -39,6 +39,7 @@ alias gdt="git difftool HEAD"
 alias gmt="git mergetool"
 alias gl="git log --oneline"
 alias gf="git fetch"
+alias newrepo="open https://github.com/new"
 
 # Ignore local changes to a file that's already in git
 alias git-skip="git update-index --skip-worktree"
@@ -63,7 +64,7 @@ alias gotopath="cd pbpaste"
 alias path="pwd"
 alias localip="ipconfig getifaddr en0"
 alias externalip="curl --silent ifconfig.me"
-alias myports="sudo lsof -i -P | grep -i 'listen' | grep '$USER'"
+alias ports="sudo lsof -i -P -n | grep LISTEN | awk '{print \$1, \$2, \$9}' | column -t"
 alias homeips="ifconfig | grep -o 'inet 10\.10\.[0-9]*\.[0-9]*' | grep -o '10\.10\.[0-9]*\.[0-9]*'"
 alias dirSize="du -sh"
 
