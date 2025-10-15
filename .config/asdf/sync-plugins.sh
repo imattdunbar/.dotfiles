@@ -2,5 +2,5 @@
 
 plugins=$(cut -d ' ' -f 1 $HOME/.tool-versions)
 for plugin in $plugins; do
-  asdf plugin-add $plugin
+  asdf plugin add $plugin
 done
