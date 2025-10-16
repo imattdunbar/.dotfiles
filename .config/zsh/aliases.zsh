@@ -142,7 +142,6 @@ alias nukespm="sudo rm -rf $HOME/Library/Caches/org.swift.swiftpm"
 alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
 alias nukesc="sudo rm -rf $HOME/Library/Developer/CoreSimulator/Caches"
 alias nukeios="nukedd && nukespm && nukecc && nukesc"
-alias ios-playground="cd ~/Dev/Playground/iOS/ios-playground"
 
 # Xcode
 alias xcode-backup="go run ~/.config/xcode/xcode-sync.go --backup"
@@ -151,7 +150,6 @@ alias xcode-restore="go run ~/.config/xcode/xcode-sync.go --restore"
 # Android
 alias ktlint="./gradlew ktlintFormat"
 alias kill-ae="kill \$(pgrep -f qemu-system-aarch64) && echo 'Android emulator killed.'"
-alias android-playground="cd ~/Dev/Playground/Android/android-playground"
 alias nukebuild="sudo rm -rf $PWD/app/build"
 
 
