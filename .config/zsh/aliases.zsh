@@ -143,6 +143,8 @@ alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
 alias nukesc="sudo rm -rf $HOME/Library/Developer/CoreSimulator/Caches"
 alias nukeios="nukedd && nukespm && nukecc && nukesc"
 
+alias prettyswift="swift-format format . -i --recursive" # in project dir
+
 # Xcode
 alias xcode-backup="go run ~/.config/xcode/xcode-sync.go --backup"
 alias xcode-restore="go run ~/.config/xcode/xcode-sync.go --restore"
