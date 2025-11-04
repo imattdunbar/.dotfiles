@@ -21,19 +21,30 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lspconfig = require("lspconfig")
+			-- Configure ts_ls
+			vim.lsp.config("ts_ls", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("ts_ls")
 
-			lspconfig.ts_ls.setup({ capabilities = capabilities })
+			-- Configure lua_ls
+			vim.lsp.config("lua_ls", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("lua_ls")
 
-			lspconfig.lua_ls.setup({})
-			lspconfig.gopls.setup({
+			-- Configure gopls
+			vim.lsp.config("gopls", {
+				capabilities = capabilities,
 				settings = {
 					gopls = {
 						gofumpt = true,
 					},
 				},
 			})
+			vim.lsp.enable("gopls")
 
+			-- LSP keymaps
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
