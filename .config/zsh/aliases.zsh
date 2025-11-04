@@ -202,7 +202,7 @@ alias caddy-reload="caddy reload --config /opt/homebrew/etc/caddy/Caddyfile"
 alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfile"
 
 # OpenCode
-alias oc="opencode"
+alias oc="opencode --agent plan"
 alias oc-usage="open https://openrouter.ai/settings/credits"
 alias oc-auth="code ~/.local/share/opencode/auth.json"
 alias oc-config="code ~/.config/opencode/config.json"
