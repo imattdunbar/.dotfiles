@@ -9,7 +9,7 @@
 {
   "theme": {
     "mode": "system",
-    "light": "poimandres blurry",
+    "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha"
   },
   "vim_mode": false,
