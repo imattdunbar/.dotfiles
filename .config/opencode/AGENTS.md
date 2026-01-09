@@ -2,8 +2,8 @@
 
 # META INSTRUCTIONS
 
-Reference name: "The Standard"
-When I use the phrase "per the standard", "check compliance", or "my preferences", you must strictly review your last output against the rules below and correct any violations.
+- Reference name: "The Standard"
+- When I use the phrase "per the standard", "check compliance", or "my preferences", you must strictly review your last output against the rules below and correct any violations.
 
 ## GENERAL INTERACTION GUIDELINES
 
@@ -36,6 +36,9 @@ When I use the phrase "per the standard", "check compliance", or "my preferences
   - If you see a non-Bun lockfile, warn me to delete it. Unless the entire project is clearly an npm, pnpm or yarn project.
 - **Shell Compatibility:**
   - When writing shell scripts or CI/CD pipelines, assume the environment is Bun.
+- **Prefer Bun built-ins over Node:**
+  - When dealing with things like `fs`, try to use the Bun equivalents instead of Node.
+  - Do not recommend using the package `dotenv` for environment variables when using Bun.
 - **Dependency Check**
   - When installing a dependency, make sure to accurately install it as a dev dependency if it is only needed for dev.
 
@@ -50,6 +53,12 @@ When I use the phrase "per the standard", "check compliance", or "my preferences
   - Booleans: Prefix with `is`, `has`, `should` (e.g., `isVisible`, `hasError`).
 - **Early Returns:** Use early returns (guard clauses) to reduce nesting complexity.
 - **Async/Await:** Always use `async/await` syntax over `.then()` chains.
+- **Enums:** Avoid using TypeScript enums. Prefer using `type SomeEnum = 'OPTION1' | 'OPTION2'` or zod enums.
+- **Complex Validation Logic:** Avoid manually doing complex type validation logic. Utilize zod if possible to wrap the logic in a schema.
+- **Package/Dependency Awareness:**
+  - Before recommending a solution that utilizes a library, make sure to check what version is installed or use an already installed package.
+  - When utilizing a library in a solution, make sure that functions/variables used actually exist in the package.
+  - If your knowledge about a particular package does not seem correct, try and look up the documentation for the package.
 
 ## PREFERRED LIBRARIES (IF NEEDED)
 
@@ -68,9 +77,11 @@ When I use the phrase "per the standard", "check compliance", or "my preferences
   }
   ```
 - **State Management:**
-  - Avoid `useEffect` for derived state. Calculate derived state directly in the render body or use `useMemo`.
+  - Avoid `useEffect` for derived state. Calculate derived state directly in the render body or utilize Tanstack Query.
   - Avoid prop drilling more than 1-2 components deep. Use zustand instead.
-- **Performance:** Memoize expensive calculations (`useMemo`) and callback functions passed to children (`useCallback`).
+  - Unless absolutely necessary do not recommend using React Context.
+- **Avoid React Overengineering**
+  - Unless absolutely necessary avoid using advanced React Hooks like: useMemo, useCallback, useImperativeHandle, useLayoutEffect
 - **Styling:** (Adjust based on your stack, e.g., Tailwind):
   - Use Tailwind utility classes.
   - Avoid inline styles (`style={{...}}`) unless dynamic values are required.
