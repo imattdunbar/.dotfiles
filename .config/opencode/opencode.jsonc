@@ -22,7 +22,8 @@
     }
   },
   "plugin": [
-    "opencode-openai-codex-auth" // https://github.com/numman-ali/opencode-openai-codex-auth
+    "opencode-openai-codex-auth", // https://github.com/numman-ali/opencode-openai-codex-auth
+    "opencode-anthropic-auth" // https://github.com/anomalyco/opencode-anthropic-auth
   ],
   "provider": {
     "openai": {
