@@ -205,5 +205,8 @@ alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfil
 alias oc="opencode --agent plan"
 alias oc-usage="open https://openrouter.ai/settings/credits"
 alias oc-auth="code ~/.local/share/opencode/auth.json"
-alias oc-config="code ~/.config/opencode/config.json"
+alias oc-config="code ~/.config/opencode"
 alias oc-cache="code ~/.cache/opencode"
+alias oc-nuke="rm -rf "
+
+alias bun-packages="bun pm ls -g"
