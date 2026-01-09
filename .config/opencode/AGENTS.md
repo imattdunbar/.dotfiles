@@ -78,7 +78,9 @@
   ```
 - **State Management:**
   - Avoid `useEffect` for derived state. Calculate derived state directly in the render body or utilize Tanstack Query.
-  - Avoid prop drilling more than 1-2 components deep. Use zustand instead.
+  - Avoid prop drilling more than 1-2 components deep.
+  - When data is needed in deep component trees, avoid prop drilling and context; call useQuery in each component that needs the data.
+  - If the data that needs to be shared throughout nested components is not related to a useQuery, then you should recommend zustand as an option.
   - Unless absolutely necessary do not recommend using React Context.
 - **Avoid React Overengineering**
   - Unless absolutely necessary avoid using advanced React Hooks like: useMemo, useCallback, useImperativeHandle, useLayoutEffect
