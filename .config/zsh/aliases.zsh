@@ -168,9 +168,12 @@ if [ -f bun.lockb ] || [ -f bun.lock ]; then (bun run | grep -q "dev:all" && bun
 elif [ -f package-lock.json ]; then (npm run | grep -q "dev:all" && npm run dev:all || npm run dev); 
 else echo "No lock file found. Cannot determine dev command."; fi
 '
+
+# Bun 
 alias tc="bunx tsc -b"
 alias bb="bun run build"
 alias bli="bun local:init"
+alias bgp="bun pm ls -g"
 
 alias setup-prettier="bun run $HOME/.config/other/setup-prettier.ts"
 
@@ -183,6 +186,7 @@ alias pnpx="pnpm dlx"
 # Node Modules
 alias find-nm-dir='find . -name "node_modules" -type d -prune -print | xargs du -chs'
 alias nuke-nm-dir='find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;'
+
 
 # --- End JS/TS ---
 
@@ -203,10 +207,11 @@ alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfil
 
 # OpenCode
 alias oc="opencode --agent plan"
-alias oc-usage="open https://openrouter.ai/settings/credits"
-alias oc-auth="code ~/.local/share/opencode/auth.json"
+alias oc-zen="open https://opencode.ai/zen"
+alias oc-or="open https://openrouter.ai/settings/credits"
 alias oc-config="code ~/.config/opencode"
+alias oc-auth="code ~/.local/share/opencode/auth.json"
 alias oc-cache="code ~/.cache/opencode"
-alias oc-nuke="rm -rf "
+alias oc-login="opencode auth login"
+alias oc-nuke="rm -rf ~/.local/share/opencode ~/.local/share/opencode/bin ~/.local/share/opencode/log ~/.cache/opencode ~/.config/opencode ~/.local/state/opencode"
 
-alias bun-packages="bun pm ls -g"
