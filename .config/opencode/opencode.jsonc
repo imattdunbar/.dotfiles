@@ -25,5 +25,13 @@
   },
   "plugin": [
     "opencode-anthropic-auth" // https://github.com/anomalyco/opencode-anthropic-auth
-  ]
+  ],
+  "mcp": {
+    "browsermcp": {
+      // https://browsermcp.io/
+      "type": "local",
+      "command": ["bunx", "@browsermcp/mcp@latest"],
+      "enabled": true
+    }
+  }
 }
