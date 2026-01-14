@@ -143,6 +143,7 @@ alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
 alias nukesc="sudo rm -rf $HOME/Library/Developer/CoreSimulator/Caches"
 alias nukeios="nukedd && nukespm && nukecc && nukesc"
 
+alias setup-swift-format="cp $HOME/.config/xcode/.swift-format $PWD/.swift-format"
 alias prettyswift="swift-format format . -i --recursive" # in project dir
 
 # Xcode
