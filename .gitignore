@@ -50,3 +50,6 @@ tmp/
 
 # Git patch files
 *.patch
+
+# Misc
+.serena
