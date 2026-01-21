@@ -209,12 +209,13 @@ alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfil
 
 # OpenCode
 alias oc="opencode"
+alias oc-config="code ~/.config/opencode"
 alias oc-zen="open https://opencode.ai/zen"
 alias oc-or="open https://openrouter.ai/settings/credits"
-alias oc-config="code ~/.config/opencode"
 alias oc-auth="code ~/.local/share/opencode/auth.json"
 alias oc-logs="code ~/.local/share/opencode/log"
 alias oc-cache="code ~/.cache/opencode"
 alias oc-login="opencode auth login"
 alias oc-nuke="rm -rf ~/.local/share/opencode ~/.local/share/opencode/bin ~/.local/share/opencode/log ~/.cache/opencode ~/.config/opencode ~/.local/state/opencode"
 
+function oc-models() { opencode models | tr -d '\r' | fzf; }
