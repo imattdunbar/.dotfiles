@@ -29,6 +29,24 @@
         "edit": true,
         "bash": true
       }
+    },
+    "general": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-haiku-4.5"
+    },
+    "explore": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-haiku-4.5"
+    },
+    "browser": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-haiku-4.5",
+      "prompt": "Your objective is to use the browsermcp tool to do whatever is required from the user. Unless explicitly stated otherwise, the user is talking about the current active tab provided by browsermcp, meaning you do not have to navigate anywhere before starting the task."
+    },
+    "codescan": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-haiku-4.5",
+      "prompt": "Your objective is to use the serena MCP tool to do any relevant searches throughout the codebase based on the users prompt."
     }
   },
   "plugin": [
