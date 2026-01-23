@@ -105,6 +105,16 @@
         "claude-opus-4.5"
       ]
     },
+    // ----- Work ------
+    // Run for auth
+    // gcloud auth application-default login
+    "google-vertex": {
+      "whitelist": []
+    },
+    "google-vertex-anthropic": {
+      "whitelist": ["claude-opus-4-5@20251101"]
+    },
+    // -----------------
     "google": {
       "whitelist": [
         "antigravity-claude-sonnet-4-5",

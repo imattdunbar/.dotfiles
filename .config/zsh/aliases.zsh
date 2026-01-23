@@ -208,7 +208,7 @@ alias caddy-reload="caddy reload --config /opt/homebrew/etc/caddy/Caddyfile"
 alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfile"
 
 # OpenCode
-alias oc="opencode"
+alias oc="GOOGLE_CLOUD_PROJECT=famous-rhythm-414315 opencode"
 alias oc-config="code ~/.config/opencode"
 alias oc-zen="open https://opencode.ai/zen"
 alias oc-or="open https://openrouter.ai/settings/credits"
