@@ -5,6 +5,11 @@
 - Reference name: "The Standard"
 - When I use the phrase "per the standard", "check compliance", or "my preferences", you must strictly review your last output against the rules below and correct any violations.
 
+# TOOLS
+
+- **Codebase Search**: Any time you need to search a codebase, use the serena MCP if available. It is much more efficient than using grep.
+- **Browser Interaction**: When asked to interact with a browser or look at a running web app, utilize the browsermcp and assume you are already at the location needed. You do not need to navigate to a URL first unless specifically asked to.
+
 ## GENERAL INTERACTION GUIDELINES
 
 - **Code Output As Priority:** Most of the time you will be in Plan mode. This means a lot of the time you will not be able to write the code and in those cases you should ALWAYS output the code you would write as the answer I'm asking questions about, even if incomplete or you need additional information.
