@@ -9,9 +9,11 @@
     // "model": "anthropic/claude-sonnet-4-5",
     // CoPilot Plan
     // "model": "github-copilot/claude-sonnet-4.5",
+    // Google Plan
+    // "model": "google/antigravity-claude-sonnet-4-5",
     "plan": {
       "mode": "primary",
-      "model": "anthropic/claude-sonnet-4-5",
+      "model": "github-copilot/claude-sonnet-4.5",
       "tools": {
         "write": false,
         "edit": false,
@@ -23,7 +25,7 @@
     },
     "build": {
       "mode": "primary",
-      "model": "anthropic/claude-sonnet-4-5",
+      "model": "github-copilot/claude-sonnet-4.5",
       "tools": {
         "write": true,
         "edit": true,
@@ -36,7 +38,8 @@
     },
     "explore": {
       "mode": "subagent",
-      "model": "github-copilot/claude-haiku-4.5"
+      "model": "github-copilot/claude-haiku-4.5",
+      "mcp": ["serena", "databasemcp"]
     },
     "browser": {
       "mode": "subagent",
@@ -47,6 +50,11 @@
       "mode": "subagent",
       "model": "github-copilot/claude-haiku-4.5",
       "prompt": "Your objective is to use the serena MCP tool to do any relevant searches throughout the codebase based on the users prompt."
+    },
+    "database": {
+      "mode": "subagent",
+      "model": "github-copilot/claude-haiku-4.5",
+      "mcp": ["serena", "databasemcp"]
     }
   },
   "plugin": [
@@ -72,7 +80,28 @@
         "--open-web-dashboard",
         "False"
       ]
+    },
+    "Ref": {
+      "type": "remote",
+      "url": "{file:secrets/REF_TOOLS_URL}",
+      "enabled": true
     }
+    // Database MCP Example
+    // https://googleapis.github.io/genai-toolbox/getting-started/introduction/
+    // Download as binary, place in ~/.config/opencode
+    // Different database connectors: https://googleapis.github.io/genai-toolbox/how-to/connect-ide/
+    // "databasemcp": {
+    //   "type": "local",
+    //   "command": ["/Users/matt/.config/opencode/toolbox", "--prebuilt", "postgres", "--stdio"],
+    //   "enabled": true,
+    //   "environment": {
+    //     "POSTGRES_HOST": "localhost",
+    //     "POSTGRES_PORT": "5432",
+    //     "POSTGRES_DATABASE": "",
+    //     "POSTGRES_USER": "",
+    //     "POSTGRES_PASSWORD": ""
+    //   }
+    // }
   },
   "provider": {
     // Disabled opencode + openrouter models for now - plans are too good of a deal.
@@ -89,8 +118,8 @@
     },
     "anthropic": {
       "whitelist": [
-        // Claude Pro plan
-        "claude-sonnet-4-5"
+        // Claude Pro plan - expired 1/23
+        // "claude-sonnet-4-5"
       ]
     },
     "openai": {
