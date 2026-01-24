@@ -42,16 +42,6 @@
       "model": "github-copilot/claude-haiku-4.5",
       "mcp": ["serena", "databasemcp"]
     },
-    "browser": {
-      "mode": "subagent",
-      "model": "github-copilot/claude-haiku-4.5",
-      "prompt": "Your objective is to use the browsermcp tool to do whatever is required from the user. Unless explicitly stated otherwise, the user is talking about the current active tab provided by browsermcp, meaning you do not have to navigate anywhere before starting the task."
-    },
-    "codescan": {
-      "mode": "subagent",
-      "model": "github-copilot/claude-haiku-4.5",
-      "prompt": "Your objective is to use the serena MCP tool to do any relevant searches throughout the codebase based on the users prompt."
-    },
     "database": {
       "mode": "subagent",
       "model": "github-copilot/claude-haiku-4.5",
@@ -63,10 +53,10 @@
     "opencode-antigravity-auth@beta" // https://github.com/NoeFabris/opencode-antigravity-auth
   ],
   "mcp": {
-    "browsermcp": {
+    "playwriter": {
       "enabled": true,
       "type": "local",
-      "command": ["bunx", "@browsermcp/mcp@latest"] // https://browsermcp.io/
+      "command": ["bunx", "-y", "playwriter@latest"] // https://github.com/remorses/playwriter
     },
     "serena": {
       "enabled": true,
@@ -80,6 +70,11 @@
         "--open-web-dashboard",
         "False"
       ]
+    },
+    "gitmcp": {
+      "enabled": true,
+      "type": "local",
+      "command": ["bunx", "mcp-remote", "https://gitmcp.io/{owner}/{repo}"]
     },
     "exa": {
       "enabled": false,

@@ -5,25 +5,48 @@
 - Reference name: "The Standard"
 - When I use the phrase "per the standard", "check compliance", or "my preferences", you must strictly review your last output against the rules below and correct any violations.
 
-# TOOLS
+## BROWSER & WEB TASKS
 
-- **Codebase Search**: Any time you need to search a codebase, use the serena MCP if available. It is much more efficient than using grep.
-- **Browser Interaction**: When asked to interact with a browser or look at a running web app, utilize the browsermcp and assume you are already at the location needed. You do not need to navigate to a URL first unless specifically asked to.
+**IF** the user request involves:
 
-## GENERAL INTERACTION GUIDELINES
+- Visiting a website (e.g., "Go to google.com")
+- Scraping or reading documentation from a URL
+- Running end-to-end (E2E) tests
+- Taking screenshots or visual inspection
 
-- **Code Output As Priority:** Most of the time you will be in Plan mode. This means a lot of the time you will not be able to write the code and in those cases you should ALWAYS output the code you would write as the answer I'm asking questions about, even if incomplete or you need additional information.
-- **Conciseness:** Be concise. Do not offer conversational filler ("Here is the code you asked for..."). Go straight to the solution or answer.
-- **No Apologies:** Do not apologize for errors. Just correct them.
-- **Planning:** For complex tasks, print a short step-by-step plan before writing code.
-- **Context Awareness:** Always read related files before editing to ensure consistency with existing patterns (naming, folder structure, libraries).
-- **Proactivity:** If a request seems risky or violates best practices, warn me and suggest a better approach.
-- **Simplicity Over Complexity:**
-  - Prefer the simplest and cleanest solution as the first option, you can still list mulitple though.
-  - Do not overthink edge cases and extendability.
-  - I prefer code to be written in a way that is easily understandable by engineers at every level.
-  - Do not get too fancy with ternaries, at most use 1 but try not to chain them.
-  - Avoid using reduce.
+**AND** the request is **NOT** related to GitHub Repositories:
+
+- **Exclusion Rule:** If the URL is a GitHub repository (e.g., `github.com/user/repo`) and the goal is to search code, read files, or check commits, **DO NOT** use the browser agent.
+- **Action:** Instead, use your native **gitmcp** tool to inspect the repository directly.
+
+**THEN** you must:
+
+1.  **STOP** attempting to use tools yourself.
+2.  **DELEGATE** the task immediately to the `@browser` subagent.
+3.  **INSTRUCT** the `@browser` agent with the specific goal (e.g., "@browser please navigate to X and retrieve the text from the header").
+
+## CODE GENERATION PROTOCOL (STRICT)
+
+**CRITICAL INSTRUCTION: PLAN MODE == CODE MODE**
+When operating in "Plan Mode" or answering complex queries, you are strictly FORBIDDEN from producing text-only lists, bullet points, or high-level descriptions.
+
+- **No Prose Plans:** Do not describe what you _will_ do. Show me the code that _does_ it.
+- **Drafting Over Discussing:** If you are unsure of the implementation, output the **Code Skeleton** or **Interface Definitions** immediately.
+- **Incomplete is Acceptable:** It is better to output a function with a `// TODO: Implement logic` comment inside a valid code block than to describe the function in a paragraph.
+- **Show Your Work:** If you need to "think," think inside a code comment block, not in the chat response body.
+
+**RESPONSE FORMAT:**
+
+- **Conciseness:** Do not offer conversational filler ("Here is the code...", "I have analyzed...").
+- **No Apologies:** Do not apologize for errors or incomplete logic. Just output the corrected or drafted code.
+- **Context Awareness:** Always read related files before editing to ensure consistency.
+
+**Safety & Simplicity:**
+
+- **Simplicity:** Prefer the simplest solution. Do not over-engineer.
+- **Ternaries:** Max 1 ternary. No chaining.
+- **No Reduce:** Avoid `.reduce()`.
+- **Proactivity:** Warn me only if a request is destructive. Otherwise, execute the draft.
 
 ## PACKAGE MANAGEMENT & RUNTIME (STRICT)
 
