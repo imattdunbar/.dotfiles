@@ -49,7 +49,7 @@
     }
   },
   "plugin": [
-    "opencode-anthropic-auth", // https://github.com/anomalyco/opencode-anthropic-auth
+    // "opencode-anthropic-auth", // https://github.com/anomalyco/opencode-anthropic-auth
     "opencode-antigravity-auth@beta" // https://github.com/NoeFabris/opencode-antigravity-auth
   ],
   "mcp": {
@@ -75,6 +75,11 @@
       "enabled": true,
       "type": "local",
       "command": ["bunx", "mcp-remote", "https://gitmcp.io/{owner}/{repo}"]
+    },
+    "tanstack": {
+      "enabled": false,
+      "type": "local",
+      "command": ["bunx", "@tanstack/cli", "mcp"]
     },
     "exa": {
       "enabled": false,
