@@ -58,6 +58,9 @@ alias repo="go run ~/.config/scripts/repo.go"
 alias gdb="git branch -D \$(git branch | fzf)"
 alias squash-all='git reset $(git commit-tree HEAD^{tree} -m "Squashed")'
 
+# Git Worktrees
+alias gwt="git worktree"
+
 # Utilities
 alias pwdcopy="pwd|pbcopy"
 alias gotopath="cd pbpaste"

@@ -4,6 +4,8 @@
 command_timeout = 1000000
 scan_timeout = 1000000
 
+format = """${custom.worktree_prefix}$directory$all"""
+
 [character]
 disabled = false
 
@@ -19,8 +21,41 @@ format = ''
 [gcloud]
 format = ''
 
+[git_branch]
+ignore_bare_repo = true
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
 [git_status]
 format = ''
+
+[custom.git_bare]
+description = "Show 'bare' if inside a bare repository"
+when = '[ "$(git rev-parse --is-bare-repository 2>/dev/null)" = "true" ]'
+style = "bold blue"
+symbol = ""
+format = "[$symbol bare]($style)"
+
+[custom.worktree_prefix]
+description = "Show the bare repo parent name if current dir is a worktree root"
+command = """
+# Check if we are at the top level of a git worktree
+TOP_LEVEL=$(git rev-parse --show-toplevel 2>/dev/null)
+if [ "$TOP_LEVEL" = "$(pwd)" ]; then
+    COMMON_DIR=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)
+    PARENT_DIR=$(dirname "$(pwd)")
+    # If the parent directory is the 'common dir', it's a bare repo worktree
+    if [ "$COMMON_DIR" = "$PARENT_DIR" ]; then
+        echo "$(basename "$PARENT_DIR")/"
+    fi
+fi
+"""
+when = "git rev-parse --is-inside-work-tree"
+style = "bold cyan"
+format = "[$output]($style)"
+
+[directory]
+# truncation_length = 2
+# truncate_to_repo = false
 
 [battery]
 disabled = true

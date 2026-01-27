@@ -76,6 +76,11 @@
       "type": "local",
       "command": ["bunx", "mcp-remote", "https://gitmcp.io/{owner}/{repo}"]
     },
+    // "dunskills": {
+    //   "enabled": true,
+    //   "type": "local",
+    //   "command": ["bun", "run", "/Users/matt/Desktop/dunskills/index.ts"]
+    // },
     "tanstack": {
       "enabled": false,
       "type": "local",
