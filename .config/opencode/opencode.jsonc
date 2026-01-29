@@ -50,7 +50,7 @@
   },
   "plugin": [
     // "opencode-anthropic-auth", // https://github.com/anomalyco/opencode-anthropic-auth
-    "opencode-antigravity-auth@beta" // https://github.com/NoeFabris/opencode-antigravity-auth
+    "opencode-antigravity-auth@latest" // https://github.com/NoeFabris/opencode-antigravity-auth
   ],
   "mcp": {
     "playwriter": {
@@ -121,6 +121,7 @@
     "opencode": {
       "whitelist": [
         // "claude-opus-4-5"
+        "kimi-k2.5"
       ]
     },
     "openrouter": {
