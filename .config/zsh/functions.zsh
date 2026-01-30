@@ -30,6 +30,9 @@ function fsb() {
     git pull
 }
 
+# Fetch the latest remote of the branch for the local branch, then merge
+gmerge() { git fetch origin "$1":"$1" && git merge "$1"; }
+
 grf() {
   git restore --source=HEAD --staged --worktree $1
 }
