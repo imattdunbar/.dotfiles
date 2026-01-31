@@ -189,8 +189,8 @@ alias package-scripts="jq -r '.scripts | to_entries[] | \"\(.key): \(.value)\"' 
 alias pnpx="pnpm dlx"
 
 # Node Modules
-alias find-nm-dir='find . -name "node_modules" -type d -prune -print | xargs du -chs'
-alias nuke-nm-dir='find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;'
+alias find_modules='find . -type d -name "node_modules" -prune'
+alias nuke_modules='find . -type d -name "node_modules" -prune -exec rm -rf {} +'
 
 
 # --- End JS/TS ---
