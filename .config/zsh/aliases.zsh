@@ -212,6 +212,8 @@ alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfil
 
 # OpenCode
 alias oc="GOOGLE_CLOUD_PROJECT=famous-rhythm-414315 opencode"
+alias oc-serve='opencode serve --hostname "0.0.0.0"'
+alias oc-attach="GOOGLE_CLOUD_PROJECT=famous-rhythm-414315 opencode attach localhost:4096 --dir ."
 alias oc-config="code ~/.config/opencode"
 alias oc-zen="open https://opencode.ai/zen"
 alias oc-or="open https://openrouter.ai/settings/credits"
