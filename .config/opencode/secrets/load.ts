@@ -1,10 +1,12 @@
 import { $ } from 'bun'
 import { z } from 'zod'
 
+const ACCOUNT_ID = 'JTBWQ5UAQRHP7G2DZ66QVMOY4U'
 const VAULT_NAME = 'Personal'
 const ITEM_NAME = 'OpenCode Secrets'
 
-const result = await $`op item get "${ITEM_NAME}" --vault "${VAULT_NAME}" --format json`.text()
+const result =
+  await $`op item get "${ITEM_NAME}" --vault "${VAULT_NAME}" --account "${ACCOUNT_ID}" --format json`.text()
 const item = JSON.parse(result)
 const fields = item.fields as any[]
 

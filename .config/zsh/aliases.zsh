@@ -217,7 +217,7 @@ alias oc-attach="GOOGLE_CLOUD_PROJECT=famous-rhythm-414315 opencode attach local
 alias oc-config="code ~/.config/opencode"
 alias oc-zen="open https://opencode.ai/zen"
 alias oc-or="open https://openrouter.ai/settings/credits"
-alias oc-auth="code ~/.local/share/opencode/auth.json"
+alias oc-auth="bun run ~/.config/opencode/auth.ts"
 alias oc-secrets="bun run ~/.config/opencode/secrets/load.ts"
 alias oc-logs="code ~/.local/share/opencode/log"
 alias oc-cache="code ~/.cache/opencode"

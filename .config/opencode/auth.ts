@@ -1,6 +1,7 @@
 import { $ } from 'bun'
 import { z } from 'zod'
 
+const ACCOUNT_ID = 'JTBWQ5UAQRHP7G2DZ66QVMOY4U'
 const VAULT_NAME = 'Personal'
 const ITEM_NAME = 'OpenCode Secrets'
 
@@ -37,7 +38,8 @@ async function main() {
   }
 
   // Fetch item once (used by both load and save to validate files exist)
-  const result = await $`op item get "${ITEM_NAME}" --vault "${VAULT_NAME}" --format json`.text()
+  const result =
+    await $`op item get "${ITEM_NAME}" --vault "${VAULT_NAME}" --account "${ACCOUNT_ID}" --format json`.text()
   const item = JSON.parse(result)
 
   const opFiles = (item.files as any[])
@@ -77,7 +79,7 @@ async function main() {
         continue
       }
 
-      await $`op item edit "${ITEM_NAME}" "${file.opFieldName}[file]=${file.localPath}" --vault "${VAULT_NAME}" > /dev/null`
+      await $`op item edit "${ITEM_NAME}" "${file.opFieldName}[file]=${file.localPath}" --vault "${VAULT_NAME}" --account "${ACCOUNT_ID}" > /dev/null`
 
       console.log(`SAVED ${file.name}`)
     }
