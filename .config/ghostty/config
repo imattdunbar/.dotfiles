@@ -60,7 +60,7 @@ keybind = cmd+l=text:\x02P
 
 # Sends ctrl+b then z
 
-keybind = ctrl+z=text:\x02z
+# keybind = ctrl+z=text:\x02z
 
 # Keybind -> Text input
 
