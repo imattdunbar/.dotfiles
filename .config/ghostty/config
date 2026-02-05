@@ -62,6 +62,10 @@ keybind = cmd+l=text:\x02P
 
 # keybind = ctrl+z=text:\x02z
 
+# Make tmux see opt+d and opt+c
+keybind = opt+d=text:\x1bd
+keybind = opt+c=text:\x1bc
+
 # Keybind -> Text input
 
 keybind = cmd+shift+b=text:fsb\n
