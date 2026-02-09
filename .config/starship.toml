@@ -34,6 +34,7 @@ when = '[ "$(git rev-parse --is-bare-repository 2>/dev/null)" = "true" ]'
 style = "bold blue"
 symbol = ""
 format = "[$symbol bare]($style)"
+disabled = true
 
 [custom.worktree_prefix]
 description = "Show the bare repo parent name if current dir is a worktree root"
@@ -52,6 +53,7 @@ fi
 when = "git rev-parse --is-inside-work-tree"
 style = "bold cyan"
 format = "[$output]($style)"
+disabled = true
 
 [directory]
 # truncation_length = 2
