@@ -34,7 +34,7 @@ eval "$(rbenv init - zsh)"
 export LC_ALL=en_US.UTF-8
 
 # pyenv
-eval "$(pyenv init -)"
+eval "$(pyenv init - --no-rehash)"
 
 # Capacitor
 export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/Applications/Android Studio.app"
