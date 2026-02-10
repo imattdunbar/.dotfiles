@@ -179,6 +179,7 @@ alias bb="bun run build"
 alias bli="bun local:init"
 alias bgp="bun pm ls -g"
 alias bgpu="bun update --global"
+alias bup="bun update --recursive --interactive"
 
 alias setup-prettier="bun run $HOME/.config/other/setup-prettier.ts"
 

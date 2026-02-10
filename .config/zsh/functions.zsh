@@ -80,6 +80,11 @@ cds() {
     fi
 }
 
+# Clone repo as template
+gh-template() {
+  bunx gitpick https://$GITHUB_PAT@github.com/imattdunbar/$1
+}
+
 # Kill process on port
 killport() {
   kill -9 $(lsof -ti:$1)
