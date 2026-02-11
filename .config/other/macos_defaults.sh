@@ -151,6 +151,15 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 "
 # Restart the system UI server to apply changes
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
+# Change Spotlight to Option+Space
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{enabled = YES; value = {parameters = (32, 49, 524288); type = "standard";};}'
+
+# Disable alternate Spotlight shortcut to avoid conflicts
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 '{enabled = NO;}'
+
+# Refresh preferences
+killall cfprefsd
+
 # Dock Icon size
 defaults write com.apple.dock tilesize -int 48
 killall Dock
