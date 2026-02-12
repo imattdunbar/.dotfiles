@@ -146,7 +146,7 @@
       ]
     },
     "openai": {
-      "whitelist": ["gpt-5.2-codex", "gpt-5.3-codex"]
+      "whitelist": ["gpt-5.2-codex", "gpt-5.3-codex", "gpt-5.3-codex-spark"]
     },
     "github-copilot": {
       "whitelist": [

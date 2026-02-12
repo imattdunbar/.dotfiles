@@ -225,4 +225,5 @@ alias oc-cache="code ~/.cache/opencode"
 alias oc-login="opencode auth login"
 alias oc-nuke="rm -rf ~/.local/share/opencode ~/.local/share/opencode/bin ~/.local/share/opencode/log ~/.cache/opencode ~/.config/opencode ~/.local/state/opencode"
 
+
 function oc-models() { opencode models | tr -d '\r' | fzf; }

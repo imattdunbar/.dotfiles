@@ -1,5 +1,17 @@
 #! /usr/bin/env bash
 
+# OpenCode
+oc-list() {
+  ps ax -o pid=,args= | rg '/\.bun/bin/opencode|opencode-darwin-arm64/bin/opencode|/\.config/opencode/toolbox'
+}
+
+oc-kill() {
+  local -a pids
+  pids=("${(@f)$(oc-list | rg -o '^[0-9]+')}")
+  (( ${#pids} )) || { echo "No opencode processes found"; return 0; }
+  kill "${pids[@]}"
+}
+
 # $(date -v -8H) == Now - 8 hours
 # [-v[+|-]val[y|m|w|d|H|M|S]]
 gtt() {
