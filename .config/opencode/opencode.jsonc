@@ -51,6 +51,10 @@
     }
   },
   "permission": {
+    "bash": {
+      "git status*": "allow",
+      "git diff*": "allow"
+    },
     "external_directory": {
       "~/.bun/**": "allow",
       "~/.config/opencode/opencode.jsonc": "allow",
