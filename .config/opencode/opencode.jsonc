@@ -24,7 +24,12 @@
         "bash": true
       },
       "permission": {
-        "bash": "ask"
+        "bash": {
+          "git status*": "allow",
+          "git diff*": "allow",
+          "git log*": "allow",
+          "*": "ask"
+        }
       }
     },
     "build": {
@@ -51,10 +56,6 @@
     }
   },
   "permission": {
-    "bash": {
-      "git status*": "allow",
-      "git diff*": "allow"
-    },
     "external_directory": {
       "~/.bun/**": "allow",
       "~/.config/opencode/opencode.jsonc": "allow",
@@ -168,7 +169,7 @@
       "whitelist": []
     },
     "google-vertex-anthropic": {
-      "whitelist": ["claude-opus-4-5@20251101", "claude-opus-4-6@default"]
+      "whitelist": ["claude-sonnet-4-6@default", "claude-opus-4-6@default"]
     },
     // -----------------
     "google": {
