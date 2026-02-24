@@ -54,5 +54,9 @@ tmp/
 # Misc
 .serena
 
-# Opencode in repo
+# Agents/Opencode in repo
 .opencode
+.agents
+
+# Directory env
+.envrc
