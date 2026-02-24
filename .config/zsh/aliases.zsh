@@ -210,24 +210,3 @@ alias caddy-stop="brew services stop caddy"
 alias caddy-restart="brew services restart caddy"
 alias caddy-reload="caddy reload --config /opt/homebrew/etc/caddy/Caddyfile"
 alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfile"
-
-export GOOGLE_CLOUD_PROJECT="purchaser-dev"
-export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/opencode/vertex-key.json"
-export VERTEX_LOCATION=global
-
-# OpenCode
-alias oc="opencode"
-alias oc-serve='opencode serve --hostname "0.0.0.0"'
-alias oc-attach="opencode attach localhost:4096 --dir ."
-alias oc-config="code ~/.config/opencode"
-alias oc-zen="open https://opencode.ai/zen"
-alias oc-or="open https://openrouter.ai/settings/credits"
-alias oc-auth="bun run ~/.config/opencode/auth.ts"
-alias oc-secrets="bun run ~/.config/opencode/secrets/load.ts"
-alias oc-logs="code ~/.local/share/opencode/log"
-alias oc-cache="code ~/.cache/opencode"
-alias oc-login="opencode auth login"
-alias oc-nuke="rm -rf ~/.local/share/opencode ~/.local/share/opencode/bin ~/.local/share/opencode/log ~/.cache/opencode ~/.config/opencode ~/.local/state/opencode"
-
-add-skill() { bunx skills add "$1" --agent opencode -y; }
-oc-models() { opencode models | tr -d '\r' | fzf; }
