@@ -1,6 +1,8 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# Docs - https://starship.rs/config
+
 command_timeout = 1000000
 scan_timeout = 1000000
 
@@ -88,3 +90,9 @@ disabled = true
 
 [python]
 detect_files = []
+
+[gradle]
+format = ''
+
+[kotlin]
+format = ''
