@@ -106,7 +106,7 @@ alias reset-nvim="rm -rf ~/.local/share/nvim"
 # tmux
 alias t="tmux attach || tmux"
 alias t-source="tmux source-file $HOME/.config/tmux/tmux.conf"
-alias t-kserver="tmux kill-server"
+alias t-killserver="tmux kill-server"
 alias t-ks="tmux kill-session"
 alias t-kp="tmux kill-pane"
 alias t-kw="tmux kill-window"

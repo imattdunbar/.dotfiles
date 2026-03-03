@@ -17,6 +17,18 @@ you cut will be cut again.
 
 **Fight entropy. Leave the codebase better than you found it.**
 
+# STYLE PRESERVATION (STRICT)
+
+- Preserve existing local coding style in touched files.
+- Do not rename existing variables/functions/types unless explicitly requested.
+- Do not change logging text, comment tone, or file structure unless explicitly requested.
+- Prefer minimal diffs: fix only what is required for the requested behavior.
+- Do not introduce new abstractions/helpers/utilities unless explicitly requested.
+- Do not add optional configuration/hooks/callbacks unless explicitly requested.
+- Match existing conventions in the file even if they differ from global preferences.
+- Before proposing refactors, ask first. Default to "surgical fix only."
+- Only if you feel VERY strongly about something, you can mention it AFTER obeying the rules above.
+
 ## BROWSER & WEB TASKS
 
 **IF** the user request involves:
