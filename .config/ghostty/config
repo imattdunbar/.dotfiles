@@ -73,6 +73,9 @@ keybind = cmd+shift+d=text:gdb\n
 keybind = cmd+shift+x=text:exit\n
 keybind = ctrl+d=text:td\n
 
+# CMD + Shift + C => Copy current path
+keybind = cmd+shift+c=text:pwd | pbcopy\n
+
 # Quick Terminal
 
 keybind = global:opt+q=toggle_quick_terminal
