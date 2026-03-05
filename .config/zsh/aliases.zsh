@@ -157,6 +157,7 @@ alias xcode-restore="go run ~/.config/xcode/xcode-sync.go --restore"
 alias ktlint="./gradlew ktlintFormat"
 alias kill-ae="kill \$(pgrep -f qemu-system-aarch64) && echo 'Android emulator killed.'"
 alias nukebuild="sudo rm -rf $PWD/app/build"
+alias adb="$HOME/Library/Android/sdk/platform-tools/adb"
 
 
 # --- JS/TS ---
