@@ -90,11 +90,6 @@
       "type": "local",
       "command": ["bunx", "mcp-remote", "https://gitmcp.io/{owner}/{repo}"]
     },
-    "tanstack": {
-      "enabled": true,
-      "type": "local",
-      "command": ["bunx", "@tanstack/cli", "mcp"]
-    },
     "exa": {
       "enabled": false,
       "type": "remote",
