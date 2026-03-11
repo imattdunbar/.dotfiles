@@ -25,8 +25,8 @@ macos-titlebar-style = tabs
 window-padding-x = 16
 window-padding-y = 0
 window-padding-color = extend
-window-height = 48
-window-width = 160
+# window-height = 48
+# window-width = 160
 window-save-state = always
 
 # General
