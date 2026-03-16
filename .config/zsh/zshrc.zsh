@@ -24,6 +24,7 @@ source $HOME/.config/zsh/docker.zsh
 source $HOME/.config/zsh/functions.zsh
 source $HOME/.config/zsh/keybinds.zsh
 source $HOME/.config/zsh/opencode.zsh
+source $HOME/.config/zsh/worktrunk.zsh
 
 if [[ -f $HOME/.config/zsh/local.zsh ]]; then
     source $HOME/.config/zsh/local.zsh
