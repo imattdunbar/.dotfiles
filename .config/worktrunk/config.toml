@@ -1,5 +1,11 @@
 skip-commit-generation-prompt = true
 
+[pre-switch]
+fetch = "git fetch --prune --tags"
+
+[post-create]
+copy = "wt step copy-ignored"
+
 [projects]
 # # User Configuration
 #
