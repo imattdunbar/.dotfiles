@@ -143,8 +143,9 @@
     "openai": {
       "whitelist": [
         // "gpt-5.2-codex",
-        "gpt-5.3-codex"
-        // "gpt-5.3-codex-spark"
+        "gpt-5.3-codex",
+        // "gpt-5.3-codex-spark" // pro plan only
+        "gpt-5.4"
       ]
     },
     "github-copilot": {
@@ -155,6 +156,12 @@
         // "claude-sonnet-4.6",
         // "claude-opus-4.6"
       ]
+    },
+    "github-copilot-enterprise": {
+      "whitelist": []
+    },
+    "github-models": {
+      "whitelist": []
     },
     // ----- Work ------
     "google-vertex": {
