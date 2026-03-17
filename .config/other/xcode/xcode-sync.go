@@ -39,7 +39,7 @@ func main() {
 
 func moveKeybinds(homeDir string, backup bool) {
 	src := filepath.Join(homeDir, "Library/Developer/Xcode/UserData/KeyBindings/Default.idekeybindings")
-	dest := filepath.Join(homeDir, ".config/xcode/Default.idekeybindings")
+	dest := filepath.Join(homeDir, ".config/other/xcode/Default.idekeybindings")
 
 	// Flip them if it's restore
 	if !backup {
@@ -54,7 +54,7 @@ func moveKeybinds(homeDir string, backup bool) {
 
 func moveTheme(homeDir string, backup bool) {
 	src := filepath.Join(homeDir, "Library/Developer/Xcode/UserData/FontAndColorThemes/Dunbar.xccolortheme")
-	dest := filepath.Join(homeDir, ".config/xcode/Dunbar.xccolortheme")
+	dest := filepath.Join(homeDir, ".config/other/xcode/Dunbar.xccolortheme")
 
 	// Flip them if it's restore
 	if !backup {
@@ -69,7 +69,7 @@ func moveTheme(homeDir string, backup bool) {
 
 func copySnippets(homeDir string, backup bool) {
 	src := filepath.Join(homeDir, "Library/Developer/Xcode/UserData/CodeSnippets")
-	dest := filepath.Join(homeDir, ".config/xcode/CodeSnippets")
+	dest := filepath.Join(homeDir, ".config/other/xcode/CodeSnippets")
 
 	// Flip them if it's restore
 	if !backup {

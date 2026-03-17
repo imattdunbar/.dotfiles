@@ -1,0 +1,20 @@
+{
+  "folders": [{ "path": "/Users/matt/.config" }],
+  "settings": {
+    "files.exclude": {
+      "mole": true,
+      "nix": true,
+      "op": true,
+      "rclone": true,
+      "sketchybar": true,
+      "stripe": true,
+      "hookdeck": true,
+      "gcloud": true,
+      "configstore": true,
+      "cagent": true,
+      "better-auth": true,
+      "raycast": true,
+      "atuin": true
+    }
+  }
+}

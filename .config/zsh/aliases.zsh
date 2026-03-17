@@ -1,7 +1,7 @@
 # Open in VSCode
 alias zshrc="code $HOME/.config/zsh/zshrc.zsh"
 alias aliases="code $HOME/.config/zsh; code $HOME/.config/zsh/aliases.zsh"
-alias config="code $HOME/.config"
+alias config="code $HOME/.config/other/config.code-workspace"
 alias ssh-config="code $HOME/.ssh/config"
 alias edithosts="code /etc/hosts"
 alias eggi="code $HOME/.gitignore"
@@ -54,7 +54,7 @@ alias git-unskip="git update-index --no-skip-worktree"
 # Git Utils
 alias clearorig="find . -name '*.orig' -delete"
 alias clearignored="git rm -r --cached . && git add ."
-alias repo="go run ~/.config/scripts/repo.go"
+alias repo="go run ~/.config/other/scripts/repo.go"
 alias gdb="git branch -D \$(git branch | fzf)"
 alias squash-all='git reset $(git commit-tree HEAD^{tree} -m "Squashed")'
 
@@ -146,12 +146,12 @@ alias nukecc="sudo rm -rf $HOME/Library/Caches/CocoaPods"
 alias nukesc="sudo rm -rf $HOME/Library/Developer/CoreSimulator/Caches"
 alias nukeios="nukedd && nukespm && nukecc && nukesc"
 
-alias setup-swift-format="cp $HOME/.config/xcode/.swift-format $PWD/.swift-format"
+alias setup-swift-format="cp $HOME/.config/other/xcode/.swift-format $PWD/.swift-format"
 alias prettyswift="swift-format format . -i --recursive" # in project dir
 
 # Xcode
-alias xcode-backup="go run ~/.config/xcode/xcode-sync.go --backup"
-alias xcode-restore="go run ~/.config/xcode/xcode-sync.go --restore"
+alias xcode-backup="go run ~/.config/other/xcode/xcode-sync.go --backup"
+alias xcode-restore="go run ~/.config/other/xcode/xcode-sync.go --restore"
 
 # Android
 alias ktlint="./gradlew ktlintFormat"
