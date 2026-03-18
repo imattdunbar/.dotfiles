@@ -18,21 +18,28 @@ after-startup-command = []
 [key-mapping]
 preset = 'qwerty'
 
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 4'
+check-further-callbacks = true
+
 # Force all windows to be floating
 [[on-window-detected]]
 check-further-callbacks = true
 run = 'layout floating'
 
 [workspace-to-monitor-force-assignment]
-# Docked: 1-3 on Odyssey, 4-6 on Dell
-# Undocked (built-in only): everything falls back to built-in
-1 = ['^Odyssey G95SC$', 'built-in']
-2 = ['^Odyssey G95SC$', 'built-in']
-3 = ['^Odyssey G95SC$', 'built-in']
-4 = ['^DELL S2722DGM$', 'built-in']
-5 = ['^DELL S2722DGM$', 'built-in']
-6 = ['^DELL S2722DGM$', 'built-in']
-
+1 = ['^Built-in Retina Display$', '^Odyssey G95SC$', 'built-in']
+2 = ['^Built-in Retina Display$', '^Odyssey G95SC$', 'built-in']
+3 = ['^Odyssey G95SC$', '^Built-in Retina Display$', 'built-in']
+4 = [
+  '^DELL S2722DGM$',
+  '^Odyssey G95SC$',
+  '^Built-in Retina Display$',
+  'built-in',
+]
+5 = ['^DELL S2722DGM$', '^Built-in Retina Display$', 'built-in']
+6 = ['^DELL S2722DGM$', '^Built-in Retina Display$', 'built-in']
 
 [mode.main.binding]
 cmd-h = []     # Disable "hide application"
@@ -47,12 +54,12 @@ alt-enter = 'exec-and-forget open -a "Ghostty"'
 alt-shift-r = 'reload-config'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#work«space
-cmd-ctrl-alt-shift-1 = 'workspace 1'
-cmd-ctrl-alt-shift-2 = 'workspace 2'
-cmd-ctrl-alt-shift-3 = 'workspace 3'
-cmd-ctrl-alt-shift-4 = 'workspace 4'
-cmd-ctrl-alt-shift-5 = 'workspace 5'
-cmd-ctrl-alt-shift-6 = 'workspace 6'
+cmd-ctrl-alt-shift-1 = ['workspace 1', 'move-mouse monitor-lazy-center']
+cmd-ctrl-alt-shift-2 = ['workspace 2', 'move-mouse monitor-lazy-center']
+cmd-ctrl-alt-shift-3 = ['workspace 3', 'move-mouse monitor-lazy-center']
+cmd-ctrl-alt-shift-4 = ['workspace 4', 'move-mouse monitor-lazy-center']
+cmd-ctrl-alt-shift-5 = ['workspace 5', 'move-mouse monitor-lazy-center']
+cmd-ctrl-alt-shift-6 = ['workspace 6', 'move-mouse monitor-lazy-center']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'

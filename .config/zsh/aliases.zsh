@@ -175,7 +175,7 @@ else echo "No lock file found. Cannot determine dev command."; fi
 '
 
 # Bun 
-alias tc="bunx tsc -b"
+alias tc="bunx tsc --noEmit"
 alias bb="bun run build"
 alias bli="bun local:init"
 alias bgp="bun pm ls -g"
