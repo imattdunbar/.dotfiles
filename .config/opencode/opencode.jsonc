@@ -3,7 +3,7 @@
   "default_agent": "plan",
   /*
     OpenAI Plan
-    "model": "openai/gpt-5.2-codex",
+    "model": "openai/gpt-5.3-codex",
     Claude Plan
     "model": "anthropic/claude-sonnet-4-5",
     CoPilot Plan
@@ -41,16 +41,16 @@
     },
     "general": {
       "mode": "subagent",
-      "model": "github-copilot/claude-haiku-4.5"
+      "model": "openai/gpt-5.4-mini"
     },
     "explore": {
       "mode": "subagent",
-      "model": "github-copilot/claude-haiku-4.5",
+      "model": "openai/gpt-5.4-mini",
       "mcp": ["serena", "databasemcp"]
     },
     "database": {
       "mode": "subagent",
-      "model": "github-copilot/claude-haiku-4.5",
+      "model": "openai/gpt-5.4-mini",
       "mcp": ["serena", "databasemcp"]
     }
   },
