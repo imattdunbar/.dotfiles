@@ -137,12 +137,6 @@
         // "openai/gpt-5.4-mini"
       ]
     },
-    "anthropic": {
-      "whitelist": [
-        // Claude Pro plan - expired 1/23
-        // "claude-sonnet-4-5"
-      ]
-    },
     "openai": {
       "whitelist": [
         // "gpt-5.2-codex",
