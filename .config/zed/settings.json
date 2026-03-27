@@ -64,6 +64,20 @@
     },
     "JavaScript": {
       "language_servers": ["typescript-language-server", "!vtsls", "..."]
+    },
+    "Prisma": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": ["prisma-language-server"]
+    }
+  },
+  "lsp": {
+    "prisma-language-server": {
+      "settings": {
+        "prisma": {
+          "pinToPrisma6": true
+        }
+      }
     }
   },
   // ---------------
