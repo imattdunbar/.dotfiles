@@ -26,6 +26,7 @@
                     },
                     {
                         "description": "Hyper + F/G to CTRL+CMD+F and CTRL+CMD+G",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

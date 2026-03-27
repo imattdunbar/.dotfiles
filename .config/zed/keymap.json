@@ -38,7 +38,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "alt-k": "zed::OpenKeymap"
+      "alt-k": "zed::OpenKeymapFile"
     }
   },
   {
@@ -93,6 +93,54 @@
     "context": "Workspace",
     "bindings": {
       "cmd-alt-s": ["task::Spawn", { "task_name": "Force Format" }]
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-alt-cmd-shift-f": "pane::GoBack"
+    }
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl--": "pane::GoBack"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-alt-cmd-shift-g": "pane::GoForward"
+    }
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-_": "pane::GoForward"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-g": "git::Blame"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-cmd-g b": "git::Blame"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-cmd-{": "editor::ToggleFold"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "cmd-k cmd-l": "editor::ToggleFold"
     }
   }
 ]

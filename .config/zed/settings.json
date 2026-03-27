@@ -1,83 +1,41 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette
 {
-  "theme": {
-    "mode": "system",
-    "light": "Catppuccin Mocha",
-    "dark": "Catppuccin Mocha"
+  // --- General ---
+  "session": {
+    "trust_all_worktrees": true,
+    "restore_unsaved_buffers": true
+  },
+  "use_system_prompts": true,
+  "restore_on_file_reopen": true,
+  "lsp_document_colors": "background",
+  "inlay_hints": {
+    "show_background": true
+  },
+  "prettier": {
+    "allowed": true
+  },
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
   },
   "vim_mode": false,
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "buffer_font_family": "FiraCode Nerd Font Mono",
-  "buffer_font_features": {
-    "calt": false // disable ligatures
-  },
-  "restore_on_startup": "none",
+  "restore_on_startup": "empty_tab",
   "confirm_quit": false,
-  "terminal": {
-    "dock": "bottom",
-    "font_family": "FiraCode Nerd Font Mono",
-    "blinking": "off"
-  },
   "soft_wrap": "editor_width",
   "format_on_save": "on",
   "formatter": "auto",
-  "prettier": {
-    // If these settings are not used by default, that means prettier is installed in the directory
-    // and a prettier config file for that directory must be added and used.
-    "allowed": true,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "none",
-    "semi": false,
-    "printWidth": 120,
-    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
-  },
-  // AI + Code Completion
-  "agent": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
-    },
-    "button": true,
-    "dock": "left"
-  },
-  "features": {
-    // "edit_prediction_provider": "zed"
-    "edit_prediction_provider": "none"
-  },
   "show_edit_predictions": true,
   "show_completions_on_input": true,
-  // ----- End of AI settings -----
-  // "languages": {
-  //   "Go": {
-  //     "code_actions_on_format": {
-  //       "source.organizeImports": true
-  //     },
-  //     "format_on_save": {
-  //       "external": {
-  //         "command": "gofmt",
-  //         "arguments": []
-  //       }
-  //     }
-  //   }
-  // },
-  // "language_servers": ["!eslint", "!typescript-language-server", "vtsls", "..."], // eslint off
-  // "lsp": {
-  //   "vtsls": {
-  //     "settings": {
-  //       "typescript": { "tsserver": { "maxTsServerMemory": 16184 } },
-  //       "javascript": { "tsserver": { "maxTsServerMemory": 16184 } }
-  //     }
-  //   }
-  // },
+  "inline_code_actions": false,
+  "extend_comment_on_newline": false,
+  "file_types": {
+    "JSONC": ["tsconfig*.json"],
+    "JSON": [".prettierrc"],
+    "Dockerfile": ["Dockerfile*"]
+  },
   "languages": {
     "TypeScript": {
       "language_servers": ["typescript-language-server", "!vtsls", "..."]
@@ -89,16 +47,89 @@
       "language_servers": ["typescript-language-server", "!vtsls", "..."]
     }
   },
-  "file_types": {
-    "JSONC": ["tsconfig*.json"],
-    "JSON": [".prettierrc"],
-    "Dockerfile": ["Dockerfile*"]
+  // ---------------
+  // --- Theme ---
+  "icon_theme": {
+    "mode": "light",
+    "light": "Warm Charmed Icons",
+    "dark": "Warm Charmed Icons"
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
+  },
+  "theme_overrides": {
+    "Catppuccin Mocha": {
+      "title_bar.background": "#181825",
+      "status_bar.background": "#181825",
+      "panel.background": "#181825",
+      "surface.background": "#181825",
+      "background": "#181825",
+      "tab_bar.background": "#00000000",
+      "tab.inactive_background": "#00000000",
+
+      "editor.background": "#181825",
+      "editor.gutter.background": "#181825",
+      "editor.subheader.background": "#181825",
+      // "tab.active_background": "#303340",
+
+      "border": "#00000000",
+      "border.variant": "#00000000",
+      "border.focused": "#00000000",
+      "border.selected": "#00000000",
+      "border.transparent": "#00000000",
+      "border.disabled": "#00000000",
+      "editor.document_highlight.read_background": "#00000000",
+      "editor.document_highlight.write_background": "#00000000",
+      "scrollbar.track.background": "#00000000",
+      "scrollbar.track.border": "#00000000",
+      "panel.focused_border": "#00000000",
+      "pane.focused_border": "#00000000",
+      "pane_group.border": "#00000000"
+    }
+  },
+  // -------------
+  // --- Other ---
+  "edit_predictions": {
+    "provider": "none"
+  },
+  "buffer_font_features": {
+    "calt": false // disable ligatures
+  },
+  "agent": {
+    "enable_feedback": true,
+    "enabled": false,
+    "button": true,
+    "dock": "left"
+  },
+  "title_bar": {
+    "show_user_menu": false,
+    "show_branch_icon": false,
+    "show_menus": false,
+    "show_onboarding_banner": false,
+    "show_project_items": false,
+    "show_branch_name": false,
+    "show_user_picture": false,
+    "show_sign_in": false
+  },
+  "file_finder": {
+    "modal_max_width": "large"
+  },
+  "debugger": {
+    "button": false
+  },
+  "search": {
+    "button": false
   },
   "tab_bar": {
+    // "show": false,
+    "show_tab_bar_buttons": false,
     "show": true,
-    "show_nav_history_buttons": true
+    "show_nav_history_buttons": false
   },
   "diagnostics": {
+    "button": false,
     "include_warnings": false
   },
   "tabs": {
@@ -108,6 +139,7 @@
     "activate_on_close": "neighbour"
   },
   "toolbar": {
+    "agent_review": false,
     "breadcrumbs": false,
     "quick_actions": false // inline assist button is here
   },
@@ -115,24 +147,45 @@
     "metrics": false,
     "diagnostics": false
   },
+  "status_bar": {
+    "active_language_button": true,
+    "active_encoding_button": "disabled"
+    // "experimental.show": false
+  },
+  "global_lsp_settings": {
+    "button": false
+  },
   "project_panel": {
-    "default_width": 320,
+    "button": false,
+    "default_width": 400,
     "dock": "left",
     "file_icons": true,
     "folder_icons": true,
     "git_status": true,
-    "indent_size": 20,
-    "auto_reveal_entries": true
+    // "indent_size": 20,
+    "auto_reveal_entries": true,
+    // "hide_root": true,
+    "auto_fold_dirs": false,
+    "scrollbar": {
+      "show": "never"
+    },
+    // "bold_folder_labels": true,
+    "indent_guides": {
+      "show": "never"
+    },
+    "indent_size": 16,
+    "entry_spacing": "comfortable",
+    "starts_open": true
   },
   "git_panel": {
     "button": false
   },
   "outline_panel": {
-    "button": false
-  },
-  "chat_panel": {
-    "button": "never",
-    "dock": "right"
+    "default_width": 400,
+    "button": false,
+    "indent_guides": {
+      "show": "never"
+    }
   },
   "collaboration_panel": {
     "button": false,
@@ -141,5 +194,35 @@
   "notification_panel": {
     "button": false,
     "dock": "left"
+  },
+  "gutter": {
+    "min_line_number_digits": 0,
+    "folds": true,
+    "runnables": false,
+    "breakpoints": false
+  },
+  "indent_guides": {
+    // "enabled": false
+  },
+  "scrollbar": {
+    // "show": "never"
+    "cursors": false,
+    "diagnostics": "warning"
+  },
+  "git": {
+    // "inline_blame": {
+    //   "delay_ms": 3000,
+    //   "padding": 32
+    // }
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "terminal": {
+    "button": false,
+    "dock": "right",
+    "font_family": "FiraCode Nerd Font Mono",
+    "blinking": "off"
   }
+  // -------------
 }
