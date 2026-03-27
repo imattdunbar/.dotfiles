@@ -84,18 +84,6 @@
     }
   },
   {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-shift-c": ["task::Spawn", { "task_name": "Open VSCode" }]
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-alt-s": ["task::Spawn", { "task_name": "Force Format" }]
-    }
-  },
-  {
     "context": "Pane",
     "bindings": {
       "ctrl-alt-cmd-shift-f": "pane::GoBack"
