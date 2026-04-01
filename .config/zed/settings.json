@@ -69,6 +69,10 @@
       "format_on_save": "on",
       "formatter": "language_server",
       "language_servers": ["prisma-language-server"]
+    },
+    "Plain Text": {
+      "format_on_save": "off",
+      "formatter": "none"
     }
   },
   "lsp": {
