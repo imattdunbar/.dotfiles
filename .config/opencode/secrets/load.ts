@@ -10,6 +10,8 @@ const result =
 const item = JSON.parse(result)
 const fields = item.fields as any[]
 
+const isAllUppercase = (s: string) => /^[A-Z]+$/.test(s)
+
 const fieldSchema = z.object({
   type: z.string(),
   label: z.string(),
@@ -22,7 +24,9 @@ const validFields: Field[] = []
 
 fields.forEach((field) => {
   const parsed = fieldSchema.safeParse(field)
-  if (parsed.success) validFields.push(parsed.data)
+  if (parsed.success && isAllUppercase(parsed.data.label)) {
+    validFields.push(parsed.data)
+  }
 })
 
 for (const field of validFields) {
