@@ -4,14 +4,10 @@
   /*
     OpenAI Plan
     "model": "openai/gpt-5.3-codex",
-    Claude Plan
-    "model": "anthropic/claude-sonnet-4-5",
     CoPilot Plan
     "model": "github-copilot/claude-sonnet-4.5",
-    Google Plan
-    "model": "google/antigravity-claude-sonnet-4-5",
     Vertex
-    "model": "google-vertex-anthropic/claude-opus-4-5@20251101",
+    "model": "google-vertex-anthropic/claude-opus-4-6@default",
   */
   "model": "openai/gpt-5.3-codex",
   "agent": {
@@ -21,14 +17,6 @@
         "write": false,
         "edit": false,
         "bash": true
-      },
-      "permission": {
-        "bash": {
-          "git status*": "allow",
-          "git diff*": "allow",
-          "git log*": "allow",
-          "*": "ask"
-        }
       }
     },
     "build": {
@@ -45,13 +33,7 @@
     },
     "explore": {
       "mode": "subagent",
-      "model": "openai/gpt-5.4-mini",
-      "mcp": ["serena", "databasemcp"]
-    },
-    "database": {
-      "mode": "subagent",
-      "model": "openai/gpt-5.4-mini",
-      "mcp": ["serena", "databasemcp"]
+      "model": "openai/gpt-5.4-mini"
     }
   },
   "permission": {
@@ -62,95 +44,35 @@
       "**/.env*": "deny"
     }
   },
-  "plugin": [
-    // "opencode-anthropic-auth", // https://github.com/anomalyco/opencode-anthropic-auth
-    // "opencode-antigravity-auth@latest" // https://github.com/NoeFabris/opencode-antigravity-auth
-  ],
+  "plugin": [],
   "mcp": {
     "playwriter": {
       "enabled": true,
       "type": "local",
       "command": ["bunx", "-y", "playwriter@latest"] // https://github.com/remorses/playwriter
-    },
-    "serena": {
-      "enabled": true,
-      "type": "local",
-      "command": [
-        "uvx",
-        "--from",
-        "git+https://github.com/oraios/serena",
-        "serena",
-        "start-mcp-server",
-        "--open-web-dashboard",
-        "False"
-      ]
-    },
-    "gitmcp": {
-      "enabled": true,
-      "type": "local",
-      "command": ["bunx", "mcp-remote", "https://gitmcp.io/{owner}/{repo}"]
-    },
-    "exa": {
-      "enabled": false,
-      "type": "remote",
-      "url": "{file:secrets/EXA_AI_URL}"
-    },
-    "ref": {
-      "enabled": false,
-      "type": "remote",
-      "url": "{file:secrets/REF_TOOLS_URL}"
     }
-    /*
-      Database MCP Example
-      https://googleapis.github.io/genai-toolbox/getting-started/introduction/
-      Download as binary, place in ~/.config/opencode
-      Different database connectors: https://googleapis.github.io/genai-toolbox/how-to/connect-ide/
-      "databasemcp": {
-        "type": "local",
-        "command": ["/Users/matt/.config/opencode/toolbox", "--prebuilt", "postgres", "--stdio"],
-        "enabled": true,
-        "environment": {
-          "POSTGRES_HOST": "localhost",
-          "POSTGRES_PORT": "5432",
-          "POSTGRES_DATABASE": "",
-          "POSTGRES_USER": "",
-          "POSTGRES_PASSWORD": ""
-        }
-      }
-    */
   },
   "provider": {
     // Disabled opencode + openrouter models for now - plans are too good of a deal.
     // Provider + Model ID search: https://models.dev
     "opencode": {
       "whitelist": [
-        // "claude-opus-4-5"
         "kimi-k2.5"
-        // "gpt-5.4-mini"
         // "gpt-5.4-nano"
       ]
     },
     "openrouter": {
       "whitelist": [
-        // "google/gemini-3.1-pro-preview"
-        // "anthropic/claude-opus-4.5"
-        // "openai/gpt-5.4-mini"
+        // "anthropic/claude-opus-4.6"
       ]
     },
     "openai": {
-      "whitelist": [
-        // "gpt-5.2-codex",
-        "gpt-5.3-codex",
-        // "gpt-5.3-codex-spark" // pro plan only
-        "gpt-5.4",
-        "gpt-5.4-mini"
-      ]
+      "whitelist": ["gpt-5.3-codex", "gpt-5.4", "gpt-5.4-mini"]
     },
     "github-copilot": {
       "whitelist": [
         "gemini-3-flash-preview",
-        "gemini-3.1-pro-preview",
-        "claude-haiku-4.5"
+        "gemini-3.1-pro-preview"
         // "claude-sonnet-4.6",
         // "claude-opus-4.6"
       ]
