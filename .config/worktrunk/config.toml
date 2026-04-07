@@ -1,7 +1,9 @@
 skip-commit-generation-prompt = true
 
-[pre-switch]
-fetch = "git fetch --prune --tags"
+# [pre-switch]
+# fetch = "git fetch --prune --tags"
 
-[post-create]
+# Before creating the worktree and cloning, fetch the branch & copy gitignored files
+[pre-start]
+fetch = "git fetch --prune --tags"
 copy = "wt step copy-ignored"
