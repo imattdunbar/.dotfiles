@@ -16,16 +16,9 @@ export HOMEBREW_NO_ENV_HINTS=TRUE
 # Solves an issue with asdf + postgres
 export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"
 
-# Navi
-# eval "$(navi widget zsh)"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-NVM_PATH="$(brew --prefix nvm 2>/dev/null || true)"
-if [[ -n "$NVM_PATH" ]]; then
-  [ -s "$NVM_PATH/nvm.sh" ] && \. "$NVM_PATH/nvm.sh"
-  [ -s "$NVM_PATH/etc/bash_completion.d/nvm" ] && \. "$NVM_PATH/etc/bash_completion.d/nvm"
-fi
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
+alias nvm="fnm"
 
 # rbenv
 eval "$(rbenv init - zsh)"

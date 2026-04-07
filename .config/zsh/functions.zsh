@@ -1,17 +1,5 @@
 #! /usr/bin/env bash
 
-# OpenCode
-oc-list() {
-  ps ax -o pid=,args= | rg '/\.bun/bin/opencode|opencode-darwin-arm64/bin/opencode|/\.config/opencode/toolbox'
-}
-
-oc-kill() {
-  local -a pids
-  pids=("${(@f)$(oc-list | rg -o '^[0-9]+')}")
-  (( ${#pids} )) || { echo "No opencode processes found"; return 0; }
-  kill "${pids[@]}"
-}
-
 # $(date -v -8H) == Now - 8 hours
 # [-v[+|-]val[y|m|w|d|H|M|S]]
 gtt() {
@@ -19,27 +7,45 @@ gtt() {
   git commit --amend --no-edit --date "$(date)"
 }
 
-function tsc() {
-  if [ -f ./node_modules/.bin/tsc ]; then
-  ./node_modules/.bin/tsc "$@"
-  else
-    # Use npx to resolve the global `tsc` without recursion
-    npx -p typescript tsc "$@"
-  fi
-}
+# Interactive branch switcher
+fsb() {
+  local selected line kind ref branch
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return 0
 
-function fsb() {
-    git fetch --prune
-    local pattern=$*
-        local branches branch
-        branches=$(git branch --all | awk 'tolower($0) ~ /'"$pattern"'/') &&
-        branch=$(echo "$branches" |
-                fzf --reverse -1 -0 +m) &&
-        if [ "$branch" = "" ]; then
-            echo "[$0] No branch matches the provided pattern"; return;
-    fi;
-    git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
-    git pull
+  selected="$(
+    {
+      local_branches="$(git for-each-ref --format='%(refname:short)' refs/heads)"
+      git for-each-ref --sort=-committerdate refs/heads \
+        --format=$'\033[32mlocal\033[0m\t%(refname:short)'
+
+      git for-each-ref --sort=-committerdate refs/remotes \
+        --format='%(refname:short)' |
+        grep -vE '^(origin|.+/HEAD)$' |
+        while IFS= read -r remote_ref; do
+          branch_name="${remote_ref#*/}"
+          if ! printf '%s\n' "$local_branches" | grep -Fxq "$branch_name"; then
+            printf '\033[38;5;214mremote\033[0m\t%s\n' "$remote_ref"
+          fi
+        done
+    } | fzf --ansi --reverse --height=75% --border --prompt='Branch > ' \
+      --preview='git log --color=always --oneline -n 12 {2} 2>/dev/null'
+  )" || return 0
+
+  kind="${selected%%$'\t'*}"
+  ref="${selected#*$'\t'}"
+
+  if [[ "$kind" == $'\033[32mlocal\033[0m' ]]; then
+    git switch "$ref"
+    return
+  fi
+
+  branch="${ref#*/}"
+
+  if git show-ref --verify --quiet "refs/heads/$branch"; then
+    git switch "$branch"
+  else
+    git switch --track "$ref"
+  fi
 }
 
 # Fetch the latest remote of the branch for the local branch, then merge
@@ -84,14 +90,6 @@ unstage() {
   git restore --staged $1
 }
 
-cds() {
-    local dir
-    dir=$(ogls | fzf)
-    if [[ -n "$dir" ]]; then
-        cd "$dir"
-    fi
-}
-
 # Clone repo as template
 gh-template() {
   bunx gitpick https://$GITHUB_PAT@github.com/imattdunbar/$1
@@ -106,27 +104,15 @@ checkport() {
   lsof -i :$1
 }
 
-patchalacritty() {
-  cp ~/.config/alacritty/alacritty.icns /Applications/Alacritty.app/Contents/Resources/alacritty.icns
-  touch /Applications/Alacritty.app
-  sudo sh -c 'killall Finder && killall Dock'
-}
-
-patchwezterm() {
-  cp ~/.config/wezterm/wezterm.icns /Applications/WezTerm.app/Contents/Resources/terminal.icns
-  touch /Applications/WezTerm.app
-  sudo sh -c 'killall Finder && killall Dock'
+# Push New Branch
+pushnewb() {
+    BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
+    git push --set-upstream origin "${BRANCH}"
 }
 
 download-video() {
     setopt localoptions noglob
     yt-dlp --format best --output "~/Desktop/%(title)s.%(ext)s" "$*"
-}
-
-# Push New Branch
-pushnewb() {
-    BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
-    git push --set-upstream origin "${BRANCH}"
 }
 
 # Tab Naming
@@ -145,28 +131,15 @@ if [[ -z "$TMUX" ]]; then
     set_terminal_title
 fi
 
-# Auto nvm use
-autoload -U add-zsh-hook
+# Not used - keeping for reference to patch icons
+# patchalacritty() {
+#   cp ~/.config/alacritty/alacritty.icns /Applications/Alacritty.app/Contents/Resources/alacritty.icns
+#   touch /Applications/Alacritty.app
+#   sudo sh -c 'killall Finder && killall Dock'
+# }
 
-load-nvmrc() {
-  [[ -a .nvmrc ]] || return
-  local nvmrc_path
-  nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# patchwezterm() {
+#   cp ~/.config/wezterm/wezterm.icns /Applications/WezTerm.app/Contents/Resources/terminal.icns
+#   touch /Applications/WezTerm.app
+#   sudo sh -c 'killall Finder && killall Dock'
+# }

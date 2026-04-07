@@ -30,9 +30,6 @@ if [[ -f $HOME/.config/zsh/local.zsh ]]; then
     source $HOME/.config/zsh/local.zsh
 fi
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
 # bun global bin
 export PATH="$PATH:$HOME/.bun/bin"
 

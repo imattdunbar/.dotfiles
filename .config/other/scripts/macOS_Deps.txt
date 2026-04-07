@@ -16,7 +16,7 @@ https://developer.1password.com/docs/cli/shell-plugins/github/
 
 
 brew install --cask iterm2
-brew install nvm
+brew install fnm
 brew install rbenv
 brew install pyenv
 

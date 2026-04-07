@@ -24,3 +24,16 @@ alias oc-nuke="rm -rf ~/.local/share/opencode ~/.local/share/opencode/bin ~/.loc
 
 add-skill() { bunx skills add "$1" --agent opencode -y; }
 oc-models() { oc models | tr -d '\r' | fzf; }
+
+# List OpenCode processes
+oc-list() {
+  ps ax -o pid=,args= | rg '/\.bun/bin/opencode|opencode-darwin-arm64/bin/opencode|/\.config/opencode/toolbox'
+}
+
+# Kill all OpenCode instances
+oc-kill() {
+  local -a pids
+  pids=("${(@f)$(oc-list | rg -o '^[0-9]+')}")
+  (( ${#pids} )) || { echo "No opencode processes found"; return 0; }
+  kill "${pids[@]}"
+}

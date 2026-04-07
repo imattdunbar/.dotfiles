@@ -66,9 +66,11 @@ keybind = cmd+l=text:\x02P
 keybind = opt+d=text:\x1bd
 keybind = opt+c=text:\x1bc
 
+# Map to Ctrl+P which triggers git branch picker in zsh
+keybind = cmd+shift+b=text:\x10
+
 # Keybind -> Text input
 
-keybind = cmd+shift+b=text:fsb\n
 keybind = cmd+shift+d=text:gdb\n
 keybind = cmd+shift+x=text:exit\n
 keybind = ctrl+d=text:td\n
