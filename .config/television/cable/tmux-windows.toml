@@ -1,0 +1,26 @@
+[metadata]
+name = "tmux-windows"
+description = "List and switch between tmux windows"
+requirements = ["tmux"]
+
+[keybindings]
+enter = "actions:select"
+
+[source]
+command = "tmux list-windows -a -F '#{session_name}:#{window_index}\t#{window_name}\t#{pane_current_command}' | sort -t ':' -k1,1 -k2,2n"
+display = "{split:\t:0} - {split:\t:1} ({split:\t:2})"
+output = "{split:\t:0}"
+no_sort = true
+
+# [preview]
+# command = "sh -lc 'target=\"{split:\t:0}\"; pane=$(tmux list-panes -t \"$target\" -F \"#{pane_id} #{?pane_active,1,0}\" 2>/dev/null | awk \"$2 == 1 { print \\$1; exit }\" ); if [ -z \"$pane\" ]; then pane=$(tmux list-panes -t \"$target\" -F \"#{pane_id}\" 2>/dev/null | head -n 1); fi; if [ -n \"$pane\" ]; then tmux capture-pane -p -t \"$pane\" 2>/dev/null; else printf \"No preview available\\n\"; fi'"
+
+[actions.select]
+description = "Switch to the selected window"
+command = "sh -lc 'target=\"{split:\t:0}\"; session=\"${target%%:*}\"; if [ -n \"$TMUX\" ]; then tmux switch-client -t \"$session\" \\; select-window -t \"$target\"; else tmux attach-session -t \"$session\" \\; select-window -t \"$target\"; fi'"
+mode = "execute"
+
+[actions.kill]
+description = "Kill the selected window"
+command = "tmux kill-window -t '{split:\t:0}'"
+mode = "fork"
