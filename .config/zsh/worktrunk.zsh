@@ -1,5 +1,5 @@
 # init
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+if [[ -o interactive ]] && command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
 # Helper around wt merge that just merges the commits into the specified branch or main branch without
 # doing a bunch of work or generating the commit message

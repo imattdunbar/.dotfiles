@@ -4,24 +4,25 @@ export PATH="$HOME/.asdf/shims:$PATH"
 # Brew
 if [[ $(uname -m) == "x86_64" ]]; then
     # Intel
-    eval "$(/usr/local/bin/brew shellenv)"
     export HOMEBREW_PREFIX="/usr/local"
 else
     # Apple Silicon
-    eval "$(/opt/homebrew/bin/brew shellenv)"
     export HOMEBREW_PREFIX="/opt/homebrew"
 fi
+
+export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
+
 export HOMEBREW_NO_ENV_HINTS=TRUE
 
 # Solves an issue with asdf + postgres
-export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"
+export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/bin/pkg-config:$HOMEBREW_PREFIX/opt/icu4c/lib/pkgconfig:$HOMEBREW_PREFIX/opt/curl/lib/pkgconfig:$HOMEBREW_PREFIX/opt/zlib/lib/pkgconfig"
 
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
 alias nvm="fnm"
 
 # rbenv
-eval "$(rbenv init - zsh)"
+eval "$(rbenv init - zsh --no-rehash)"
 
 # Cocoapods
 export LC_ALL=en_US.UTF-8
