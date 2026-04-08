@@ -72,6 +72,8 @@ detect_folders = []
 [bun]
 detect_files = ["bun.lockb", "bun.lock", "bunfig.toml"]
 style = "bold green"
+# symbol = "🥟 "
+symbol = " "
 
 [swift]
 detect_extensions = []
