@@ -10,8 +10,19 @@ oc() {
   )
 }
 
-alias oc-serve='oc serve --hostname "0.0.0.0"'
-alias oc-attach="oc attach localhost:4096 --dir ."
+tvo() {
+  local selection=$(tv opencode)
+  
+  if [ -n "$selection" ]; then
+    local session_id=$(echo "$selection" | grep -o 'ses_[a-zA-Z0-9]*')
+    local session_dir=$(echo "$selection" | awk '{print $1}')
+
+    cd "$session_dir" && oc -s "$session_id"
+  fi
+}
+
+alias ocs='oc serve --port 4096 --hostname "0.0.0.0"'
+alias oca="oc attach localhost:4096 --dir ."
 alias oc-login="oc auth login"
 alias oc-config="code ~/.config/opencode"
 alias oc-zen="open https://opencode.ai/zen"

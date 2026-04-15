@@ -1,0 +1,6 @@
+[metadata]
+name = "opencode"
+description = "Browse and attach to OpenCode sessions"
+
+[source]
+command = "bun run ~/.config/opencode/sessions.ts"
