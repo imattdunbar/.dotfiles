@@ -57,9 +57,12 @@
     // Provider + Model ID search: https://models.dev
     "opencode": {
       "whitelist": [
-        "kimi-k2.5"
+        // "kimi-k2.5"
         // "gpt-5.4-nano"
       ]
+    },
+    "opencode-go": {
+      "whitelist": ["glm-5.1", "kimi-k2.5"]
     },
     "openrouter": {
       "whitelist": [
