@@ -74,9 +74,9 @@
       "whitelist": [
         "gemini-3-flash-preview",
         "gemini-3.1-pro-preview",
-        "gpt-5.3-codex"
-        // "claude-sonnet-4.6",
-        // "claude-opus-4.6"
+        // "gpt-5.3-codex"
+        "claude-sonnet-4.6",
+        "claude-opus-4.6"
       ]
     },
     "cloudflare-workers-ai": {
