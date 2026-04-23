@@ -51,6 +51,11 @@ fsb() {
 # Fetch the latest remote of the branch for the local branch, then merge
 gmerge() { git fetch origin "$1":"$1" && git merge "$1"; }
 
+# Fetch the latest version of main and merge it with the current branch, use automated commit message
+merge-main() {
+  git fetch origin main --prune && git merge --no-edit origin/main
+}
+
 grf() {
   git restore --source=HEAD --staged --worktree $1
 }
