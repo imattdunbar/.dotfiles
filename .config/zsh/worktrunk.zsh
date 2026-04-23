@@ -27,3 +27,6 @@ wt_switch() { wt switch --create "$@" 2>/dev/null || wt switch "$@"; }
 
 alias wts="wt_switch"
 alias wt-switch="wt_switch"
+
+alias wtl="wt list"
+alias wtd="wt remove"

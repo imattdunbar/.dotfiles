@@ -131,6 +131,15 @@ if [[ -z "$TMUX" ]]; then
     set_terminal_title
 fi
 
+# Utility to get the size of a directory, no params means current, can pass in multiple paths
+sizeof() {
+  if [[ $# -eq 0 ]]; then
+    du -sh .
+  else
+    du -sh -- "$@"
+  fi
+}
+
 # Not used - keeping for reference to patch icons
 # patchalacritty() {
 #   cp ~/.config/alacritty/alacritty.icns /Applications/Alacritty.app/Contents/Resources/alacritty.icns
