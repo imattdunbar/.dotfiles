@@ -34,7 +34,14 @@ alias oc-cache="code ~/.cache/opencode"
 alias oc-nuke="rm -rf ~/.local/share/opencode ~/.local/share/opencode/bin ~/.local/share/opencode/log ~/.cache/opencode ~/.config/opencode ~/.local/state/opencode"
 
 add-skill() { bunx skills add "$1" --agent opencode -y; }
+
+# Lists models I have whitelisted
 oc-models() { oc models | tr -d '\r' | fzf; }
+
+# Lists all models available for a provider (points to empty config dir so no whitelist is enforced)
+oc-allmodels() {
+  XDG_CONFIG_HOME=/tmp/opencode-empty-config oc models "$@" | tr -d '\r' | fzf
+}
 
 # List OpenCode processes
 oc-list() {
