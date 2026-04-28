@@ -1,14 +1,15 @@
 skip-commit-generation-prompt = true
 
-# [pre-switch]
-# fetch = "git fetch --prune --tags"
-
+# Pre-Switch runs every time you switch to another worktree
 # When switching to a worktree make sure the ignored files (.env) are copied from the root
 # NOTE: This will not overwrite root -> worktree if it's already been copied
 [post-switch]
 copy = "wt step copy-ignored"
 
+# Pre-Start runs when a new worktree is created
 # Before creating the worktree and cloning, fetch the branch & copy gitignored files
-[pre-start]
+[[pre-start]]
 fetch = "git fetch --prune --tags"
+
+[[pre-start]]
 copy = "wt step copy-ignored"
