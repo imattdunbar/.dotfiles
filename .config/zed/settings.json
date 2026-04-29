@@ -57,13 +57,13 @@
   },
   "languages": {
     "TypeScript": {
-      "language_servers": ["typescript-language-server", "!vtsls", "..."]
+      "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
     },
     "TSX": {
-      "language_servers": ["typescript-language-server", "!vtsls", "..."]
+      "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
     },
     "JavaScript": {
-      "language_servers": ["typescript-language-server", "!vtsls", "..."]
+      "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
     },
     "Prisma": {
       "format_on_save": "on",
