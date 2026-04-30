@@ -39,6 +39,7 @@ alias gdt="git difftool HEAD"
 alias gmt="git mergetool"
 alias gl="git log --oneline"
 alias gf="git fetch"
+alias gpr="bun run ~/.config/other/scripts/gpr.ts"
 alias newrepo="open https://github.com/new"
 
 # Ignore local changes to a file that's already in git
@@ -54,7 +55,7 @@ alias git-unskip="git update-index --no-skip-worktree"
 # Git Utils
 alias clearorig="find . -name '*.orig' -delete"
 alias clearignored="git rm -r --cached . && git add ."
-alias repo="go run ~/.config/other/scripts/repo.go"
+alias repo="bun run ~/.config/other/scripts/repo.ts"
 alias gdb="git branch -D \$(git branch | fzf)"
 alias squash-all='git reset $(git commit-tree HEAD^{tree} -m "Squashed")'
 
