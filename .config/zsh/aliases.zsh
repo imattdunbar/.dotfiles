@@ -215,3 +215,4 @@ alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfil
 
 # Misc
 alias restart-raycast="sh ~/.config/other/scripts/restart_raycast.sh"
+alias npmx="open https://npmx.dev"
