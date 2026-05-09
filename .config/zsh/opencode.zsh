@@ -23,6 +23,7 @@ tvo() {
 
 alias ocs='oc serve --port 4096 --hostname "0.0.0.0"'
 alias oca="oc attach localhost:4096 --dir ."
+alias oc-upgrade="oc upgrade"
 alias oc-login="oc auth login"
 alias oc-config="code ~/.config/opencode"
 alias oc-zen="open https://opencode.ai/zen"
