@@ -23,7 +23,10 @@ alias wtm="wt_merge"
 alias wt-merge="wt_merge"
 
 # Helper around switching worktree to the branch and if it's not a valid branch yet, creates the branch
-wt_switch() { wt switch --create "$@" 2>/dev/null || wt switch "$@"; }
+# Switch comes first because it will try to switch to a remote branch first, but if it doesn't exist it will create the branch + tree locally
+wt_switch() {
+  wt switch "$@" 2>/dev/null || wt switch --create "$@"
+}
 
 alias wts="wt_switch"
 alias wt-switch="wt_switch"
