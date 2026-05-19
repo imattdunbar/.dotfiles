@@ -38,7 +38,7 @@ alias gs="git status"
 alias gdt="git difftool HEAD"
 alias gmt="git mergetool"
 alias gl="git log --oneline"
-alias gf="git fetch"
+alias gf="git fetch --all"
 alias gpr="bun run ~/.config/other/scripts/gpr.ts"
 alias newrepo="open https://github.com/new"
 
