@@ -4,6 +4,41 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Disable hide and fullscreen shortcuts",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": ["control", "command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Hyper + C to CMD + `",
                         "manipulators": [
                             {
