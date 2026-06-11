@@ -10,8 +10,7 @@
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["any"]
+                                        "mandatory": ["command"]
                                     }
                                 },
                                 "type": "basic"
@@ -20,8 +19,7 @@
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
-                                        "mandatory": ["control", "command"],
-                                        "optional": ["any"]
+                                        "mandatory": ["control", "command"]
                                     }
                                 },
                                 "type": "basic"
