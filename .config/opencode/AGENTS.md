@@ -29,26 +29,6 @@ you cut will be cut again.
 - Before proposing refactors, ask first. Default to "surgical fix only."
 - Only if you feel VERY strongly about something, you can mention it AFTER obeying the rules above.
 
-## BROWSER & WEB TASKS
-
-**IF** the user request involves:
-
-- Visiting a website (e.g., "Go to google.com")
-- Scraping or reading documentation from a URL
-- Running end-to-end (E2E) tests
-- Taking screenshots or visual inspection
-
-**AND** the request is **NOT** related to GitHub Repositories:
-
-- **Exclusion Rule:** If the URL is a GitHub repository (e.g., `github.com/user/repo`) and the goal is to search code, read files, or check commits, **DO NOT** use the browser agent.
-- **Action:** Instead, use your native **gitmcp** tool to inspect the repository directly.
-
-**THEN** you must:
-
-1.  **STOP** attempting to use tools yourself.
-2.  **DELEGATE** the task immediately to the `@browser` subagent.
-3.  **INSTRUCT** the `@browser` agent with the specific goal (e.g., "@browser please navigate to X and retrieve the text from the header").
-
 ## CODE GENERATION PROTOCOL (STRICT)
 
 **CRITICAL INSTRUCTION: PLAN MODE == CODE MODE**
@@ -64,6 +44,7 @@ When operating in "Plan Mode" or answering complex queries, you are strictly FOR
 - **Conciseness:** Do not offer conversational filler ("Here is the code...", "I have analyzed...").
 - **No Apologies:** Do not apologize for errors or incomplete logic. Just output the corrected or drafted code.
 - **Context Awareness:** Always read related files before editing to ensure consistency.
+- **No Diff Formatting:** Always show code I requested in your responses with language aware syntax highlighting, NEVER a green/red git diff style.
 
 **Safety & Simplicity:**
 
