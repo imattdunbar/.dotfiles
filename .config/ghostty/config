@@ -76,15 +76,18 @@ keybind = cmd+shift+b=text:\x10
 
 # Keybind -> Text input
 
-# keybind = cmd+e=text:tv tmux-windows\n
+# keybind = cmd+e=text:tv tmux-windows\r
 
-keybind = cmd+shift+d=text:gdb\n
-keybind = cmd+shift+x=text:exit\n
-keybind = ctrl+d=text:td\n
+# \r = Pressing Enter AKA Return
+
+keybind = cmd+shift+d=text:gdb\r
+keybind = cmd+shift+x=text:exit\r
+keybind = ctrl+d=text:td\r
 
 # CMD + Shift + C => Copy current path
 
-keybind = cmd+shift+c=text:pwd | pbcopy\n
+keybind = cmd+shift+c=text:pwd | pbcopy\r
+keybind = cmd+enter=ignore
 
 # Quick Terminal
 
@@ -92,4 +95,4 @@ keybind = global:opt+q=toggle_quick_terminal
 quick-terminal-animation-duration=0
 quick-terminal-position=center
 
-keybind = shift+enter=text:\n
+keybind = shift+enter=text:\r
