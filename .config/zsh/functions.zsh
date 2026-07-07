@@ -56,6 +56,10 @@ merge-main() {
   git fetch origin main --prune && git merge --no-edit origin/main
 }
 
+rebase-main() {
+  git fetch origin main && git rebase origin/main
+}
+
 grf() {
   git restore --source=HEAD --staged --worktree $1
 }

@@ -25,8 +25,11 @@ macos-titlebar-style = tabs
 window-padding-x = 16
 window-padding-y = 0
 window-padding-color = extend
+
 # window-height = 48
+
 # window-width = 160
+
 window-save-state = always
 
 # General
@@ -63,20 +66,24 @@ keybind = cmd+l=text:\x02P
 # keybind = ctrl+z=text:\x02z
 
 # Make tmux see opt+d and opt+c
+
 keybind = opt+d=text:\x1bd
 keybind = opt+c=text:\x1bc
 
 # Map to Ctrl+P which triggers git branch picker in zsh
+
 keybind = cmd+shift+b=text:\x10
 
 # Keybind -> Text input
 
-keybind = cmd+e=text:tv tmux-windows\n
+# keybind = cmd+e=text:tv tmux-windows\n
+
 keybind = cmd+shift+d=text:gdb\n
 keybind = cmd+shift+x=text:exit\n
 keybind = ctrl+d=text:td\n
 
 # CMD + Shift + C => Copy current path
+
 keybind = cmd+shift+c=text:pwd | pbcopy\n
 
 # Quick Terminal
