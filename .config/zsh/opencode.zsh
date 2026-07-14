@@ -26,14 +26,17 @@ alias oca="oc attach http://localhost:4096 --dir ."
 alias oc-upgrade="oc upgrade"
 alias oc-login="oc auth login"
 alias oc-config="code ~/.config/opencode"
-alias oc-zen="open https://opencode.ai/zen"
-alias oc-or="open https://openrouter.ai/settings/credits"
 alias oc-auth="bun run ~/.config/opencode/auth.ts"
 alias oc-secrets="bun run ~/.config/opencode/secrets/load.ts"
 alias oc-db-mcp="bun run ~/.config/opencode/db-mcp.ts"
 alias oc-logs="code ~/.local/share/opencode/log"
 alias oc-cache="code ~/.cache/opencode"
 alias oc-nuke="rm -rf ~/.local/share/opencode ~/.local/share/opencode/bin ~/.local/share/opencode/log ~/.cache/opencode ~/.config/opencode ~/.local/state/opencode"
+
+# Links
+alias oc-zen="open https://opencode.ai/zen"
+alias oc-or="open https://openrouter.ai/settings/credits"
+alias oc-gh="open https://github.com/anomalyco/opencode"
 
 add-skill() { bunx skills add "$1" --agent opencode -y; }
 
