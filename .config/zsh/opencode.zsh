@@ -10,17 +10,6 @@ oc() {
   )
 }
 
-tvo() {
-  local selection=$(tv opencode)
-  
-  if [ -n "$selection" ]; then
-    local session_id=$(echo "$selection" | grep -o 'ses_[a-zA-Z0-9]*')
-    local session_dir=$(echo "$selection" | awk '{print $1}')
-
-    cd "$session_dir" && oc -s "$session_id"
-  fi
-}
-
 alias ocs='oc serve --port 4096 --hostname "0.0.0.0"'
 alias oca="oc attach http://localhost:4096 --dir ."
 alias oc-upgrade="oc upgrade"

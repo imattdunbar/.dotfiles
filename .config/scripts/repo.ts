@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { $ } from 'bun'
 
 const remoteUrl = (await $`git remote get-url origin`.quiet().text()).trim();

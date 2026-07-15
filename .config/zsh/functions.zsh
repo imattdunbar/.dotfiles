@@ -148,16 +148,3 @@ sizeof() {
     du -sh -- "$@"
   fi
 }
-
-# Not used - keeping for reference to patch icons
-# patchalacritty() {
-#   cp ~/.config/alacritty/alacritty.icns /Applications/Alacritty.app/Contents/Resources/alacritty.icns
-#   touch /Applications/Alacritty.app
-#   sudo sh -c 'killall Finder && killall Dock'
-# }
-
-# patchwezterm() {
-#   cp ~/.config/wezterm/wezterm.icns /Applications/WezTerm.app/Contents/Resources/terminal.icns
-#   touch /Applications/WezTerm.app
-#   sudo sh -c 'killall Finder && killall Dock'
-# }

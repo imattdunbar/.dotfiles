@@ -1,7 +1,3 @@
-#!/usr/bin/env bun
-
-// @ts-nocheck
-
 import { cp, mkdir, mkdtemp, readdir, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";

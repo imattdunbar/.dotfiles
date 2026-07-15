@@ -9,9 +9,6 @@ fi
 # Starship
 eval "$(starship init zsh)"
 
-# direnv
-eval "$(direnv hook zsh)"
-
 # Zoxide
 eval "$(zoxide init zsh)"
 
@@ -20,6 +17,7 @@ eval "$(atuin init zsh)"
 
 # Source
 source $HOME/.config/zsh/aliases.zsh
+source $HOME/.config/zsh/scripts.zsh
 source $HOME/.config/zsh/docker.zsh
 source $HOME/.config/zsh/functions.zsh
 source $HOME/.config/zsh/keybinds.zsh

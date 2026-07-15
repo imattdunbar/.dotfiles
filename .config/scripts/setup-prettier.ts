@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { $ } from 'bun'
 
 const prettierConfig = await Bun.file(import.meta.dir + '/.prettierrc').text()

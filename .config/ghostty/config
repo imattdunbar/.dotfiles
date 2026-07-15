@@ -1,9 +1,7 @@
 # Docs = https://ghostty.org/docs/config/reference
-
 # Good example for reference = https://github.com/exosyphon/dotfiles/blob/main/ghostty.conf
 
 # Font
-
 font-family = "FiraCode Nerd Font Mono"
 font-thicken = true
 font-variation = wght=500
@@ -13,27 +11,21 @@ font-feature = -calt
 font-feature = -dlig
 
 # Colors
-
 background-opacity = 0.85
 background = #000000
 foreground = #41FF00
 background-blur-radius = 5
 
 # Window
-
 macos-titlebar-style = tabs
 window-padding-x = 16
 window-padding-y = 0
 window-padding-color = extend
-
 # window-height = 48
-
 # window-width = 160
-
 window-save-state = always
 
 # General
-
 cursor-color = #FFFFFF
 cursor-style = block
 cursor-style-blink = false
@@ -44,55 +36,44 @@ window-inherit-working-directory = false
 working-directory = home
 
 # Ask before quitting
-
 confirm-close-surface = false
+
+# Quick Terminal
+keybind = global:opt+q=toggle_quick_terminal
+quick-terminal-animation-duration=0
+quick-terminal-position=center
 
 # -- Keybinds --
 
 # Sends ctrl+b then e -- used in tmux, see tmux.conf
-
 keybind = cmd+e=text:\x02e
 
 # Sends ctrl+b then opt+shift+p -- saves tmux pane log
-
 keybind = cmd+p=text:\x02\x1bP
 
 # Sends ctrl+b then opt+p -- starts writing tmux pane log
-
 keybind = cmd+l=text:\x02P
 
 # Sends ctrl+b then z
-
 # keybind = ctrl+z=text:\x02z
 
 # Make tmux see opt+d and opt+c
-
 keybind = opt+d=text:\x1bd
 keybind = opt+c=text:\x1bc
 
-# Map to Ctrl+P which triggers git branch picker in zsh
-
+# Map to Ctrl+P which triggers git branch picker in zsh (see keybinds.zsh)
 keybind = cmd+shift+b=text:\x10
 
 # Keybind -> Text input
 
-# keybind = cmd+e=text:tv tmux-windows\r
-
 # \r = Pressing Enter AKA Return
-
 keybind = cmd+shift+d=text:gdb\r
 keybind = cmd+shift+x=text:exit\r
 keybind = ctrl+d=text:td\r
 
 # CMD + Shift + C => Copy current path
-
 keybind = cmd+shift+c=text:pwd | pbcopy\r
+
+# Ignore CMD+Enter, default takes Ghostty fullscreen
 keybind = cmd+enter=ignore
 
-# Quick Terminal
-
-keybind = global:opt+q=toggle_quick_terminal
-quick-terminal-animation-duration=0
-quick-terminal-position=center
-
-keybind = shift+enter=text:\r

@@ -39,7 +39,6 @@ alias gdt="git difftool HEAD"
 alias gmt="git mergetool"
 alias gl="git log --oneline"
 alias gf="git fetch --all"
-alias gpr="bun run ~/.config/other/scripts/gpr.ts"
 alias newrepo="open https://github.com/new"
 
 # Ignore local changes to a file that's already in git
@@ -55,7 +54,6 @@ alias git-unskip="git update-index --no-skip-worktree"
 # Git Utils
 alias clearorig="find . -name '*.orig' -delete"
 alias clearignored="git rm -r --cached . && git add ."
-alias repo="bun run ~/.config/other/scripts/repo.ts"
 alias gdb="git branch -D \$(git branch | fzf)"
 alias squash-all='git reset $(git commit-tree HEAD^{tree} -m "Squashed")'
 
@@ -88,9 +86,6 @@ command -v z >/dev/null && alias cd="z"
 
 # macOS
 alias disablegatekeeper="sudo spctl --master-disable"
-alias brew-bundle-install="brew bundle install --file ~/.config/other/Brewfile"
-alias brew-bundle-dump="brew bundle dump --force --file ~/.config/other/Brewfile; sed -i '' '/^vscode/d' ~/.config/other/Brewfile
-"
 
 # xattr file_path
 # to check if app has com.apple.quarantine
@@ -150,10 +145,6 @@ alias nukeios="nukedd && nukespm && nukecc && nukesc"
 alias setup-swift-format="cp $HOME/.config/other/xcode/.swift-format $PWD/.swift-format"
 alias prettyswift="swift-format format . -i --recursive" # in project dir
 
-# Xcode
-alias xcode-backup="go run ~/.config/other/xcode/xcode-sync.go --backup"
-alias xcode-restore="go run ~/.config/other/xcode/xcode-sync.go --restore"
-
 # Android
 alias ktlint="./gradlew ktlintFormat"
 alias kill-ae="kill \$(pgrep -f qemu-system-aarch64) && echo 'Android emulator killed.'"
@@ -182,8 +173,6 @@ alias bli="bun local:init"
 alias bgp="bun pm ls -g"
 alias bgpu="bun update --global"
 alias bup="bun update --recursive --interactive"
-
-alias setup-prettier="bun run $HOME/.config/other/scripts/setup-prettier.ts"
 
 # Package
 alias package-scripts="jq -r '.scripts | to_entries[] | \"\(.key): \(.value)\"' package.json | fzf"
@@ -214,9 +203,7 @@ alias caddy-reload="caddy reload --config /opt/homebrew/etc/caddy/Caddyfile"
 alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfile"
 
 # Misc
-alias restart-raycast="sh ~/.config/other/scripts/restart_raycast.sh"
 alias npmx="open https://npmx.dev"
 alias audiobook="open https://www.audible.com/library"
-alias gskill="bun run $HOME/.config/other/scripts/gskill.ts"
 
 alias unfuck-macos='killall Dock Finder SystemUIServer ControlCenter NotificationCenter; killall cfprefsd; /System/Library/CoreServices/Dock.app/Contents/MacOS/Dock >/dev/null 2>&1 & disown'
