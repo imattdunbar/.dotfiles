@@ -183,7 +183,7 @@ alias bgp="bun pm ls -g"
 alias bgpu="bun update --global"
 alias bup="bun update --recursive --interactive"
 
-alias setup-prettier="bun run $HOME/.config/other/setup-prettier.ts"
+alias setup-prettier="bun run $HOME/.config/other/scripts/setup-prettier.ts"
 
 # Package
 alias package-scripts="jq -r '.scripts | to_entries[] | \"\(.key): \(.value)\"' package.json | fzf"
@@ -217,5 +217,6 @@ alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfil
 alias restart-raycast="sh ~/.config/other/scripts/restart_raycast.sh"
 alias npmx="open https://npmx.dev"
 alias audiobook="open https://www.audible.com/library"
+alias gskill="bun run $HOME/.config/other/scripts/gskill.ts"
 
 alias unfuck-macos='killall Dock Finder SystemUIServer ControlCenter NotificationCenter; killall cfprefsd; /System/Library/CoreServices/Dock.app/Contents/MacOS/Dock >/dev/null 2>&1 & disown'
