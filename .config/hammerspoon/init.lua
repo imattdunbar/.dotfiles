@@ -7,7 +7,7 @@ keyboardController = {}
 local K = keyboardController
 
 -- ============================================================================
--- 1. Native Setup: Caps Lock No Action + Physical Caps Lock to F18
+-- 1. Caps Lock to F18
 -- ============================================================================
 
 function K.configureKeyboard()
