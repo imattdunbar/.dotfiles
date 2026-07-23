@@ -127,27 +127,6 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Convert Text to Si
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Lock Screen" "@\$L"
 killall pbs
 
-# Set "Move focus to next window" keyboard shortcut to Hyper + C
-# Hyper = Cmd + Ctrl + Opt + Shift
-# Key code for 'C' = 8
-# Combined modifier value = 1835008 (Cmd=1048576 + Ctrl=262144 + Opt=524288 + Shift=131072)
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 "
-<dict>
-    <key>enabled</key>
-    <true/>
-    <key>value</key>
-    <dict>
-        <key>parameters</key>
-        <array>
-            <integer>99</integer>
-            <integer>8</integer>
-            <integer>1835008</integer>
-        </array>
-        <key>type</key>
-        <string>standard</string>
-    </dict>
-</dict>"
-
 # Restart the system UI server to apply changes
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
@@ -157,12 +136,17 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{ena
 # Disable alternate Spotlight shortcut to avoid conflicts
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 '{enabled = NO;}'
 
+# Override hammerspoon config 
+defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
+
 # Refresh preferences
 killall cfprefsd
 
 # Dock Icon size
 defaults write com.apple.dock tilesize -int 48
 killall Dock
+
+echo "Reminder to make sure Hammerspoon is installed and that Move Focus to Next Window is set to CMD+backtick"
 
 echo "If something failed, make sure to give Ghostty full disk access. Settings -> Privacy & Security -> Full Disk Access"
 echo "Done. Should probably restart now."

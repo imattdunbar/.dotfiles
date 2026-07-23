@@ -18,7 +18,7 @@ background-blur-radius = 5
 
 # Window
 macos-titlebar-style = tabs
-window-padding-x = 16
+window-padding-x = 16,0
 window-padding-y = 0
 window-padding-color = extend
 # window-height = 48
@@ -76,4 +76,3 @@ keybind = cmd+shift+c=text:pwd | pbcopy\r
 
 # Ignore CMD+Enter, default takes Ghostty fullscreen
 keybind = cmd+enter=ignore
-

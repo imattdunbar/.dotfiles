@@ -1,0 +1,72 @@
+onboarding = false
+
+[terminal]
+default_shell = "zsh"
+shell_mode = "auto"
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+b"
+
+# Preserve your prefix-free pane navigation.
+focus_pane_left = "ctrl+h"
+focus_pane_down = "ctrl+j"
+focus_pane_up = "ctrl+k"
+focus_pane_right = "ctrl+l"
+
+# Herdr's built-in navigator replaces both tmux-fzf and your global
+# session/window picker. cmd+e in Ghostty already emits prefix+e.
+goto = ["prefix+f", "prefix+e"]
+
+# Keep prefix+r available for your repo command.
+resize_mode = "prefix+alt+r"
+
+# Already Herdr defaults, shown for correspondence with tmux.
+close_pane = "prefix+x"
+zoom = "prefix+z"
+new_tab = "prefix+c"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+switch_tab = "prefix+1..9"
+detach = "prefix+q"
+
+[[keys.command]]
+key = "prefix+o"
+type = "shell"
+command = 'code "$HERDR_ACTIVE_PANE_CWD"'
+description = "open pane directory in VSCode"
+
+[[keys.command]]
+key = "prefix+r"
+type = "shell"
+command = 'zsh -i -c "repo"'
+description = "open repository remote"
+
+[[keys.command]]
+key = "prefix+g"
+type = "popup"
+command = 'exec "${SHELL:-zsh}"'
+description = "open scratch terminal"
+width = "80%"
+height = "80%"
+
+[theme]
+name = "catppuccin"
+
+[theme.custom]
+panel_bg = "reset"
+
+[ui]
+agent_panel_sort = "spaces"
+mouse_capture = true
+pane_borders = true
+pane_gaps = true
+
+[ui.sound]
+enabled = false
+
+[advanced]
+scrollback_limit_bytes = 10000000
+
+[experimental]
+pane_history = true
