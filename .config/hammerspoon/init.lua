@@ -166,6 +166,14 @@ K.hyperMode:bind({}, "g", nil, function()
 	end)
 end)
 
+-- Caps + - -> Option + Command + -
+-- Trigger after the physical - key is released.
+K.hyperMode:bind({}, "-", nil, function()
+	hs.timer.doAfter(0.01, function()
+		hs.eventtap.keyStroke({ "alt", "cmd" }, "-", 0)
+	end)
+end)
+
 -- ============================================================================
 -- 4. Disable Annoying Shortcuts
 -- ============================================================================
