@@ -80,8 +80,8 @@
       "light": "none"
     },
     "backgroundPanel": {
-      "dark": "darkStep2",
-      "light": "lightStep2"
+      "dark": "none",
+      "light": "none"
     },
     "backgroundElement": {
       "dark": "darkStep3",
