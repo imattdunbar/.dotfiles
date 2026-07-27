@@ -150,29 +150,32 @@ K.hyperMode:bind({}, "space", function()
 	hs.eventtap.event.newSystemKeyEvent("PLAY", false):post()
 end)
 
--- Caps + F -> Option + Command + F
--- Trigger after the physical F key is released.
-K.hyperMode:bind({}, "f", nil, function()
-	hs.timer.doAfter(0.01, function()
-		hs.eventtap.keyStroke({ "alt", "cmd" }, "f", 0)
-	end)
-end)
+local commandOptionKeys = {
+	"f",
+	"g",
+	"-",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+}
 
--- Caps + G -> Option + Command + G
--- Trigger after the physical G key is released.
-K.hyperMode:bind({}, "g", nil, function()
-	hs.timer.doAfter(0.01, function()
-		hs.eventtap.keyStroke({ "alt", "cmd" }, "g", 0)
+local function bindCommandOptionKey(key)
+	K.hyperMode:bind({}, key, nil, function()
+		hs.timer.doAfter(0.01, function()
+			hs.eventtap.keyStroke({ "cmd", "alt" }, key, 0)
+		end)
 	end)
-end)
+end
 
--- Caps + - -> Option + Command + -
--- Trigger after the physical - key is released.
-K.hyperMode:bind({}, "-", nil, function()
-	hs.timer.doAfter(0.01, function()
-		hs.eventtap.keyStroke({ "alt", "cmd" }, "-", 0)
-	end)
-end)
+for _, key in ipairs(commandOptionKeys) do
+	bindCommandOptionKey(key)
+end
 
 -- ============================================================================
 -- 4. Disable Annoying Shortcuts

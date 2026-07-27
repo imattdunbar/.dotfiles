@@ -30,6 +30,9 @@ next_tab = "prefix+n"
 switch_tab = "prefix+1..9"
 detach = "prefix+q"
 
+# Switch workspace = Caps + 1-9
+switch_workspace = "cmd+alt+1..9"
+
 [[keys.command]]
 key = "prefix+o"
 type = "shell"
@@ -52,6 +55,7 @@ height = "80%"
 
 [theme]
 name = "catppuccin"
+auto_switch = false
 
 [theme.custom]
 panel_bg = "reset"
@@ -61,6 +65,9 @@ agent_panel_sort = "spaces"
 mouse_capture = true
 pane_borders = true
 pane_gaps = true
+
+[ui.sidebar.spaces]
+row_gap = 1
 
 [ui.sound]
 enabled = false
