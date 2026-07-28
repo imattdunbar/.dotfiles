@@ -11,15 +11,7 @@ type SnapshotResponse = {
   }
 }
 
-type TitleResponse = {
-  result: {
-    reason: string
-  }
-}
-
 const herdr = '/opt/homebrew/bin/herdr'
-let lastTitle: string | null = null
-let hasForegroundClient = false
 
 while (true) {
   const snapshotProcess = Bun.spawn([herdr, 'api', 'snapshot'], {
@@ -29,8 +21,6 @@ while (true) {
   const snapshotText = await new Response(snapshotProcess.stdout).text()
 
   if ((await snapshotProcess.exited) !== 0) {
-    lastTitle = null
-    hasForegroundClient = false
     await Bun.sleep(1000)
     continue
   }
@@ -44,24 +34,12 @@ while (true) {
     continue
   }
 
-  const title = `${workspace.label} | ${tab.label}`
+  const titleProcess = Bun.spawn([herdr, 'terminal', 'title', 'set', `${workspace.label} | ${tab.label}`], {
+    stdout: 'ignore',
+    stderr: 'ignore'
+  })
 
-  if (title !== lastTitle || !hasForegroundClient) {
-    const titleProcess = Bun.spawn([herdr, 'terminal', 'title', 'set', title], {
-      stdout: 'pipe',
-      stderr: 'ignore'
-    })
-    const titleText = await new Response(titleProcess.stdout).text()
-
-    if ((await titleProcess.exited) === 0) {
-      const response = JSON.parse(titleText) as TitleResponse
-      hasForegroundClient = response.result.reason !== 'no_foreground_client'
-
-      if (hasForegroundClient) {
-        lastTitle = title
-      }
-    }
-  }
+  await titleProcess.exited
 
   await Bun.sleep(1000)
 }
