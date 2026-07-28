@@ -120,12 +120,6 @@ alias t-plugins="sh ~/.config/tmux/plugins/tpm/scripts/install_plugins.sh"
 alias t-cheat="open https://tmuxcheatsheet.com"
 alias nuke-tmux="rm -rf ~/.config/tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm && t-plugins && t-source"
 
-# herdr
-alias h="herdr"
-alias h-reload="herdr config check && herdr server reload-config"
-alias h-nw='herdr workspace rename "$HERDR_WORKSPACE_ID" > /dev/null'
-alias h-nt='herdr tab rename "$HERDR_TAB_ID" > /dev/null'
-
 # AWS
 alias aws-whoami="aws sts get-caller-identity"
 alias aws-config="code ~/.aws"

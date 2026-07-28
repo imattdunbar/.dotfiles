@@ -17,6 +17,7 @@ eval "$(atuin init zsh)"
 
 # Source
 source $HOME/.config/zsh/aliases.zsh
+source $HOME/.config/zsh/herdr.zsh
 source $HOME/.config/zsh/scripts.zsh
 source $HOME/.config/zsh/docker.zsh
 source $HOME/.config/zsh/functions.zsh
