@@ -1,0 +1,29 @@
+id = "local.window-title"
+name = "Window Title"
+version = "0.1.0"
+min_herdr_version = "0.7.5"
+description = "Set the terminal title from the active workspace and tab"
+platforms = ["macos"]
+
+[[startup]]
+command = ["bun", "update-title.ts"]
+
+[[events]]
+on = "workspace.focused"
+command = ["bun", "update-title.ts"]
+
+[[events]]
+on = "workspace.renamed"
+command = ["bun", "update-title.ts"]
+
+[[events]]
+on = "workspace.updated"
+command = ["bun", "update-title.ts"]
+
+[[events]]
+on = "tab.focused"
+command = ["bun", "update-title.ts"]
+
+[[events]]
+on = "tab.renamed"
+command = ["bun", "update-title.ts"]

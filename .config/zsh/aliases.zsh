@@ -122,7 +122,7 @@ alias nuke-tmux="rm -rf ~/.config/tmux/plugins && git clone https://github.com/t
 
 # herdr
 alias h="herdr"
-alias h-reload="herdr config check && herdr server reload-config"
+alias h-reload="herdr config check && herdr server reload-config && herdr plugin link ~/.config/herdr/plugins/window-title --enabled"
 alias h-nw='herdr workspace rename "$HERDR_WORKSPACE_ID" > /dev/null'
 alias h-nt='herdr tab rename "$HERDR_TAB_ID" > /dev/null'
 

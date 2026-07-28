@@ -27,7 +27,7 @@ zoom = "prefix+z"
 new_tab = "prefix+c"
 previous_tab = "prefix+p"
 next_tab = "prefix+n"
-switch_tab = "prefix+1..9"
+switch_tab = ["prefix+1..9", "alt+1..9"] # option + 1-9 also switches tabs
 detach = "prefix+q"
 
 # Switch workspace = Caps + 1-9
