@@ -2,6 +2,7 @@
   "name": "scripts",
   "private": true,
   "devDependencies": {
+    "@jxa/global-type": "^1.4.0",
     "@types/bun": "latest",
     "prettier": "^3.9.5",
     "prettier-plugin-tailwindcss": "^0.8.1"

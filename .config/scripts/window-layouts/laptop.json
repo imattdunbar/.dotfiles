@@ -1,0 +1,156 @@
+{
+  "timestamp": "2026-07-28T18:01:09.377Z",
+  "layoutName": "docked",
+  "windows": [
+    {
+      "bundleId": "com.google.Chrome",
+      "appName": "Google Chrome",
+      "title": "Postman - Browser Based Auth - Google Chrome - Matthew (Purchaser)",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.microsoft.VSCode",
+      "appName": "Code",
+      "title": "init.lua — config (Workspace)",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.microsoft.VSCode",
+      "appName": "Code",
+      "title": "laptop.json — scripts",
+      "windowIndex": 1,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.tinyspeck.slackmacgap",
+      "appName": "Slack",
+      "title": "dev (Channel) - purchaser - Slack",
+      "windowIndex": 0,
+      "x": 864,
+      "y": 33,
+      "w": 864,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.mitchellh.ghostty",
+      "appName": "ghostty",
+      "title": "misc | 1",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.apple.MobileSMS",
+      "appName": "Messages",
+      "title": "Alex Mesmer",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 864,
+      "h": 1010
+    },
+    {
+      "bundleId": "dev.zed.Zed",
+      "appName": "zed",
+      "title": "empty project",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.spotify.client",
+      "appName": "Spotify",
+      "title": "Spotify Premium",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.tinyapp.TablePlus",
+      "appName": "TablePlus",
+      "title": "Purchaser API : purchaserapidevelopment - PostgreSQL 16.11",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.apple.mail",
+      "appName": "Mail",
+      "title": "All Inboxes – 5,384 messages",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.apple.iCal",
+      "appName": "Calendar",
+      "title": "Calendar",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.hnc.Discord",
+      "appName": "Discord",
+      "title": "Friends - Discord",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "net.imput.helium",
+      "appName": "Helium",
+      "title": "New Tab - Helium",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.postmanlabs.mac",
+      "appName": "Postman",
+      "title": "Overview - SeasonView",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.google.GeminiMacOS",
+      "appName": "Gemini",
+      "title": "Gemini — Raycast Window Management Docking Issues",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    }
+  ]
+}
