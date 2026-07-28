@@ -68,6 +68,7 @@ pane_gaps = true
 
 [ui.sidebar.spaces]
 row_gap = 1
+rows = [["workspace"]]
 
 [ui.sound]
 enabled = false

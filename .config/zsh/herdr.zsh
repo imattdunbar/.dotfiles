@@ -1,5 +1,11 @@
 # herdr
-alias h="herdr"
+h() {
+    if [[ -n "$1" ]]; then
+        herdr --session "$1"
+        return
+    fi
+    herdr
+}
 alias h-reload="herdr config check && herdr server reload-config"
 alias h-nw='herdr workspace rename "$HERDR_WORKSPACE_ID" > /dev/null'
 alias h-nt='herdr tab rename "$HERDR_TAB_ID" > /dev/null'
