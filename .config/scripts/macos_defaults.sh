@@ -146,6 +146,21 @@ killall cfprefsd
 defaults write com.apple.dock tilesize -int 48
 killall Dock
 
+# Install and start the Herdr window title watcher
+mkdir -p "$HOME/Library/LaunchAgents"
+cp -f "$HOME/.config/herdr/com.dunbar.watch-herdr.plist" "$HOME/Library/LaunchAgents/com.dunbar.watch-herdr.plist"
+
+if launchctl print "gui/$(id -u)/com.dunbar.watch-herdr" >/dev/null 2>&1; then
+    launchctl bootout "gui/$(id -u)/com.dunbar.watch-herdr"
+
+    while launchctl print "gui/$(id -u)/com.dunbar.watch-herdr" >/dev/null 2>&1; do
+        sleep 0.1
+    done
+fi
+
+launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/com.dunbar.watch-herdr.plist"
+launchctl kickstart -k "gui/$(id -u)/com.dunbar.watch-herdr"
+
 echo "Reminder to make sure Hammerspoon is installed and that Move Focus to Next Window is set to CMD+backtick"
 
 echo "If something failed, make sure to give Ghostty full disk access. Settings -> Privacy & Security -> Full Disk Access"
