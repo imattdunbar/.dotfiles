@@ -127,17 +127,19 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Convert Text to Si
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Lock Screen" "@\$L"
 killall pbs
 
-# Restart the system UI server to apply changes
-/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+# Apparently the format of these preference settings in the plist were changed in macOS Tahoe, so if trying to set others like this it's probably a good idea to have an agent look at the before/after of the plist when setting them and copy over the edits like this.
 
-# Change Spotlight to Option+Space
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{enabled = YES; value = {parameters = (32, 49, 524288); type = "standard";};}'
+# Disable Spotlight search so Raycast can use CMD+Space
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>'
 
 # Disable alternate Spotlight shortcut to avoid conflicts
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 '{enabled = NO;}'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 '<dict><key>enabled</key><false/></dict>'
 
 # Override hammerspoon config 
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
+
+# Restart the system UI server to apply changes
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 # Refresh preferences
 killall cfprefsd
