@@ -56,6 +56,11 @@ merge-main() {
   git fetch origin main --prune && git merge --no-edit origin/main
 }
 
+# Fetch latest main, open difftool between what's currently on main and the current state of the branch
+diff-main() {
+  git fetch origin main && git difftool origin/main
+}
+
 rebase-main() {
   git fetch origin main && git rebase origin/main
 }
