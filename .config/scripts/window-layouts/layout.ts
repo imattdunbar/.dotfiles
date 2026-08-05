@@ -1,4 +1,3 @@
-import { $ } from 'bun'
 import { z } from 'zod'
 
 const windowSpecSchema = z.object({
@@ -22,6 +21,25 @@ const commandSchema = z.tuple([z.enum(['save', 'load']), z.enum(['docked.json', 
 
 export type WindowSpec = z.infer<typeof windowSpecSchema>
 export type LayoutPayload = z.infer<typeof layoutPayloadSchema>
+
+async function runJXA(script: string): Promise<string> {
+  const subprocess = Bun.spawn(['/usr/bin/osascript', '-l', 'JavaScript'], {
+    stdin: new Blob([script]),
+    stdout: 'pipe',
+    stderr: 'pipe'
+  })
+  const [exitCode, stdout, stderr] = await Promise.all([
+    subprocess.exited,
+    new Response(subprocess.stdout).text(),
+    new Response(subprocess.stderr).text()
+  ])
+
+  if (exitCode !== 0) {
+    throw new Error(stderr || `osascript exited with code ${exitCode}`)
+  }
+
+  return stdout
+}
 
 export function dumpWindowsJXA(): string {
   const sys = Application('System Events')
@@ -104,13 +122,13 @@ export function restoreWindowsJXA(specs: WindowSpec[]): void {
 }
 
 export async function captureLayout(layoutName: string): Promise<LayoutPayload> {
-  // Stringify the function implementation to pass to osascript JXA flag
+  // Stringify the function implementation to pass to osascript
   const script = `
     ${dumpWindowsJXA.toString()}
     dumpWindowsJXA();
   `
 
-  const raw = await $`osascript -l JavaScript -e ${script}`.text()
+  const raw = await runJXA(script)
   const windows: WindowSpec[] = JSON.parse(raw.trim())
 
   return {
@@ -127,7 +145,7 @@ export async function restoreLayout(layout: LayoutPayload): Promise<void> {
     restoreWindowsJXA(specs);
   `
 
-  await $`osascript -l JavaScript -e ${script}`
+  await runJXA(script)
 }
 
 const [command, layoutFile] = commandSchema.parse(Bun.argv.slice(2))

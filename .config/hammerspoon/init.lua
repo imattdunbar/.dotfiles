@@ -191,8 +191,8 @@ local function runBunLayout(action, layoutFile, onComplete)
 		K.layoutTask = nil
 
 		if exitCode ~= 0 then
-			hs.alert.show("Failed to " .. action .. ": " .. layoutFile)
-			print("Bun Error: " .. stdErr)
+			local errorMessage = stdErr ~= "" and stdErr or stdOut
+			hs.alert.show("Failed to " .. action .. ": " .. layoutFile .. "\n" .. errorMessage)
 			return
 		end
 
@@ -233,22 +233,24 @@ local function restartRaycast()
 	end, 0.1)
 end
 
--- Opt + Shift + 1/0 to save/load laptop config
+-- Opt + Shift + 1 to load laptop config
 hs.hotkey.bind({ "alt", "shift" }, "1", function()
 	runBunLayout("load", "laptop.json", restartRaycast)
 end)
 
+-- Opt + Shift + 0 to save laptop config
 hs.hotkey.bind({ "alt", "shift" }, "0", function()
 	runBunLayout("save", "laptop.json")
 end)
 
--- Opt + Shift + 2/9 to save/load docked config
-hs.hotkey.bind({ "alt", "shift" }, "9", function()
-	runBunLayout("save", "docked.json")
-end)
-
+-- Opt + Shift + 2 to save docked config
 hs.hotkey.bind({ "alt", "shift" }, "2", function()
 	runBunLayout("load", "docked.json", restartRaycast)
+end)
+
+-- Opt + Shift + 9 to load docked config
+hs.hotkey.bind({ "alt", "shift" }, "9", function()
+	runBunLayout("save", "docked.json")
 end)
 
 -- Opt + Shift + 5 to restart Raycast
