@@ -134,8 +134,23 @@ const [command, layoutFile] = commandSchema.parse(Bun.argv.slice(2))
 const layoutPath = `${import.meta.dir}/${layoutFile}`
 
 if (command === 'save') {
-  const layout = await captureLayout(layoutFile.replace('.json', ''))
-  await Bun.write(layoutPath, JSON.stringify(layout, null, 2))
+  const capturedLayout = await captureLayout(layoutFile.replace('.json', ''))
+  const existingLayout = layoutPayloadSchema.parse(await Bun.file(layoutPath).json())
+  const existingBundleIds = new Set(existingLayout.windows.map((window) => window.bundleId))
+  const newWindows = capturedLayout.windows.filter((window) => !existingBundleIds.has(window.bundleId))
+
+  await Bun.write(
+    layoutPath,
+    JSON.stringify(
+      {
+        ...existingLayout,
+        timestamp: capturedLayout.timestamp,
+        windows: [...existingLayout.windows, ...newWindows]
+      },
+      null,
+      2
+    )
+  )
 } else {
   const layout = layoutPayloadSchema.parse(await Bun.file(layoutPath).json())
   await restoreLayout(layout)

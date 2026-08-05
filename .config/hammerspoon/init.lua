@@ -178,25 +178,64 @@ for _, key in ipairs(commandOptionKeys) do
 end
 
 -- Bun layout runner function
-local function runBunLayout(action, layoutFile)
+local function runBunLayout(action, layoutFile, onComplete)
 	local bunPath = "/opt/homebrew/bin/bun"
 	local scriptPath = "/Users/matt/.config/scripts/window-layouts/layout.ts"
 
-	local task = hs.task.new(bunPath, function(exitCode, stdOut, stdErr)
-		if exitCode == 0 then
-			hs.alert.show("Layout " .. action .. " complete: " .. layoutFile)
-		else
+	if K.layoutTask and K.layoutTask:isRunning() then
+		hs.alert.show("A layout task is already running")
+		return
+	end
+
+	K.layoutTask = hs.task.new(bunPath, function(exitCode, stdOut, stdErr)
+		K.layoutTask = nil
+
+		if exitCode ~= 0 then
 			hs.alert.show("Failed to " .. action .. ": " .. layoutFile)
 			print("Bun Error: " .. stdErr)
+			return
+		end
+
+		hs.alert.show("Layout " .. action .. " complete: " .. layoutFile)
+
+		if onComplete then
+			onComplete()
 		end
 	end, { "run", scriptPath, action, layoutFile })
 
-	task:start()
+	if not K.layoutTask then
+		hs.alert.show("Failed to create layout task")
+		return
+	end
+
+	if not K.layoutTask:start() then
+		K.layoutTask = nil
+		hs.alert.show("Failed to start layout task")
+	end
+end
+
+-- Restart Raycast runner
+local function restartRaycast()
+	local raycast = hs.application.get("com.raycast.macos")
+
+	if raycast then
+		raycast:kill9()
+	end
+
+	K.raycastRestartTimer = hs.timer.waitUntil(function()
+		return hs.application.get("com.raycast.macos") == nil
+	end, function()
+		K.raycastRestartTimer = nil
+
+		if not hs.application.launchOrFocusByBundleID("com.raycast.macos") then
+			hs.alert.show("Failed to restart Raycast")
+		end
+	end, 0.1)
 end
 
 -- Opt + Shift + 1/0 to save/load laptop config
 hs.hotkey.bind({ "alt", "shift" }, "1", function()
-	runBunLayout("load", "laptop.json")
+	runBunLayout("load", "laptop.json", restartRaycast)
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "0", function()
@@ -209,21 +248,10 @@ hs.hotkey.bind({ "alt", "shift" }, "9", function()
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "2", function()
-	runBunLayout("load", "docked.json")
+	runBunLayout("load", "docked.json", restartRaycast)
 end)
 
 -- Opt + Shift + 5 to restart Raycast
-local function restartRaycast()
-	hs.task
-		.new("/Users/matt/.config/scripts/restart_raycast.sh", function(exitCode, stdOut, stdErr)
-			if exitCode ~= 0 then
-				hs.alert.show("Failed to restart Raycast")
-				print("Raycast restart error: " .. stdErr)
-			end
-		end)
-		:start()
-end
-
 hs.hotkey.bind({ "alt", "shift" }, "5", restartRaycast)
 
 -- Opt + Shift + 6 to reload Hammerspoon config
