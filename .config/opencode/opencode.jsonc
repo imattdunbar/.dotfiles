@@ -49,7 +49,7 @@
       "**/.env*": "deny"
     }
   },
-  "plugin": [],
+  "plugin": ["@plannotator/opencode@latest"],
   "mcp": {
     "playwriter": {
       "enabled": true,
