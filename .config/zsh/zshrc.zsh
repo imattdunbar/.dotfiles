@@ -29,6 +29,9 @@ if [[ -f $HOME/.config/zsh/local.zsh ]]; then
     source $HOME/.config/zsh/local.zsh
 fi
 
+# Plannotator
+export PATH="$HOME/.local/bin:$PATH"
+
 # bun global bin
 export PATH="$PATH:$HOME/.bun/bin"
 
