@@ -130,5 +130,35 @@
     "unbind": {
       "cmd-k cmd-l": "editor::ToggleFold"
     }
+  },
+  {
+    "context": "NotebookEditor",
+    "unbind": {
+      "cmd-shift-m": "notebook::AddMarkdownBlock"
+    }
+  },
+  {
+    "context": "NotebookEditor > Editor",
+    "unbind": {
+      "cmd-shift-m": "notebook::AddMarkdownBlock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-shift-m": "diagnostics::Deploy"
+    }
+  },
+  {
+    "context": "Editor && extension == md",
+    "bindings": {
+      "cmd-shift-m": "markdown::OpenPreview"
+    }
+  },
+  {
+    "context": "Editor && extension == md",
+    "unbind": {
+      "cmd-shift-v": "markdown::OpenPreview"
+    }
   }
 ]

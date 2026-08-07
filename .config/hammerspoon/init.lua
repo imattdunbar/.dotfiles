@@ -1,6 +1,7 @@
 -- ============================================================================
--- Hammerspoon Keyboard Configuration
+-- Hammerspoon Configuration
 -- ============================================================================
+---@diagnostic disable: undefined-global, lowercase-global
 
 -- Retain tasks, watchers, hotkeys, and modal objects.
 keyboardController = {}
