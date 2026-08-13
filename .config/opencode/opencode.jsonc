@@ -68,20 +68,18 @@
     // Disabled opencode + openrouter models for now - plans are too good of a deal.
     // Provider + Model ID search: https://models.dev
     "opencode": {
-      "whitelist": [
-        "kimi-k3"
-        // "deepseek-v4-flash-free"
-        // "kimi-k2.5"
-        // "gpt-5.4-nano"
-      ]
+      "whitelist": ["kimi-k3", "deepseek-v4-pro", "deepseek-v4-flash"]
     },
     "opencode-go": {
-      "whitelist": ["glm-5.1", "kimi-k2.5"]
+      "whitelist": [
+        // "glm-5.1",
+        // "kimi-k2.5"
+      ]
     },
     "openrouter": {
       "whitelist": [
         // "anthropic/claude-opus-4.6"
-        "openai/gpt-5.4-nano"
+        // "openai/gpt-5.4-nano"
       ]
     },
     "openai": {
@@ -111,15 +109,17 @@
     },
     "github-copilot": {
       "whitelist": [
-        "gemini-3-flash-preview",
-        "gemini-3.1-pro-preview",
+        // "gemini-3-flash-preview",
+        // "gemini-3.1-pro-preview",
         // "gpt-5.3-codex"
-        "claude-sonnet-4.6",
-        "claude-opus-4.6"
+        // "claude-sonnet-4.6",
+        // "claude-opus-4.6"
       ]
     },
     "cloudflare-workers-ai": {
-      "whitelist": ["@cf/moonshotai/kimi-k2.5"]
+      "whitelist": [
+        // "@cf/moonshotai/kimi-k2.5"
+      ]
     },
     "github-copilot-enterprise": {
       "whitelist": []
@@ -134,7 +134,10 @@
       ]
     },
     "google-vertex-anthropic": {
-      "whitelist": ["claude-sonnet-4-6@default", "claude-opus-4-6@default"]
+      "whitelist": [
+        // "claude-sonnet-4-6@default",
+        // "claude-opus-4-6@default"
+      ]
     }
     // -----------------
   }
