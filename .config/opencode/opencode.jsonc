@@ -55,7 +55,8 @@
       {
         "workflow": "manual"
       }
-    ]
+    ],
+    "{env:HOME}/.config/scripts/oc-agy-proxy.ts"
   ],
   "mcp": {
     "playwriter": {

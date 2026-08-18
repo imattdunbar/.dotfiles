@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { Database } from 'bun:sqlite'
 import type { Plugin } from '@opencode-ai/plugin'
 import { existsSync, mkdirSync, statSync } from 'node:fs'

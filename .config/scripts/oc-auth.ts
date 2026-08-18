@@ -14,14 +14,9 @@ const AUTH_FILES = [
   },
   {
     name: 'vertex-key.json',
-    localPath: `${import.meta.dir}/vertex-key.json`,
+    localPath: `${Bun.env.HOME}/.config/opencode/vertex-key.json`,
     opFieldName: 'vertex-key\\.json'
   }
-  // {
-  //   name: 'antigravity-accounts.json',
-  //   localPath: `${import.meta.dir}/antigravity-accounts.json`,
-  //   opFieldName: 'antigravity-accounts\\.json'
-  // }
 ]
 
 const commandSchema = z.enum(['load', 'save'])

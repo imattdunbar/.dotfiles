@@ -1,6 +1,6 @@
 import { $ } from 'bun'
 
-const toolboxPath = `${import.meta.dir}/toolbox`
+const toolboxPath = `${Bun.env.HOME}/.config/opencode/toolbox`
 
 // Download the toolbox file
 await $`curl -L -o ${toolboxPath} https://storage.googleapis.com/mcp-toolbox-for-databases/v1.2.0/darwin/arm64/toolbox`

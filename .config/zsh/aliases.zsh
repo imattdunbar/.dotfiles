@@ -20,6 +20,7 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles-reset='dotfiles reset --hard'
 alias dotfiles-squash='dotfiles reset $(dotfiles commit-tree HEAD^{tree} -m "Squashed")'
 alias dotfiles-update='dotfiles commit -a -m "Updates"; dotfiles push'
+alias dotfiles-repo='open https://github.com/imattdunbar/.dotfiles'
 alias dfdt="dotfiles difftool"
 alias dfs="dotfiles status"
 

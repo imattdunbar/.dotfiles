@@ -1,18 +1,7 @@
 import { $ } from 'bun'
-import { z } from 'zod'
 
-const ACCOUNT_ID = 'JTBWQ5UAQRHP7G2DZ66QVMOY4U'
 const VAULT_NAME = 'Personal'
 const ITEM_NAME = 'ssh'
-
-const commandSchema = z.enum(['load', 'save'])
-
-const fileSchema = z.object({
-  id: z.string(),
-  name: z.string()
-})
-
-type OPFile = z.infer<typeof fileSchema>
 
 async function main() {
   // Move .gitconfig

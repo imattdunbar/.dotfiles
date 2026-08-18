@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",
+    "@opencode-ai/plugin": "^1.18.18",
     "citty": "^0.2.2",
     "dayjs": "^1.11.23",
     "drizzle-kit": "^0.31.10",
     "drizzle-orm": "^0.45.2",
+    "hono": "^4.13.2",
     "zod": "^4.4.3"
   }
 }
