@@ -22,6 +22,9 @@ alias oc-logs="code ~/.local/share/opencode/log"
 alias oc-cache="code ~/.cache/opencode"
 alias oc-nuke="rm -rf ~/.local/share/opencode ~/.local/share/opencode/bin ~/.local/share/opencode/log ~/.cache/opencode ~/.config/opencode ~/.local/state/opencode"
 
+# Codex plan usage
+alias oc-usage="bun run $HOME/.config/scripts/oc-usage.ts"
+
 # Links
 alias oc-zen="open https://opencode.ai/zen"
 alias oc-or="open https://openrouter.ai/settings/credits"
