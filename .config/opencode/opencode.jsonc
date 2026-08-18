@@ -67,6 +67,26 @@
   "provider": {
     // Disabled opencode + openrouter models for now - plans are too good of a deal.
     // Provider + Model ID search: https://models.dev
+    "antigravity": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Antigravity CLI",
+      "options": {
+        "baseURL": "http://127.0.0.1:8787/v1",
+        "timeout": false,
+        "chunkTimeout": 30000
+      },
+      "models": {
+        "gemini-3.7-flash-high": {
+          "name": "Gemini 3.7 Flash",
+          "reasoning": true,
+          "tool_call": false,
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          }
+        }
+      }
+    },
     "opencode": {
       "whitelist": [
         // "kimi-k3",
@@ -83,7 +103,7 @@
     },
     "openrouter": {
       "whitelist": [
-        "google/gemini-3.7-flash"
+        // "google/gemini-3.7-flash"
         // "anthropic/claude-opus-4.6"
         // "openai/gpt-5.4-nano"
       ]
