@@ -109,13 +109,9 @@ gh-template() {
   bunx gitpick https://$GITHUB_PAT@github.com/imattdunbar/$1
 }
 
-# Kill process on port
-killport() {
-  kill -9 $(lsof -ti:$1)
-}
-
+# List process running on port, ignore errors
 checkport() {
-  lsof -i :$1
+  lsof -nP -iTCP:$1 -sTCP:LISTEN 2>/dev/null
 }
 
 # Push New Branch
