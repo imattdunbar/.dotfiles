@@ -19,6 +19,7 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Keep articles such as `a`, `an`, and `the`.
 - Remove filler words such as `simply`, `robust`, `seamlessly`, and `leverage`.
 - Keep code and identifiers exact.
+- Keep the total response as short as the task allows.
 
 ## Work
 
@@ -30,12 +31,6 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Do not add dependencies, configuration, or compatibility code without a concrete need.
 - Do not revert changes that you did not make.
 - Ask before destructive actions. Otherwise, execute the request.
-
-## Verification
-
-- Do not write tests or run test commands unless explicitly requested.
-- Do not use browser MCP tools to verify or debug code unless explicitly requested.
-- Do not start a separate debugging pass after code changes unless explicitly requested.
 
 ## Runtime
 
@@ -65,3 +60,10 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Avoid unnecessary effects, memoization, context, and prop drilling.
 - Follow the project styling and data-fetching patterns.
 - When no pattern exists, prefer Tailwind, TanStack Query, and Zustand.
+
+## Verification
+
+- DO NOT write tests or run test commands unless explicitly requested.
+- DO NOT use browser MCP tools to verify or debug code unless explicitly requested.
+- DO NOT start a separate debugging pass after code changes unless explicitly requested.
+- DO NOT run any verification or testing commands that are going to hold up your response without EXPLICIT permission or asking first.

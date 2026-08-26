@@ -97,10 +97,7 @@
       ]
     },
     "opencode-go": {
-      "whitelist": [
-        // "glm-5.1",
-        // "kimi-k2.5"
-      ]
+      "whitelist": ["glm-5.3-flash"]
     },
     "openrouter": {
       "whitelist": [
