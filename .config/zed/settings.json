@@ -1,5 +1,6 @@
 {
   // --- General ---
+  "cli_default_open_behavior": "new_window",
   "session": {
     "trust_all_worktrees": true,
     "restore_unsaved_buffers": true

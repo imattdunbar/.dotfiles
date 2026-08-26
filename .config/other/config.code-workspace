@@ -14,7 +14,11 @@
       "cagent": true,
       "better-auth": true,
       "raycast": true,
-      "atuin": true
+      "atuin": true,
+      "tanstack": true,
+      "flipperdevices.com": true,
+      "gh": true,
+      "1Password": true
     }
   }
 }
