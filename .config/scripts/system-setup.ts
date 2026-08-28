@@ -17,7 +17,7 @@ async function main() {
   const opProcess = Bun.spawn(
     ['op', 'read', '--force', '--out-file', zipPath, `op://${VAULT_NAME}/${ITEM_NAME}/ssh.zip`],
     {
-      stdout: 'inherit',
+      stdout: 'ignore',
       stderr: 'inherit'
     }
   )
@@ -53,7 +53,9 @@ async function main() {
     await rm(zipPath, { force: true })
   }
 
-  await $`zsh -ic 'open ~/.ssh'`
+  await $`zsh -ic 'open ~/.ssh' </dev/null`
+
+  await $`zsh -ic 'dotfiles remote set-url origin git@github.com:imattdunbar/.dotfiles.git' </dev/null`
 }
 
 await main()
