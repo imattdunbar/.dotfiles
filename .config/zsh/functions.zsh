@@ -122,7 +122,7 @@ pushnewb() {
 
 download-video() {
     setopt localoptions noglob
-    yt-dlp --format best --output "~/Desktop/%(title)s.%(ext)s" "$*"
+    yt-dlp --cookies-from-browser chrome --format best --output "~/Desktop/%(title)s.%(ext)s" "$*"
 }
 
 # Tab Naming

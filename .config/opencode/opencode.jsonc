@@ -97,7 +97,7 @@
       ]
     },
     "opencode-go": {
-      "whitelist": ["glm-5.3-flash"]
+      "whitelist": ["glm-5.3-flash", "deepseek-v4-flash", "kimi-k3"]
     },
     "openrouter": {
       "whitelist": [

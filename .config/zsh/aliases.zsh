@@ -186,4 +186,6 @@ alias caddy-fmt="caddy fmt --overwrite --config /opt/homebrew/etc/caddy/Caddyfil
 alias npmx="open https://npmx.dev"
 alias audiobook="open https://www.audible.com/library"
 
+alias gh-secret-sync="gh secret set -f .env"
+
 alias unfuck-macos='killall Dock Finder SystemUIServer ControlCenter NotificationCenter; killall cfprefsd; /System/Library/CoreServices/Dock.app/Contents/MacOS/Dock >/dev/null 2>&1 & disown'
