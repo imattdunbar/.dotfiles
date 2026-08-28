@@ -13,6 +13,7 @@
   "dependencies": {
     "@libsql/client": "^0.17.4",
     "@opencode-ai/plugin": "^1.18.18",
+    "adm-zip": "^0.6.0",
     "citty": "^0.2.2",
     "dayjs": "^1.11.23",
     "drizzle-kit": "^0.31.10",

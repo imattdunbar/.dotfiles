@@ -1,1 +1,2 @@
-# Anything specific to Linux (likely nixOS) goes in here
+# Anything specific to Linux
+alias open='xdg-open'

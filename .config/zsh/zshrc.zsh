@@ -37,3 +37,6 @@ export PATH="$PATH:$HOME/.bun/bin"
 
 # Go
 export PATH="$PATH:$HOME/go/bin"
+
+# Mise
+eval "$(mise activate zsh)"
