@@ -32,6 +32,13 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Do not revert changes that you did not make.
 - Ask before destructive actions. Otherwise, execute the request.
 
+## Showing Code
+
+- Prefer showing code with comments instead of explaining high level steps when possible.
+- Present complete code blocks, not prose summaries.
+- Put the target file path above each block if applicable.
+- Use prose only for decisions, tradeoffs, and non-implementation questions.
+
 ## Pragmatic fixes
 
 - If a one-line fix works, lead with it.
