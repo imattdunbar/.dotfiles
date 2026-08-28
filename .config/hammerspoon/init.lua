@@ -126,6 +126,11 @@ end)
 -- 3. Standard F18-Layer Shortcuts
 -- ============================================================================
 
+-- Caps + T -> Opt+Q (Ghostty quick terminal)
+K.hyperMode:bind({}, "t", function()
+	hs.eventtap.keyStroke({ "alt" }, "q", 0)
+end)
+
 -- Caps + H/L -> Home/End
 K.hyperMode:bind({}, "h", function()
 	hs.eventtap.keyStroke({}, "home", 0)
