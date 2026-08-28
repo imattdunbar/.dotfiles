@@ -32,6 +32,15 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Do not revert changes that you did not make.
 - Ask before destructive actions. Otherwise, execute the request.
 
+## Pragmatic fixes
+
+- If a one-line fix works, lead with it.
+- Present a temporary workaround before the ideal design.
+- Label the workaround, then state its main risk.
+- If the user insists on an approach, solve within that constraint.
+- Offer the durable alternative after the immediate fix, not instead of it.
+- Think about the smallest candidate before you propose a larger design.
+
 ## Runtime
 
 - Use the project runtime and package manager.
