@@ -1,4 +1,6 @@
 {
+  // --- Docs ---
+  // https://zed.dev/docs/reference/all-settings
   // --- General ---
   "cli_default_open_behavior": "new_window",
   "session": {
@@ -7,6 +9,10 @@
   },
   "use_system_prompts": true,
   "restore_on_file_reopen": true,
+  "preview_tabs": {
+    "enabled": false
+  },
+  "colorize_brackets": false,
   "lsp_document_colors": "background",
   "inlay_hints": {
     "show_background": true
@@ -21,13 +27,14 @@
   },
   "auto_install_extensions": {
     "astro": true,
-    "catppuccin": true,
     "charmed-icons": true,
     "docker-compose": true,
     "dockerfile": true,
     "env": true,
+    "ghostty": true,
     "git-firefly": true,
     "html": true,
+    "kaimandres": true,
     "kotlin": true,
     "make": true,
     "prisma": true,
@@ -94,37 +101,20 @@
   },
   "theme": {
     "mode": "dark",
-    "light": "Catppuccin Mocha",
-    "dark": "Catppuccin Mocha"
+    "light": "Kaimandres",
+    "dark": "Kaimandres"
   },
   "theme_overrides": {
-    "Catppuccin Mocha": {
-      "title_bar.background": "#181825",
-      "status_bar.background": "#181825",
-      "panel.background": "#181825",
-      "surface.background": "#181825",
-      "background": "#181825",
-      "tab_bar.background": "#00000000",
-      "tab.inactive_background": "#00000000",
-
-      "editor.background": "#181825",
-      "editor.gutter.background": "#181825",
-      "editor.subheader.background": "#181825",
-      // "tab.active_background": "#303340",
-
-      "border": "#00000000",
-      "border.variant": "#00000000",
-      "border.focused": "#00000000",
-      "border.selected": "#00000000",
-      "border.transparent": "#00000000",
-      "border.disabled": "#00000000",
-      "editor.document_highlight.read_background": "#00000000",
-      "editor.document_highlight.write_background": "#00000000",
-      "scrollbar.track.background": "#00000000",
-      "scrollbar.track.border": "#00000000",
-      "panel.focused_border": "#00000000",
-      "pane.focused_border": "#00000000",
-      "pane_group.border": "#00000000"
+    "Kaimandres": {
+      "editor.document_highlight.bracket_background": "#00000000",
+      "syntax": {
+        "punctuation.bracket": {
+          "color": "#e4e4eb"
+        },
+        "punctuation.delimiter": {
+          "color": "#e4e4eb"
+        }
+      }
     }
   },
   // -------------
@@ -227,10 +217,6 @@
     }
   },
   "collaboration_panel": {
-    "button": false,
-    "dock": "left"
-  },
-  "notification_panel": {
     "button": false,
     "dock": "left"
   },

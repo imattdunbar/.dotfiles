@@ -72,21 +72,21 @@
     }
   },
   {
-    "context": "Editor && mode == full",
+    // "context": "Editor && mode == full",
     "bindings": {
       "ctrl-l": "pane::ActivateNextItem"
     }
   },
   {
-    "context": "Editor && mode == full",
+    // "context": "Editor && mode == full",
     "bindings": {
       "ctrl-h": "pane::ActivatePreviousItem"
     }
   },
   {
-    "context": "Pane",
+    "context": "Editor && mode == full",
     "bindings": {
-      "ctrl-alt-cmd-shift-f": "pane::GoBack"
+      "alt-cmd-f": "pane::GoBack"
     }
   },
   {
@@ -96,9 +96,9 @@
     }
   },
   {
-    "context": "Pane",
+    "context": "Editor && mode == full",
     "bindings": {
-      "ctrl-alt-cmd-shift-g": "pane::GoForward"
+      "alt-cmd-g": "pane::GoForward"
     }
   },
   {
@@ -159,6 +159,11 @@
     "context": "Editor && extension == md",
     "unbind": {
       "cmd-shift-v": "markdown::OpenPreview"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-shift-t": "workspace::NewCenterTerminal"
     }
   }
 ]
