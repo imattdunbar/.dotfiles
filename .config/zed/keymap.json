@@ -165,5 +165,10 @@
     "bindings": {
       "cmd-shift-t": "workspace::NewCenterTerminal"
     }
+  },
+  {
+    "bindings": {
+      "alt-cmd--": "project_panel::CollapseAllEntries"
+    }
   }
 ]
