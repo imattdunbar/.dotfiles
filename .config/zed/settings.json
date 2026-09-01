@@ -2,6 +2,7 @@
   // --- Docs ---
   // https://zed.dev/docs/reference/all-settings
   // --- General ---
+  "lsp_results_location": "picker",
   "cli_default_open_behavior": "new_window",
   "session": {
     "trust_all_worktrees": true,
@@ -47,7 +48,7 @@
   },
   "vim_mode": false,
   "ui_font_size": 16,
-  "buffer_font_size": 14,
+  "buffer_font_size": 15,
   "buffer_font_family": "FiraCode Nerd Font Mono",
   "restore_on_startup": "empty_tab",
   "confirm_quit": false,
@@ -95,7 +96,7 @@
   // ---------------
   // --- Theme ---
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Warm Charmed Icons",
     "dark": "Warm Charmed Icons"
   },
