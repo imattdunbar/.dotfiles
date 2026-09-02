@@ -149,3 +149,30 @@ sizeof() {
     du -sh -- "$@"
   fi
 }
+
+# Utility to take a video file and make it smaller for sending in messages
+shrink-video() {
+  if [ -z "$1" ]; then
+    echo "Usage: shrink-video <filename>"
+    return 1
+  fi
+
+  local input="$1"
+  local base="${input%.*}"
+  local output="${base}-shrunk.mp4"
+
+  echo "Shrinking $input..."
+
+  if ffmpeg -y -loglevel error -stats -i "$input" \
+    -vf "scale='min(1920,iw)':-2" \
+    -r 30 \
+    -c:v libx264 -preset veryfast -crf 24 -pix_fmt yuv420p \
+    -c:a aac -b:a 128k \
+    -movflags +faststart \
+    "$output" > /dev/null 2>&1; then
+    echo "Complete: $output"
+  else
+    echo "Failed to shrink $input" >&2
+    return 1
+  fi
+}
