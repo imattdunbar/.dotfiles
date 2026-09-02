@@ -56,7 +56,8 @@
         "workflow": "manual"
       }
     ],
-    "{env:HOME}/.config/scripts/oc-agy-proxy.ts"
+    "{env:HOME}/.config/scripts/oc-agy-proxy.ts",
+    "opencode-with-claude"
   ],
   "mcp": {
     "playwriter": {
@@ -86,6 +87,23 @@
             "output": 65536
           }
         }
+      }
+    },
+    "anthropic": {
+      "whitelist": [
+        "claude-opus-5", // expensive yapper
+        "claude-opus-4-8"
+      ],
+      "models": {
+        "claude-opus-5": {
+          "options": {
+            "effort": "medium"
+          }
+        }
+      },
+      "options": {
+        "baseURL": "http://127.0.0.1:3456",
+        "apiKey": "dummy"
       }
     },
     "opencode": {

@@ -10,7 +10,33 @@ oc() {
   )
 }
 
-alias ocs='oc serve --port 4096 --hostname "0.0.0.0"'
+ocs() {
+  (
+    export GOOGLE_CLOUD_PROJECT="purchaser-dev"
+    export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/opencode/vertex-key.json"
+    export VERTEX_LOCATION="global"
+
+    nohup opencode serve \
+      --port 4096 \
+      --hostname "0.0.0.0" \
+      >>"$HOME/.local/share/opencode/log/server.log" \
+      2>&1 </dev/null
+  ) &!
+}
+
+ocs-stop() {
+  local pid
+  pid="$(lsof -tiTCP:4096 -sTCP:LISTEN)"
+
+  [[ -n "$pid" ]] || return 0
+  kill -KILL "$pid"
+}
+
+ocs-restart() {
+  ocs-stop
+  ocs
+}
+
 alias oca="oc attach http://localhost:4096 --dir ."
 alias oc-upgrade="oc upgrade"
 alias oc-login="oc auth login"
