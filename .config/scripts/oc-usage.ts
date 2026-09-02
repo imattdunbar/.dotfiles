@@ -56,7 +56,7 @@ async function fetchCodexUsage() {
   const remainingPercent = Math.max(0, 100 - window.used_percent)
   const resetAt = dayjs.unix(window.reset_at).tz(dayjs.tz.guess()).format('MMM D h:mmA z')
 
-  console.log(`Codex\n${remainingPercent}% remaining | Reset: ${resetAt}`)
+  return [`Codex\n${remainingPercent}% remaining | Reset: ${resetAt}`]
 }
 
 async function fetchClaudeUsage() {
@@ -113,27 +113,28 @@ async function fetchClaudeUsage() {
       ['seven_day_sonnet', 'Weekly Sonnet']
     ] as const
 
-    console.log('\nClaude')
+    const lines: string[] = ['\nClaude']
     for (const [key, label] of windows) {
       const window = usage[key]
       if (!window) continue
 
       const remainingPercent = Math.max(0, Math.round((100 - window.utilization) * 10) / 10)
       const resetAt = dayjs(window.resets_at).tz(dayjs.tz.guess()).format('MMM D h:mmA z')
-      console.log(`${label}: ${remainingPercent}% remaining | Reset: ${resetAt}`)
+      lines.push(`${label}: ${remainingPercent}% remaining | Reset: ${resetAt}`)
     }
+    return lines
   } catch (e) {
-    // ignore
+    return []
   }
 }
 
 async function fetchGoUsage() {
   const cookies = getChromeCookies('opencode.ai')
-  if (!cookies) return
+  if (!cookies) return []
 
   if (!cookies.auth) {
     console.error("No 'auth' session found for opencode.ai in Chrome. Ensure you are logged in.")
-    return
+    return []
   }
 
   const cookieHeader = Object.entries(cookies)
@@ -159,22 +160,27 @@ async function fetchGoUsage() {
     /(rollingUsage|weeklyUsage|monthlyUsage):\$R\[\d+\]=\{status:"ok",resetInSec:(\d+),usagePercent:([\d.]+)/g
   const matches = Array.from(html.matchAll(regex))
 
-  if (matches.length > 0) {
-    console.log('\nOpenCode Go')
-    for (const m of matches) {
-      const labels: Record<string, string> = {
-        rollingUsage: '5 hour',
-        weeklyUsage: 'Weekly',
-        monthlyUsage: 'Monthly'
-      }
-      const remainingPercent = Math.max(0, Math.round((100 - Number(m[3])) * 10) / 10)
-      const resetAt = dayjs().add(Number(m[2]), 'second').tz(dayjs.tz.guess()).format('MMM D h:mmA z')
+  if (matches.length === 0) return []
 
-      console.log(`${labels[m[1]]}: ${remainingPercent}% remaining | Reset: ${resetAt}`)
+  const lines: string[] = ['\nOpenCode Go']
+  for (const m of matches) {
+    const labels: Record<string, string> = {
+      rollingUsage: '5 hour',
+      weeklyUsage: 'Weekly',
+      monthlyUsage: 'Monthly'
     }
+    const remainingPercent = Math.max(0, Math.round((100 - Number(m[3])) * 10) / 10)
+    const resetAt = dayjs().add(Number(m[2]), 'second').tz(dayjs.tz.guess()).format('MMM D h:mmA z')
+
+    lines.push(`${labels[m[1]]}: ${remainingPercent}% remaining | Reset: ${resetAt}`)
   }
+  return lines
 }
 
-await fetchCodexUsage()
-await fetchClaudeUsage()
-await fetchGoUsage()
+const results = await Promise.all([
+  fetchCodexUsage().catch(() => [] as string[]),
+  fetchClaudeUsage(),
+  fetchGoUsage().catch(() => [] as string[])
+])
+
+console.log(results.flat().join('\n'))
