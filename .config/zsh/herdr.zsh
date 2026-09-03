@@ -15,6 +15,9 @@ alias h-sd="herdr pane split --current --direction down --focus > /dev/null"
 alias h-stop="herdr server stop"
 alias h-detach="echo 'ctrl+b then q to detatch from herdr'"
 
+alias h-mdm4="herdr --remote ssh://matt@MDM4.local:22"
+alias h-work="herdr --remote ssh://matt@WorkMD.local:22"
+
 
 # Big pane on left | 2 split vertically on right
 h-layout-left() {
