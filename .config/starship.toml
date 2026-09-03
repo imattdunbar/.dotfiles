@@ -8,6 +8,12 @@ scan_timeout = 1000000
 
 format = """${custom.worktree_prefix}$directory$all"""
 
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
 [character]
 disabled = false
 
