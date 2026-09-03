@@ -1,9 +1,16 @@
 ---
-name: bun-catalog-update
-description: Use when updating package.json catalog dependencies in Bun projects to the latest npm versions.
+name: bun
+description: Bun runtime, package manager, bundler, and test runner documentation and common workflows.
 ---
 
-# Bun Catalog Update
+# Bun
+
+- Documentation index: https://bun.com/llms.txt
+- Fetch specific pages from the index as needed.
+- Use Bun only.
+- Do not create npm, Yarn, or pnpm lockfiles in Bun projects.
+
+## Catalog update
 
 Read the current directory's `package.json`, get every package in the top-level `catalog`, check each latest version from npm, update only the version values in the top-level `catalog`, then run Bun install to refresh the lockfile.
 

@@ -177,10 +177,47 @@ async function fetchGoUsage() {
   return lines
 }
 
+async function fetchGitHubCopilotUsage() {
+  const cookies = getChromeCookies('github.com')
+  if (!cookies || !cookies.logged_in) return []
+
+  const cookieHeader = Object.entries(cookies)
+    .map(([k, v]) => `${k}=${v}`)
+    .join('; ')
+
+  const res = await fetch('https://github.com/settings/copilot/features', {
+    headers: {
+      Cookie: cookieHeader,
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'
+    }
+  })
+
+  if (!res.ok) {
+    throw new Error(`HTTP Error ${res.status}: ${res.statusText}`)
+  }
+
+  const html = await res.text()
+
+  const limitMatch = html.match(/([\d,]+) of ([\d,]+) AI credits used/)
+  const usedMatch = html.match(/([\d,]+) AI credits used/)
+  const cycle = html.match(
+    /(January|February|March|April|May|June|July|August|September|October|November|December) \d+-\d+, \d{4}/
+  )?.[0]
+
+  if (!usedMatch) return []
+
+  const used = limitMatch
+    ? `${usedMatch[1]} of ${limitMatch[2]} AI credits used`
+    : `${usedMatch[1]} AI credits used`
+
+  return [`\nGitHub Copilot\n${used} | Cycle: ${cycle}`]
+}
+
 const results = await Promise.all([
   fetchCodexUsage().catch(() => [] as string[]),
   fetchClaudeUsage(),
-  fetchGoUsage().catch(() => [] as string[])
+  fetchGoUsage().catch(() => [] as string[]),
+  fetchGitHubCopilotUsage().catch(() => [] as string[])
 ])
 
 console.log(results.flat().join('\n'))
