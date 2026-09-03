@@ -57,6 +57,7 @@
       }
     ],
     "{env:HOME}/.config/scripts/oc-agy-proxy.ts",
+    "{env:HOME}/.config/scripts/oc-session-dashboard.ts",
     "opencode-with-claude"
   ],
   "mcp": {

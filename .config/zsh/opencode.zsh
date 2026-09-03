@@ -16,6 +16,8 @@ ocs() {
     export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/opencode/vertex-key.json"
     export VERTEX_LOCATION="global"
 
+    cd "$HOME"
+
     nohup opencode serve \
       --port 4096 \
       --hostname "0.0.0.0" \
