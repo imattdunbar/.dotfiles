@@ -129,24 +129,37 @@ async function fetchClaudeUsage() {
 }
 
 async function fetchGoUsage() {
-  const cookies = getChromeCookies('opencode.ai')
-  if (!cookies) return []
-
-  if (!cookies.auth) {
-    console.error("No 'auth' session found for opencode.ai in Chrome. Ensure you are logged in.")
-    return []
+  type AuthFile = {
+    'opencode-go'?: {
+      key?: string
+    }
   }
 
-  const cookieHeader = Object.entries(cookies)
-    .map(([k, v]) => `${k}=${v}`)
-    .join('; ')
+  type UsageWindow = {
+    percent: number
+    resetsAt: string
+  }
 
-  const targetUrl = 'https://opencode.ai/workspace/wrk_01KJ9VVHAYZT3Z5WJ0SY6GPYPM/go'
+  type UsageResponse = {
+    usage?: {
+      rolling?: UsageWindow
+      weekly?: UsageWindow
+      monthly?: UsageWindow
+    }
+  }
 
-  const res = await fetch(targetUrl, {
+  const authPath = `${Bun.env.HOME}/.local/share/opencode/auth.json`
+  const auth = (await Bun.file(authPath).json()) as AuthFile
+  const apiKey = auth['opencode-go']?.key
+
+  if (!apiKey) {
+    throw new Error('OpenCode Go API key is absent')
+  }
+
+  const res = await fetch('https://opencode.ai/zen/go/v1/usage', {
     headers: {
-      Cookie: cookieHeader,
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'
+      Authorization: `Bearer ${apiKey}`,
+      'User-Agent': 'oc-usage'
     }
   })
 
@@ -154,25 +167,24 @@ async function fetchGoUsage() {
     throw new Error(`HTTP Error ${res.status}: ${res.statusText}`)
   }
 
-  const html = await res.text()
-
-  const regex =
-    /(rollingUsage|weeklyUsage|monthlyUsage):\$R\[\d+\]=\{status:"ok",resetInSec:(\d+),usagePercent:([\d.]+)/g
-  const matches = Array.from(html.matchAll(regex))
-
-  if (matches.length === 0) return []
+  const usage = ((await res.json()) as UsageResponse).usage
+  if (!usage) throw new Error('The response contains no OpenCode Go usage')
 
   const lines: string[] = ['\nOpenCode Go']
-  for (const m of matches) {
-    const labels: Record<string, string> = {
-      rollingUsage: '5 hour',
-      weeklyUsage: 'Weekly',
-      monthlyUsage: 'Monthly'
-    }
-    const remainingPercent = Math.max(0, Math.round((100 - Number(m[3])) * 10) / 10)
-    const resetAt = dayjs().add(Number(m[2]), 'second').tz(dayjs.tz.guess()).format('MMM D h:mmA z')
+  const windows = [
+    ['rolling', '5 hour'],
+    ['weekly', 'Weekly'],
+    ['monthly', 'Monthly']
+  ] as const
 
-    lines.push(`${labels[m[1]]}: ${remainingPercent}% remaining | Reset: ${resetAt}`)
+  for (const [key, label] of windows) {
+    const window = usage[key]
+    if (!window) continue
+
+    const remainingPercent = Math.max(0, Math.round((100 - window.percent) * 10) / 10)
+    const resetAt = dayjs(window.resetsAt).tz(dayjs.tz.guess()).format('MMM D h:mmA z')
+
+    lines.push(`${label}: ${remainingPercent}% remaining | Reset: ${resetAt}`)
   }
   return lines
 }

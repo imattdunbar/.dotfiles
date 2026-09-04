@@ -99,6 +99,7 @@
     },
     "openai": {
       "whitelist": [
+        "gpt-6-astra",
         "gpt-5.6-sol",
         "gpt-5.6-sol-1m",
         "gpt-5.6-sol-fast", // flagship
@@ -106,6 +107,26 @@
         "gpt-5.6-luna-fast" // nano
       ],
       "models": {
+        "gpt-6-astra": {
+          "name": "GPT-6 Astra",
+          "family": "gpt-astra",
+          "attachment": true,
+          "reasoning": true,
+          "temperature": false,
+          "tool_call": true,
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "options": {
+            "textVerbosity": "low"
+          }
+        },
         "gpt-5.6-sol-1m": {
           "id": "gpt-5.6-sol",
           "name": "GPT-5.6 Sol 1M",
