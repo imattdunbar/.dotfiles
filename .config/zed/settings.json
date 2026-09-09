@@ -38,6 +38,7 @@
     "kaimandres": true,
     "kotlin": true,
     "make": true,
+    "oxc": true,
     "prisma": true,
     "sql": true,
     "svelte": true,
@@ -54,7 +55,7 @@
   "confirm_quit": false,
   "soft_wrap": "editor_width",
   "format_on_save": "on",
-  "formatter": "auto",
+  "formatter": { "language_server": { "name": "oxfmt" } },
   "show_edit_predictions": true,
   "show_completions_on_input": true,
   "inline_code_actions": false,
@@ -73,6 +74,27 @@
     },
     "JavaScript": {
       "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
+    },
+    "Lua": {
+      "formatter": "auto"
+    },
+    "Go": {
+      "formatter": "auto"
+    },
+    "Svelte": {
+      "formatter": "auto"
+    },
+    "Astro": {
+      "formatter": "auto"
+    },
+    "XML": {
+      "formatter": "auto"
+    },
+    "Terraform": {
+      "formatter": "auto"
+    },
+    "Dockerfile": {
+      "formatter": "auto"
     },
     "Prisma": {
       "format_on_save": "on",

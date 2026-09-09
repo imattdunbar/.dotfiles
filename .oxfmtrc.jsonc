@@ -1,0 +1,13 @@
+{
+  // Personal fallback: applies only where no nearer oxfmt config exists.
+  // Project configs always win over this file.
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "semi": false,
+  "printWidth": 120,
+  "sortTailwindcss": true,
+  "sortPackageJson": false,
+  // Generated files are never worth formatting, anywhere.
+  "ignorePatterns": ["**/*.gen.ts", "**/uniwind-types.d.ts"]
+}
