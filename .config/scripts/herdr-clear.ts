@@ -94,7 +94,9 @@ async function main(): Promise<void> {
 
   let failed = 0
   for (const c of idle) {
-    const r = runHerdr(['pane', 'run', c.pane.pane_id, 'clear'])
+    // the command to run in all panes
+    const cmd = 'unset SSH_CONNECTION SSH_CLIENT SSH_TTY; clear'
+    const r = runHerdr(['pane', 'run', c.pane.pane_id, cmd])
     if (r.code !== 0) {
       failed++
       console.error(`FAIL ${c.pane.pane_id}: ${r.stderr || r.stdout}`)

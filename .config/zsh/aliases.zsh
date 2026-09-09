@@ -188,4 +188,6 @@ alias audiobook="open https://www.audible.com/library"
 
 alias gh-secret-sync="gh secret set -f .env"
 
+alias clear-ssh='unset SSH_CONNECTION SSH_CLIENT SSH_TTY'
+
 alias unfuck-macos='killall Dock Finder SystemUIServer ControlCenter NotificationCenter; killall cfprefsd; /System/Library/CoreServices/Dock.app/Contents/MacOS/Dock >/dev/null 2>&1 & disown'
