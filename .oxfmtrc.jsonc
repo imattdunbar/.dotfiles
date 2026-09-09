@@ -9,5 +9,14 @@
   "sortTailwindcss": true,
   "sortPackageJson": false,
   // Generated files are never worth formatting, anywhere.
-  "ignorePatterns": ["**/*.gen.ts", "**/uniwind-types.d.ts"]
+  "ignorePatterns": [
+    // Tanstack Gen Router
+    "**/*.gen.ts",
+    // Uniwind Expo
+    "**/uniwind-types.d.ts",
+    // Drizzle migrations
+    "**/migrations/**/*.json",
+    // iOS asset catalogs
+    "**/Assets.xcassets/**"
+  ]
 }
