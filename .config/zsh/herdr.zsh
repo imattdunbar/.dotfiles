@@ -15,6 +15,8 @@ alias h-sd="herdr pane split --current --direction down --focus > /dev/null"
 alias h-stop="herdr server stop"
 alias h-detach="echo 'ctrl+b then q to detatch from herdr'"
 
+alias h-clear="bun run $HOME/.config/scripts/herdr-clear.ts"
+
 alias h-mdm4="herdr --remote ssh://matt@MDM4.local:22"
 alias h-work="herdr --remote ssh://matt@WorkMD.local:22"
 
