@@ -29,7 +29,8 @@ window-save-state = always
 cursor-color = #FFFFFF
 cursor-style = block
 cursor-style-blink = false
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,ssh-env,ssh-terminfo
+
 mouse-hide-while-typing = true
 window-new-tab-position = end
 window-inherit-working-directory = false

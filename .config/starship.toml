@@ -12,7 +12,8 @@ format = """${custom.worktree_prefix}$directory$all"""
 disabled = true
 
 [hostname]
-disabled = true
+ssh_only = true
+disabled = false
 
 [character]
 disabled = false
