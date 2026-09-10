@@ -157,8 +157,6 @@ K.hyperMode:bind({}, "space", function()
 end)
 
 local commandOptionKeys = {
-	"f",
-	"g",
 	"-",
 	"1",
 	"2",
@@ -181,6 +179,20 @@ end
 
 for _, key in ipairs(commandOptionKeys) do
 	bindCommandOptionKey(key)
+end
+
+-- Caps + F/G -> Command + 9/0
+local commandKeyMappings = {
+	f = "9",
+	g = "0",
+}
+
+for sourceKey, targetKey in pairs(commandKeyMappings) do
+	K.hyperMode:bind({}, sourceKey, nil, function()
+		hs.timer.doAfter(0.01, function()
+			hs.eventtap.keyStroke({ "cmd" }, targetKey, 0)
+		end)
+	end)
 end
 
 -- Bun layout runner function

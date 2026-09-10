@@ -146,6 +146,9 @@ elif [ -f package-lock.json ]; then (npm run | grep -q "dev:all" && npm run dev:
 else echo "No lock file found. Cannot determine dev command."; fi
 '
 
+# Mise
+alias mise-config="code $HOME/.config/mise/config.toml"
+
 # Bun 
 alias tc="bunx tsc --noEmit"
 alias bb="bun run build"

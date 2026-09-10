@@ -86,7 +86,7 @@
   {
     "context": "Editor && mode == full",
     "bindings": {
-      "alt-cmd-f": "pane::GoBack"
+      "cmd-9": "pane::GoBack"
     }
   },
   {
@@ -98,7 +98,7 @@
   {
     "context": "Editor && mode == full",
     "bindings": {
-      "alt-cmd-g": "pane::GoForward"
+      "cmd-0": "pane::GoForward"
     }
   },
   {

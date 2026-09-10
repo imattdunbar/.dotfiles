@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DVTFontAndColorLastUpdatedToolsVersion</key>
+	<string>27.0</string>
+	<key>DVTSourceEditorCursor</key>
+	<string>Vertical Bar</string>
+	<key>DVTTextShowMinimap</key>
+	<false/>
+	<key>DVTWorkspaceGlobalFontRecipe</key>
+	<data>
+	eyJkYXJrT3ZlcnJpZGVzIjpbImtleXdvcmQiLHsiZmFtaWx5Ijp7ImN1c3RvbSI6eyJf
+	MCI6IkZpcmFDb2RlIE5lcmQgRm9udCBNb25vIn19LCJzaXplIjoxNCwidmFyaWFudCI6
+	eyJpZGVudGlmaWVyIjoiRmlyYUNvZGVORk0tQm9sZCIsInNsYW50Ijp7InZhbHVlIjow
+	fSwid2VpZ2h0Ijo3LCJ3aWR0aCI6eyJ2YWx1ZSI6MH19fSwia2V5d29yZC5hdHRyaWJ1
+	dGUiLHsiZmFtaWx5Ijp7ImN1c3RvbSI6eyJfMCI6IkZpcmFDb2RlIE5lcmQgRm9udCBN
+	b25vIn19LCJzaXplIjoxNCwidmFyaWFudCI6eyJpZGVudGlmaWVyIjoiRmlyYUNvZGVO
+	Rk0tUmV0Iiwic2xhbnQiOnsidmFsdWUiOjB9LCJ3ZWlnaHQiOjUsIndpZHRoIjp7InZh
+	bHVlIjowfX19XSwiZm9udHMiOlt7InByb3NlIjp7fX0seyJjYXRlZ29yeSI6eyJwcm9z
+	ZSI6e319LCJkaXNwbGF5TW9kZXMiOlt7InN0YW5kYXJkIjp7fX0seyJjYXRlZ29yeSI6
+	eyJwcm9zZSI6e319LCJjb250ZW50Ijp7ImN1c3RvbSI6eyJhdXRvbWF0aWNTaXplIjpm
+	YWxzZSwiZGFyayI6eyJmYW1pbHkiOnsiY3VzdG9tIjp7Il8wIjoiRmlyYUNvZGUgTmVy
+	ZCBGb250IE1vbm8ifX0sInNpemUiOjE0LCJ2YXJpYW50Ijp7ImlkZW50aWZpZXIiOiJG
+	aXJhQ29kZU5GTS1SZWciLCJzbGFudCI6eyJ2YWx1ZSI6MH0sIndlaWdodCI6NCwid2lk
+	dGgiOnsidmFsdWUiOjB9fX0sImxpZ2h0Ijp7ImZhbWlseSI6eyJjdXN0b20iOnsiXzAi
+	OiJGaXJhQ29kZSBOZXJkIEZvbnQgTW9ubyJ9fSwic2l6ZSI6MTQsInZhcmlhbnQiOnsi
+	aWRlbnRpZmllciI6IkZpcmFDb2RlTkZNLUxpZ2h0Iiwic2xhbnQiOnsidmFsdWUiOjB9
+	LCJ3ZWlnaHQiOjMsIndpZHRoIjp7InZhbHVlIjowfX19fX19XX0seyJjb2RlIjp7fX0s
+	eyJjYXRlZ29yeSI6eyJjb2RlIjp7fX0sImRpc3BsYXlNb2RlcyI6W3sic3RhbmRhcmQi
+	Ont9fSx7ImNhdGVnb3J5Ijp7ImNvZGUiOnt9fSwiY29udGVudCI6eyJjdXN0b20iOnsi
+	YXV0b21hdGljU2l6ZSI6ZmFsc2UsImRhcmsiOnsiZmFtaWx5Ijp7ImN1c3RvbSI6eyJf
+	MCI6IkZpcmFDb2RlIE5lcmQgRm9udCBNb25vIn19LCJzaXplIjoxNCwidmFyaWFudCI6
+	eyJpZGVudGlmaWVyIjoiRmlyYUNvZGVORk0tTWVkIiwic2xhbnQiOnsidmFsdWUiOjB9
+	LCJ3ZWlnaHQiOjUsIndpZHRoIjp7InZhbHVlIjowfX19LCJsaWdodCI6eyJmYW1pbHki
+	OnsiY3VzdG9tIjp7Il8wIjoiRmlyYUNvZGUgTmVyZCBGb250IE1vbm8ifX0sInNpemUi
+	OjE0LCJ2YXJpYW50Ijp7ImlkZW50aWZpZXIiOiJGaXJhQ29kZU5GTS1SZWciLCJzbGFu
+	dCI6eyJ2YWx1ZSI6MH0sIndlaWdodCI6NCwid2lkdGgiOnsidmFsdWUiOjB9fX19fX1d
+	fSx7ImNvbnNvbGUiOnt9fSx7ImNhdGVnb3J5Ijp7ImNvbnNvbGUiOnt9fSwiZGlzcGxh
+	eU1vZGVzIjpbeyJzdGFuZGFyZCI6e319LHsiY2F0ZWdvcnkiOnsiY29uc29sZSI6e319
+	LCJjb250ZW50Ijp7ImN1c3RvbSI6eyJhdXRvbWF0aWNTaXplIjpmYWxzZSwiZGFyayI6
+	eyJmYW1pbHkiOnsiY3VzdG9tIjp7Il8wIjoiRmlyYUNvZGUgTmVyZCBGb250IE1vbm8i
+	fX0sInNpemUiOjEyLCJ2YXJpYW50Ijp7ImlkZW50aWZpZXIiOiJGaXJhQ29kZU5GTS1S
+	ZWciLCJzbGFudCI6eyJ2YWx1ZSI6MH0sIndlaWdodCI6NCwid2lkdGgiOnsidmFsdWUi
+	OjB9fX0sImxpZ2h0Ijp7ImZhbWlseSI6eyJjdXN0b20iOnsiXzAiOiJGaXJhQ29kZSBO
+	ZXJkIEZvbnQgTW9ubyJ9fSwic2l6ZSI6MTIsInZhcmlhbnQiOnsiaWRlbnRpZmllciI6
+	IkZpcmFDb2RlTkZNLUxpZ2h0Iiwic2xhbnQiOnsidmFsdWUiOjB9LCJ3ZWlnaHQiOjMs
+	IndpZHRoIjp7InZhbHVlIjowfX19fX19XX1dLCJsaWdodE92ZXJyaWRlcyI6WyJrZXl3
+	b3JkIix7ImZhbWlseSI6eyJjdXN0b20iOnsiXzAiOiJGaXJhQ29kZSBOZXJkIEZvbnQg
+	TW9ubyJ9fSwic2l6ZSI6MTQsInZhcmlhbnQiOnsiaWRlbnRpZmllciI6IkZpcmFDb2Rl
+	TkZNLUJvbGQiLCJzbGFudCI6eyJ2YWx1ZSI6MH0sIndlaWdodCI6Nywid2lkdGgiOnsi
+	dmFsdWUiOjB9fX0sImtleXdvcmQuYXR0cmlidXRlIix7ImZhbWlseSI6eyJjdXN0b20i
+	OnsiXzAiOiJGaXJhQ29kZSBOZXJkIEZvbnQgTW9ubyJ9fSwic2l6ZSI6MTQsInZhcmlh
+	bnQiOnsiaWRlbnRpZmllciI6IkZpcmFDb2RlTkZNLVJldCIsInNsYW50Ijp7InZhbHVl
+	IjowfSwid2VpZ2h0Ijo1LCJ3aWR0aCI6eyJ2YWx1ZSI6MH19fV0sImxpbmVTcGFjaW5n
+	Ijp7Im5vcm1hbCI6e319fQ==
+	</data>
+	<key>DVTWorkspaceRecipeLastUsedDates</key>
+	<data>
+	eyJEQTNCQjRFMi01ODM1LTU4QjUtQTZCQS05OEFFMUY0ODU1MzMiOjgxMDc1NDM3NC4w
+	MzYxOTF9
+	</data>
+	<key>DVTWorkspaceThemeSettings</key>
+	<data>
+	eyJkYXJrIjp7InNhdmVkUmVjaXBlIjp7Il8wIjoiREEzQkI0RTItNTgzNS01OEI1LUE2
+	QkEtOThBRTFGNDg1NTMzIn19LCJsaWdodCI6eyJkZWZhdWx0Ijp7fX19
+	</data>
+	<key>IDEAppearance</key>
+	<integer>2</integer>
+	<key>IDEDidCompleteThemesFLEToolsVersion</key>
+	<string>27.0</string>
+	<key>IDEKeyBindingCurrentPreferenceSet</key>
+	<string>Dunbar.idekeybindings</string>
+	<key>IDEKeyBindingExcludedPreferenceSet</key>
+	<array>
+		<string>Default</string>
+	</array>
+	<key>NSToolbar Configuration Xcode.IDEKit.Toolbar.SimpleFilesFocused.Customizable</key>
+	<dict>
+		<key>TB Display Mode</key>
+		<integer>2</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<true/>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSToolbar Configuration Xcode.IDEKit.Toolbar.Workspace.Customizable</key>
+	<dict>
+		<key>TB Default Item Identifiers</key>
+		<array>
+			<string>Xcode.IDEKit.CustomToolbarItem.ToggleNavigator</string>
+			<string>NSToolbarFlexibleSpaceItem</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.RunStop</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.SplitViewDivider-0</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.BackForward</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.WindowTitle</string>
+			<string>NSToolbarFlexibleSpaceItem</string>
+			<string>Xcode.IDEIntelligenceChat.CustomToolbarItem.NewConversation</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.RootChooser</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.SchemePicker.Centered</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.Issues</string>
+			<string>NSToolbarFlexibleSpaceItem</string>
+			<string>Xcode.XcodeCloud.CustomToolbarItem.ToolbarItem</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.StatusCategories</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.AddEditor</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.EditorOptions</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.EditorMode</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.SplitViewDivider-1</string>
+			<string>NSToolbarFlexibleSpaceItem</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.ToggleInspector</string>
+		</array>
+		<key>TB Display Mode</key>
+		<integer>2</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<true/>
+		<key>TB Item Identifiers</key>
+		<array>
+			<string>Xcode.IDEKit.CustomToolbarItem.ToggleNavigator</string>
+			<string>NSToolbarFlexibleSpaceItem</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.RunStop</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.SplitViewDivider-0</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.BackForward</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.WindowTitle</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.SchemePicker.Centered</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.Issues</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.AddEditor</string>
+			<string>Xcode.XcodeCloud.CustomToolbarItem.ToolbarItem</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.EditorOptions</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.SplitViewDivider-1</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.EditorMode</string>
+			<string>NSToolbarFlexibleSpaceItem</string>
+			<string>Xcode.IDEKit.CustomToolbarItem.ToggleInspector</string>
+		</array>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
+	<key>XCFontAndColorCurrentDarkTheme</key>
+	<string>Default (Dark).xccolortheme</string>
+</dict>
+</plist>

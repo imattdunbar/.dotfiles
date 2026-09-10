@@ -17,9 +17,15 @@ foreground = #41FF00
 background-blur-radius = 5
 
 # Window
-macos-titlebar-style = tabs
+macos-titlebar-style = hidden
 window-padding-x = 16,0
-window-padding-y = 0
+window-padding-y = 16,0
+
+# Before macOS 27
+# macos-titlebar-style = transparent
+# window-padding-x = 16,0
+# window-padding-y = 0
+
 window-padding-color = extend
 # window-height = 48
 # window-width = 160
