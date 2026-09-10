@@ -1,0 +1,14 @@
+[tools]
+awscli = { version = "latest", symlink_bins = "true" }
+bun = "latest"
+dotnet = "10"
+opencode = "latest"
+uv = "latest"
+node = "lts"
+java = ["jetbrains-17", "temurin-11"]
+ruby = { version = "3.3.0", os = ["macos"] }
+"gem:cocoapods" = { version = "1.16.2", os = ["macos"], depends = ["ruby"] }
+"gem:fastlane" = { version = "2.239.0", os = ["macos"], depends = ["ruby"] }
+
+[settings]
+idiomatic_version_file_enable_tools = ["node", "java"]
