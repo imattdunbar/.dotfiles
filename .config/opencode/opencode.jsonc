@@ -90,7 +90,14 @@
         "glm-5.3-flash",
         // "deepseek-v4-flash",
         "kimi-k3"
-      ]
+      ],
+      "models": {
+        "muse-spark-1.3-contributor": {
+          "options": {
+            "systemPrompt": "Answer in short bulleted lists. Bare minimum to answer the question, no fluff, no explanation unless asked. Include small code snippets with file_path:line_number references as pseudo-explanations where possible."
+          }
+        }
+      }
     },
     "openrouter": {
       "whitelist": [
