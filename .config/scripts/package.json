@@ -4,6 +4,7 @@
   "devDependencies": {
     "@jxa/global-type": "^1.4.0",
     "@types/bun": "latest",
+    "@types/node": "^22.20.2",
     "prettier": "^3.9.5",
     "prettier-plugin-tailwindcss": "^0.8.1"
   },
