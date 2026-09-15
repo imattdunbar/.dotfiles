@@ -1,9 +1,12 @@
 if [[ "$(uname -s)" == "Darwin" ]]; then
   # macOS
-  source $HOME/.config/zsh/mac.zsh
+  source "$HOME/.config/zsh/mac.zsh"
+elif [[ "$(uname -r)" == *[Mm]icrosoft* ]]; then
+  # WSL
+  source "$HOME/.config/zsh/wsl.zsh"
 else
   # Linux
-  source $HOME/.config/zsh/linux.zsh
+  source "$HOME/.config/zsh/linux.zsh"
 fi
 
 # Starship
