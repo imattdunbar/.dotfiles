@@ -75,6 +75,12 @@
     "JavaScript": {
       "language_servers": ["typescript-language-server", "!vtsls", "!eslint", "..."]
     },
+    "JSON": {
+      "formatter": "auto"
+    },
+    "JSONC": {
+      "formatter": "auto"
+    },
     "Lua": {
       "formatter": "auto"
     },
@@ -206,11 +212,11 @@
     "button": false
   },
   "project_panel": {
+    "folder_indicator": "icon",
     "button": false,
     "default_width": 400,
     "dock": "left",
     "file_icons": true,
-    "folder_icons": true,
     "git_status": true,
     // "indent_size": 20,
     "auto_reveal_entries": true,
