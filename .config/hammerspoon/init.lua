@@ -197,7 +197,7 @@ end
 
 -- Bun layout runner function
 local function runBunLayout(action, layoutFile, onComplete)
-	local bunPath = "/opt/homebrew/bin/bun"
+	local bunPath = os.getenv("HOME") .. "/.local/share/mise/shims/bun"
 	local scriptPath = "/Users/matt/.config/scripts/window-layouts/layout.ts"
 
 	if K.layoutTask and K.layoutTask:isRunning() then
