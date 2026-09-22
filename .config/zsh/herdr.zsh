@@ -12,8 +12,11 @@ alias h-nw='herdr workspace rename "$HERDR_WORKSPACE_ID" > /dev/null'
 alias h-nt='herdr tab rename "$HERDR_TAB_ID" > /dev/null'
 alias h-sr="herdr pane split --current --direction right --focus > /dev/null"
 alias h-sd="herdr pane split --current --direction down --focus > /dev/null"
-alias h-stop="herdr server stop"
+alias h-kill="herdr server stop"
 alias h-detach="echo 'ctrl+b then q to detatch from herdr'"
+alias h-ls="herdr session list"
+alias h-del="herdr session delete"
+alias h-stop="herdr session stop"
 
 alias h-clear="bun run $HOME/.config/scripts/herdr-clear.ts"
 
