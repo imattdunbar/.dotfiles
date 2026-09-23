@@ -65,10 +65,6 @@ rebase-main() {
   git fetch origin main && git rebase origin/main
 }
 
-grf() {
-  git restore --source=HEAD --staged --worktree $1
-}
-
 gpatch() {
   git add . && git diff --cached --binary > $1
 }
@@ -100,8 +96,18 @@ gapply() {
   git apply $1
 }
 
-unstage() {
-  git restore --staged $1
+# Restores a file's changes, if it's a net new file just removes it from the staged for commit
+gr() {
+  if [ "$#" -ne 1 ]; then
+    printf 'Usage: discard FILE\n' >&2
+    return 2
+  fi
+
+  if git cat-file -e "HEAD:$(git rev-parse --show-prefix)$1" 2>/dev/null; then
+    git restore --source=HEAD --staged --worktree -- "$1"
+  else
+    git reset -- "$1"
+  fi
 }
 
 # Clone repo as template
