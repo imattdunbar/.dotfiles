@@ -38,9 +38,9 @@
       {
         "workflow": "manual"
       }
-    ],
-    "{env:HOME}/.config/scripts/oc-session-dashboard.ts",
-    "opencode-with-claude"
+    ]
+    // "{env:HOME}/.config/scripts/oc-session-dashboard.ts",
+    // "opencode-with-claude"
   ],
   "mcp": {
     "playwriter": {
@@ -51,23 +51,24 @@
   },
   "provider": {
     // Provider + Model ID search: https://models.dev
-    "anthropic": {
-      "whitelist": [
-        // "claude-opus-5", // expensive yapper
-        "claude-opus-4-8"
-      ],
-      "models": {
-        "claude-opus-5": {
-          "options": {
-            "effort": "medium"
-          }
-        }
-      },
-      "options": {
-        "baseURL": "http://127.0.0.1:3456",
-        "apiKey": "dummy"
-      }
-    },
+    // Configured with the "opencode-with-claude" plugin to use Anthropic plan
+    // "anthropic": {
+    //   "whitelist": [
+    //     // "claude-opus-5", // expensive yapper
+    //     "claude-opus-4-8"
+    //   ],
+    //   "models": {
+    //     "claude-opus-5": {
+    //       "options": {
+    //         "effort": "medium"
+    //       }
+    //     }
+    //   },
+    //   "options": {
+    //     "baseURL": "http://127.0.0.1:3456",
+    //     "apiKey": "dummy"
+    //   }
+    // },
     "opencode": {
       "whitelist": [
         // no opencode zen models
