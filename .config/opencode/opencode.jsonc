@@ -25,9 +25,7 @@
   },
   "permission": {
     "external_directory": {
-      "~/Desktop/**": "allow",
-      "~/.bun/**": "allow",
-      "~/.config/opencode/opencode.jsonc": "allow",
+      "*": "allow",
       "**/*.env": "deny",
       "**/.env*": "deny"
     }

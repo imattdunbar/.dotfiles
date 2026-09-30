@@ -110,6 +110,17 @@ gr() {
   fi
 }
 
+# Restores a file's changes to whatever is at the origin/main repo
+gr-main() {
+  if [ "$#" -ne 1 ]; then
+    printf 'Usage: gr-main FILE\n' >&2
+    return 2
+  fi
+
+  git fetch origin main &&
+    git restore --source=origin/main --staged --worktree -- "$1"
+}
+
 # Clone repo as template
 gh-template() {
   bunx gitpick https://$GITHUB_PAT@github.com/imattdunbar/$1
