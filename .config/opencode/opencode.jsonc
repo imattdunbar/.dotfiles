@@ -1,15 +1,13 @@
 {
-  "$schema": "https://opencode.ai/config.json",
   "default_agent": "plan",
   "model": "openai/gpt-6.1-sol",
-  "small_model": "openai/gpt-6-luna",
-  "agent": {
+  "agents": {
     "plan": {
       "mode": "primary",
-      "permission": {
-        "edit": "deny",
-        "bash": "ask"
-      }
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "*", "effect": "ask" }
+      ]
     },
     "build": {
       "mode": "primary"
@@ -21,139 +19,27 @@
     "explore": {
       "mode": "subagent",
       "model": "openai/gpt-6-luna"
+    },
+    "title": {
+      "model": "openai/gpt-6-luna"
     }
   },
-  "permission": {
-    "external_directory": {
-      "*": "allow",
-      "**/*.env": "deny",
-      "**/.env*": "deny"
+  "permissions": [
+    { "action": "external_directory", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "**/*.env", "effect": "deny" },
+    { "action": "read", "resource": "**/.env*", "effect": "deny" }
+  ],
+  "plugins": [
+    {
+      "package": "{env:HOME}/.config/scripts/oc-dunbar"
     }
-  },
-  "plugin": [
-    [
-      "@plannotator/opencode@latest",
-      {
-        "workflow": "manual"
-      }
-    ]
-    // "{env:HOME}/.config/scripts/oc-session-dashboard.ts",
-    // "opencode-with-claude"
   ],
   "mcp": {
-    "playwriter": {
-      "enabled": true,
-      "type": "local",
-      "command": ["bunx", "-y", "playwriter@latest"] // https://github.com/remorses/playwriter
-    }
-  },
-  "provider": {
-    // Provider + Model ID search: https://models.dev
-    // Configured with the "opencode-with-claude" plugin to use Anthropic plan
-    // "anthropic": {
-    //   "whitelist": [
-    //     // "claude-opus-5", // expensive yapper
-    //     "claude-opus-4-8"
-    //   ],
-    //   "models": {
-    //     "claude-opus-5": {
-    //       "options": {
-    //         "effort": "medium"
-    //       }
-    //     }
-    //   },
-    //   "options": {
-    //     "baseURL": "http://127.0.0.1:3456",
-    //     "apiKey": "dummy"
-    //   }
-    // },
-    "opencode": {
-      "whitelist": [
-        // no opencode zen models
-        // "muse-spark-1.3-contributor-free"
-      ]
-    },
-    "opencode-go": {
-      "whitelist": [
-        // opencode go sub
-        "muse-spark-1.3-contributor",
-        "glm-5.3-flash",
-        // "deepseek-v4-flash",
-        "kimi-k3"
-      ],
-      "models": {
-        "muse-spark-1.3-contributor": {
-          "options": {
-            "systemPrompt": "Answer in short bulleted lists. Bare minimum to answer the question, no fluff, no explanation unless asked. Include small code snippets with file_path:line_number references as pseudo-explanations where possible."
-          }
-        }
+    "servers": {
+      "playwriter": {
+        "type": "local",
+        "command": ["bunx", "-y", "playwriter@latest"] // https://github.com/remorses/playwriter
       }
-    },
-    "openrouter": {
-      "whitelist": [
-        // no openrouter models
-      ]
-    },
-    "openai": {
-      "whitelist": [
-        "gpt-6.1-sol", //
-        "gpt-6-luna",
-        "gpt-6-astra"
-      ],
-      "models": {
-        // Custom entry example for gpt-6-sol - can use for future models until models.dev
-        // until models.dev registers it when a new model drops
-        // "gpt-6-sol": {
-        //   "name": "GPT-6 Sol",
-        //   "family": "gpt-sol",
-        //   "attachment": true,
-        //   "reasoning": true,
-        //   "temperature": false,
-        //   "tool_call": true,
-        //   "limit": {
-        //     "context": 1050000,
-        //     "input": 922000,
-        //     "output": 128000
-        //   },
-        //   "modalities": {
-        //     "input": ["text", "image"],
-        //     "output": ["text"]
-        //   },
-        //   "options": {
-        //     "textVerbosity": "low"
-        //   }
-        // },
-        // "gpt-5.6-sol": {
-        //   "options": {
-        //     "textVerbosity": "low"
-        //   }
-        // },
-      }
-    },
-    "github-copilot": {
-      "whitelist": ["claude-opus-5"]
-    },
-    "cloudflare-workers-ai": {
-      "whitelist": []
-    },
-    "github-copilot-enterprise": {
-      "whitelist": []
-    },
-    "github-models": {
-      "whitelist": []
-    },
-    // ----- Work ------
-    "google-vertex": {
-      "whitelist": [
-        // "gemini-3.1-pro-preview"
-      ]
-    },
-    "google-vertex-anthropic": {
-      "whitelist": [
-        // "claude-sonnet-4-6@default",
-        // "claude-opus-4-6@default"
-      ]
     }
-    // -----------------
   }
 }

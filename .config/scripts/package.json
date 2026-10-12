@@ -3,6 +3,7 @@
   "private": true,
   "devDependencies": {
     "@jxa/global-type": "^1.4.0",
+    "@opencode/plugin": "2.0.26",
     "@types/bun": "latest",
     "@types/node": "^22.20.2",
     "prettier": "^3.9.5",

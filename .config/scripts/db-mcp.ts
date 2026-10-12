@@ -18,10 +18,10 @@ PROJECT_DIR/.opencode/opencode.jsonc
 {
     "$schema": "https://opencode.ai/config.json",
     "mcp": {
+      "servers": {
         "databasemcp": {
             "type": "local",
-            "command": ["/Users/matt/.config/opencode/toolbox", "--prebuilt", "postgres", "--stdio"],
-            "enabled": true,
+            "command": ["{env:HOME}/.config/opencode/toolbox", "--prebuilt", "postgres", "--stdio"],
             "environment": {
                 "POSTGRES_HOST": "localhost",
                 "POSTGRES_PORT": "5432",
@@ -30,6 +30,7 @@ PROJECT_DIR/.opencode/opencode.jsonc
                 "POSTGRES_PASSWORD": "password"
             }
         }
+      }
     }
 }
 
