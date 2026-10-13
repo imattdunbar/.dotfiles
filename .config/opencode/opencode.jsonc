@@ -38,7 +38,7 @@
     "servers": {
       "playwriter": {
         "type": "local",
-        "command": ["bunx", "-y", "playwriter@latest"] // https://github.com/remorses/playwriter
+        "command": ["playwriter"] // https://github.com/remorses/playwriter
       }
     }
   }
