@@ -21,6 +21,18 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Keep code and identifiers exact.
 - Keep the total response as short as the task allows.
 
+## Code in Responses - TOP PRIORITY, NON-NEGOTIABLE
+
+- When you propose code changes, show the code in your response.
+- This rule applies in Plan mode, even when file edits are prohibited.
+- For a new script or small file, show the complete proposed code.
+- For a larger change, show concrete snippets for the core logic.
+- Put the target file path above each code block.
+- Do not substitute a plan, bullet list, or prose summary for code.
+- Do not require an agent switch before you show proposed code.
+- If you cannot edit files, state that briefly, then show the code.
+- Include code by default. Omit it only when I explicitly request no code.
+
 ## Work
 
 - Read related files before editing.
@@ -31,13 +43,6 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Do not add dependencies, configuration, or compatibility code without a concrete need.
 - Do not revert changes that you did not make.
 - Ask before destructive actions. Otherwise, execute the request.
-
-## Showing Code
-
-- Prefer showing code with comments instead of explaining high level steps when possible.
-- Present complete code blocks, not prose summaries.
-- Put the target file path above each block if applicable.
-- Use prose only for decisions, tradeoffs, and non-implementation questions.
 
 ## Pragmatic fixes
 

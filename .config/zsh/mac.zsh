@@ -23,9 +23,4 @@ export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 # Expo
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
-updates() {
-    brew update || return
-    brew upgrade --no-ask || return
-    mise self-update --yes || return
-    mise -C "$HOME" upgrade # updates global packages
-}
+alias updates="bun run ~/.config/scripts/updates/index.ts"
