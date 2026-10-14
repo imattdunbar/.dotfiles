@@ -9,7 +9,8 @@ const models = new Set<string>([
   'opencode-go/muse-spark-1.3-contributor',
   'opencode-go/glm-5.3-flash',
   'opencode-go/kimi-k3',
-  'github-copilot/claude-opus-5'
+  'github-copilot/claude-opus-5',
+  'meta/muse-wonder-1.0'
 ])
 
 export default {

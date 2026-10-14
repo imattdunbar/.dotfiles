@@ -32,6 +32,9 @@
   "plugins": [
     {
       "package": "{env:HOME}/.config/scripts/oc-dunbar"
+    },
+    {
+      "package": "{env:HOME}/.config/scripts/oc-muse"
     }
   ],
   "mcp": {
