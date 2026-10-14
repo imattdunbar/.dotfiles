@@ -8,9 +8,8 @@ const models = new Set<string>([
   'openai/gpt-6-astra',
   'opencode-go/muse-spark-1.3-contributor',
   'opencode-go/glm-5.3-flash',
-  'opencode-go/kimi-k3',
-  'github-copilot/claude-opus-5',
-  'meta/muse-wonder-1.0'
+  'github-copilot/claude-opus-5.5',
+  'openrouter/anthropic/claude-opus-5.5'
 ])
 
 export default {
