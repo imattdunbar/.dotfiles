@@ -1,8 +1,9 @@
 import { $ } from 'bun'
+import { spaceLog } from '../util'
 
-console.log('Running brew updates...')
+spaceLog('Running brew updates...')
 
-const update = await $`brew update`.nothrow()
-const upgrade = await $`brew upgrade --no-ask`.nothrow()
+await $`brew update`.nothrow()
+await $`brew upgrade --no-ask`.nothrow()
 
-process.exitCode = update.exitCode || upgrade.exitCode
+spaceLog('brew updates finished')

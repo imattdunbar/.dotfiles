@@ -1,21 +1,12 @@
 #!/usr/bin/env bun
 
-const child = Bun.spawn(
-  [
-    'bun',
-    'run',
-    '--parallel',
-    '--no-exit-on-error',
-    './brew.ts',
-    './mise.ts',
-    './bun.ts'
-  ],
-  {
+for (const file of ['brew.ts', 'mise.ts', 'bun.ts']) {
+  const child = Bun.spawn(['bun', file], {
     cwd: import.meta.dir,
     stdin: 'inherit',
     stdout: 'inherit',
     stderr: 'inherit'
-  }
-)
+  })
 
-process.exitCode = await child.exited
+  await child.exited
+}

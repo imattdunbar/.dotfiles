@@ -1,8 +1,9 @@
 import { $ } from 'bun'
+import { spaceLog } from '../util'
 
-console.log('Running mise updates...')
+spaceLog('Running mise updates...')
 
-const update = await $`mise self-update --yes`.nothrow()
-const upgrade = await $`mise -C ${Bun.env.HOME} upgrade`.nothrow()
+await $`mise self-update --yes`.nothrow()
+await $`mise --yes -C ${Bun.env.HOME} upgrade`.nothrow()
 
-process.exitCode = update.exitCode || upgrade.exitCode
+spaceLog('mise updates finished')

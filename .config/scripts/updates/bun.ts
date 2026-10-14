@@ -1,7 +1,9 @@
 import { $ } from 'bun'
 
-console.log('Running global bun package updates...')
+import { spaceLog } from '../util'
 
-const update = await $`bun update --global`.nothrow()
+spaceLog('Running bun global package updates...')
 
-process.exitCode = update.exitCode
+await $`bun update --global`.nothrow()
+
+spaceLog('bun global package updates complete')
