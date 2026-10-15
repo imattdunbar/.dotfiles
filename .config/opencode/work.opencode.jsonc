@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "dbhub": {
+        "type": "local",
+        "disabled": false,
+        "command": ["dbhub", "--transport", "stdio", "--config", "{env:HOME}/.config/opencode/dbhub.toml"]
+      },
+      "figma": {
+        "type": "remote",
+        "disabled": false,
+        "url": "https://mcp.figma.com/mcp"
+      }
+    }
+  }
+}

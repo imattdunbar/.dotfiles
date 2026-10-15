@@ -53,6 +53,7 @@
     "servers": {
       "dbhub": {
         "type": "local",
+        "disabled": true,
         "command": ["dbhub", "--transport", "stdio", "--config", "{env:HOME}/.config/opencode/dbhub.toml"]
         // https://github.com/bytebase/dbhub
       },
@@ -63,6 +64,7 @@
       },
       "figma": {
         "type": "remote",
+        "disabled": true,
         "url": "https://mcp.figma.com/mcp"
       }
     }
