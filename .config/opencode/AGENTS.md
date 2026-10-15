@@ -44,6 +44,18 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Do not revert changes that you did not make.
 - Ask before destructive actions. Otherwise, execute the request.
 
+## Subagents
+
+- If the location of code is unknown, delegate the search to `explore`.
+- If a question needs more than 3 searches or more than 5 files, delegate it to `explore`.
+- If you know the file path, read the file directly.
+- Give each subagent the goal, the scope, and the output format.
+- Ask `explore` for file paths, line numbers, and short excerpts, not full files.
+- Run independent subagent tasks in parallel.
+- Delegate web research and multi-file mechanical changes to `general`.
+- Keep design, complex logic, and the final review in the primary agent.
+- Before you edit code, confirm the subagent findings for that code.
+
 ## Pragmatic fixes
 
 - If a one-line fix works, lead with it.

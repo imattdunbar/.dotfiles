@@ -3,13 +3,22 @@ import type { Plugin } from '@opencode/plugin'
 type OCPlugin = Plugin.Plugin
 
 const models = new Set<string>([
+  // Github CoPilot
+  'github-copilot/claude-opus-5.5',
+
+  // OpenAI
   'openai/gpt-6.1-sol',
   'openai/gpt-6-luna',
   'openai/gpt-6-astra',
-  'opencode-go/muse-spark-1.3-contributor',
-  'opencode-go/glm-5.3-flash',
-  'github-copilot/claude-opus-5.5',
-  'openrouter/anthropic/claude-opus-5.5'
+
+  // OpenRouter
+  // 'openrouter/anthropic/claude-opus-5.5',
+
+  // OpenCode Go
+  'opencode-go/gemini-4-argon-contributor',
+  'opencode-go/claude-haiku-5-5'
+  // 'opencode-go/muse-spark-1.3-contributor',
+  // 'opencode-go/glm-5.3-flash',
 ])
 
 export default {
