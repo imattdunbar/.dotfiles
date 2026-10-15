@@ -36,10 +36,19 @@
     { "action": "read", "resource": "**/.env*", "effect": "deny" }
   ],
   "plugins": [
+    "opencode-with-claude",
     {
       "package": "{env:HOME}/.config/scripts/oc-dunbar"
     }
   ],
+  "providers": {
+    "anthropic": {
+      "settings": {
+        "baseURL": "http://127.0.0.1:3456/v1",
+        "apiKey": "dummy"
+      }
+    }
+  },
   "mcp": {
     "servers": {
       "playwriter": {

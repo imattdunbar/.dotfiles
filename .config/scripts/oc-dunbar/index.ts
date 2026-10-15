@@ -6,6 +6,10 @@ const models = new Set<string>([
   // Github CoPilot
   'github-copilot/claude-opus-5.5',
 
+  // Anthropic
+  'anthropic/claude-opus-5-5',
+  'anthropic/claude-haiku-5-5',
+
   // OpenAI
   'openai/gpt-6.1-sol',
   'openai/gpt-6-luna',
