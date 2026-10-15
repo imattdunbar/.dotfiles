@@ -5,6 +5,7 @@ import { spaceLog } from '../util'
 const globals = {
   packages: [
     '@anthropic-ai/claude-code',
+    '@bytebase/dbhub',
     '@google/gemini-cli',
     '@types/bun',
     'opencode-with-claude',

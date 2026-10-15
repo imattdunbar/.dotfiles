@@ -155,7 +155,7 @@ alias tc="bunx tsc --noEmit"
 alias bb="bun run build"
 alias bli="bun local:init"
 alias bgp="bun pm ls -g"
-alias bgpu="bun update --global"
+alias bgpu="bun $HOME/.config/scripts/updates/bun.ts"
 alias bup="bun update --recursive --interactive"
 
 # Package

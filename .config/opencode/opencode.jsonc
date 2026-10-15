@@ -51,9 +51,19 @@
   },
   "mcp": {
     "servers": {
+      "dbhub": {
+        "type": "local",
+        "command": ["dbhub", "--transport", "stdio", "--config", "{env:HOME}/.config/opencode/dbhub.toml"]
+        // https://github.com/bytebase/dbhub
+      },
       "playwriter": {
         "type": "local",
-        "command": ["playwriter"] // https://github.com/remorses/playwriter
+        "command": ["playwriter"]
+        // https://github.com/remorses/playwriter
+      },
+      "figma": {
+        "type": "remote",
+        "url": "https://mcp.figma.com/mcp"
       }
     }
   }

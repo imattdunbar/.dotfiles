@@ -1,0 +1,7 @@
+[[sources]]
+id = "prisma7"
+dsn = "postgres://postgres:password@localhost:5432/purchaser_prisma7"
+
+[[sources]]
+id = "purchaser"
+dsn = "postgres://postgres:password@localhost:5432/purchaser_db"
