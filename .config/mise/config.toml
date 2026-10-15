@@ -9,6 +9,7 @@ java = ["jetbrains-17", "temurin-11"]
 ruby = { version = "3.3.0", os = ["macos"] }
 "gem:cocoapods" = { version = "1.16.2", os = ["macos"], depends = ["ruby"] }
 "gem:fastlane" = { version = "2.239.0", os = ["macos"], depends = ["ruby"] }
+ktlint = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "java"]
