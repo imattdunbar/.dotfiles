@@ -51,6 +51,10 @@
   },
   "mcp": {
     "servers": {
+      "paper": {
+        "type": "local",
+        "command": ["{env:HOME}/.paper/bin/paper", "mcp"]
+      },
       "dbhub": {
         "type": "local",
         "disabled": true,
