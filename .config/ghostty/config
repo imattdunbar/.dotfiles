@@ -69,8 +69,8 @@ keybind = ctrl+shift+d=unbind
 keybind = opt+d=text:\x1bd
 keybind = opt+c=text:\x1bc
 
-# Map to Ctrl+P which triggers git branch picker in zsh (see keybinds.zsh)
-keybind = cmd+shift+b=text:\x10
+# Open the git branch picker directly.
+keybind = cmd+shift+b=text:fsb\r
 
 # CMD + Shift + C => Copy current path
 keybind = cmd+shift+c=text:pwd | pbcopy\r
