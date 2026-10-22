@@ -8,6 +8,7 @@ rex.bind("cmd+shift+d", "pane.split", { direction = "down" })
 
 rex.bind("cmd+shift+r", "client.config.reload")
 rex.bind("cmd+shift+x", "client.palette.toggle")
+rex.bind("cmd+o", "session.switch")
 
 rex.bind("cmd+shift+b", function()
 	rex.block.call("com.superlogical.terminal", "write", {
