@@ -14,9 +14,11 @@ focus_pane_down = "ctrl+j"
 focus_pane_up = "ctrl+k"
 focus_pane_right = "ctrl+l"
 
-# Herdr's built-in navigator replaces both tmux-fzf and your global
-# session/window picker. cmd+e in Ghostty already emits prefix+e.
-goto = ["prefix+f", "prefix+e"]
+split_vertical = "ctrl+d"
+split_horizontal = "ctrl+shift+d"
+
+# Open the Herdr navigator.
+goto = "prefix+f"
 
 # Keep prefix+r available for your repo command.
 resize_mode = "prefix+alt+r"

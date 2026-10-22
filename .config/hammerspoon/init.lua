@@ -283,8 +283,30 @@ end)
 -- 4. Disable Annoying Shortcuts
 -- ============================================================================
 
--- Disable Command + H.
+-- Block Command + H outside Rex and Ghostty.
 K.blockCommandH = hs.hotkey.bind({ "cmd" }, "h", function() end)
+
+local function updateCommandHBlock()
+	local app = hs.application.frontmostApplication()
+	local bundleID = ((app and app:bundleID()) or ""):lower()
+
+	if bundleID:find("ghostty", 1, true)
+		or bundleID:find("rex", 1, true) then
+		K.blockCommandH:disable()
+		return
+	end
+
+	K.blockCommandH:enable()
+end
+
+K.commandHWatcher = hs.application.watcher.new(function(_, eventType)
+	if eventType == hs.application.watcher.activated then
+		updateCommandHBlock()
+	end
+end)
+
+K.commandHWatcher:start()
+updateCommandHBlock()
 
 -- Disable Command + Control + F for Fullscreen
 K.blockFullscreen = hs.hotkey.bind({ "cmd", "ctrl" }, "f", function() end)
