@@ -51,8 +51,14 @@
   },
   "mcp": {
     "servers": {
+      "playwriter": {
+        "type": "local",
+        "command": ["playwriter"]
+        // https://github.com/remorses/playwriter
+      },
       "paper": {
         "type": "local",
+        "disabled": true,
         "command": ["{env:HOME}/.paper/bin/paper", "mcp"]
       },
       "dbhub": {
@@ -60,11 +66,6 @@
         "disabled": true,
         "command": ["dbhub", "--transport", "stdio", "--config", "{env:HOME}/.config/opencode/dbhub.toml"]
         // https://github.com/bytebase/dbhub
-      },
-      "playwriter": {
-        "type": "local",
-        "command": ["playwriter"]
-        // https://github.com/remorses/playwriter
       },
       "figma": {
         "type": "remote",

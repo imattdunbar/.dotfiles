@@ -1,3 +1,4 @@
+// Copy this file to the working directory of whatever project to utilize the mcp servers
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
@@ -11,6 +12,11 @@
         "type": "remote",
         "disabled": false,
         "url": "https://mcp.figma.com/mcp"
+      },
+      "paper": {
+        "type": "local",
+        "disabled": false,
+        "command": ["{env:HOME}/.paper/bin/paper", "mcp"]
       }
     }
   }
