@@ -10,6 +10,46 @@ rex.bind("cmd+shift+r", "client.config.reload")
 rex.bind("cmd+shift+x", "client.palette.toggle")
 rex.bind("cmd+o", "session.switch")
 
+rex.action{
+	name = "setup",
+	title = "Set Up Main Session",
+	run = function(ctx, args)
+		-- Preserve all names if main already exists.
+		local result = assert(rex.call("session.list"))
+		local sessions = result.sessions or {}
+
+		for _, session in ipairs(sessions) do
+			if session.label == "main" then
+				return
+			end
+		end
+
+		-- Select the first session and its first tab.
+		local first = sessions[1]
+		if first == nil then return end
+
+		local view = assert(rex.session.view{
+			session_id = first.session_id,
+		})
+		local tab = (view.windows or {})[1]
+		if tab == nil then return end
+
+		-- Name the tab before the session so a failure permits a retry.
+		assert(rex.session.set_window_label{
+			session_id = first.session_id,
+			window_id = tab.window_id,
+			label = "herdr",
+		})
+
+		assert(rex.session.set_label{
+			session_id = first.session_id,
+			label = "main",
+		})
+	end,
+}
+
+rex.bind("cmd+u", "setup")
+
 rex.bind("cmd+shift+b", function()
 	rex.block.call("com.superlogical.terminal", "write", {
 		data = "fsb\r",
