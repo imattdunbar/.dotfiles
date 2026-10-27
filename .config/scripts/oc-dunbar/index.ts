@@ -12,6 +12,7 @@ const models = new Set<string>([
 
   // OpenAI
   'openai/gpt-6.1-sol',
+  'openai/gpt-6.1-terra',
   'openai/gpt-6-luna',
   'openai/gpt-6-astra',
 

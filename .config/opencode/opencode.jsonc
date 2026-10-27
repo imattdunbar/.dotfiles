@@ -14,11 +14,11 @@
     },
     "general": {
       "mode": "subagent",
-      "model": "openai/gpt-6-luna#high"
+      "model": "openai/gpt-6.1-terra#low"
     },
     "explore": {
       "mode": "subagent",
-      "model": "opencode-go/claude-haiku-5-5"
+      "model": "openai/gpt-6.1-terra#low"
     },
     "compaction": {
       "model": "openai/gpt-6-luna#medium"
