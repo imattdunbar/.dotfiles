@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-28T18:01:09.377Z",
+  "timestamp": "2026-10-27T11:05:17.672Z",
   "layoutName": "laptop",
   "windows": [
     {
@@ -146,6 +146,16 @@
       "bundleId": "com.google.GeminiMacOS",
       "appName": "Gemini",
       "title": "Gemini — Raycast Window Management Docking Issues",
+      "windowIndex": 0,
+      "x": 0,
+      "y": 33,
+      "w": 1728,
+      "h": 1010
+    },
+    {
+      "bundleId": "com.superlogical.rex",
+      "appName": "Rex",
+      "title": "herdr - main",
       "windowIndex": 0,
       "x": 0,
       "y": 33,

@@ -261,7 +261,7 @@ hs.hotkey.bind({ "alt", "shift" }, "0", function()
 	runBunLayout("save", "laptop.json")
 end)
 
--- Opt + Shift + 2 to save docked config
+-- Opt + Shift + 2 to load docked config
 hs.hotkey.bind({ "alt", "shift" }, "2", function()
 	runBunLayout("load", "docked.json", restartRaycast)
 end)
@@ -290,8 +290,7 @@ local function updateCommandHBlock()
 	local app = hs.application.frontmostApplication()
 	local bundleID = ((app and app:bundleID()) or ""):lower()
 
-	if bundleID:find("ghostty", 1, true)
-		or bundleID:find("rex", 1, true) then
+	if bundleID:find("ghostty", 1, true) or bundleID:find("rex", 1, true) then
 		K.blockCommandH:disable()
 		return
 	end
