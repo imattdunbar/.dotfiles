@@ -2,7 +2,11 @@
   "$schema": "https://opencode.ai/v2/cli.json",
   "keybinds": {
     "agent.cycle": "tab",
-    "agent.cycle.reverse": "shift+tab"
+    "agent.cycle.reverse": "shift+tab",
+    "session.background": "<leader>b",
+    "session.sidebar.toggle": "<leader>p",
+    "session.tab.select.1": "<leader>1",
+    "session.tab.select.2": "<leader>2"
   },
   "theme": {
     "name": "dunbar"
@@ -14,7 +18,7 @@
     "wrap": "word"
   },
   "session": {
-    "sidebar": "auto",
+    "sidebar": "hide",
     "scrollbar": false,
     "thinking": "hide"
   },
