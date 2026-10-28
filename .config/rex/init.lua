@@ -64,5 +64,31 @@ rex.bind("cmd+shift+c", function()
 	return true
 end)
 
+rex.bind("cmd+shift+t", function(ctx)
+	local block_id = assert(ctx.block_id, "No focused pane")
+	local process = assert(rex.block.call(
+		"com.superlogical.terminal", "process", {
+			block_id = block_id,
+		}
+	))
+	local cwd = process.foreground and process.foreground.cwd
+	assert(cwd, "No directory available")
+
+	local pane = assert(rex.session.describe_block{
+		block_id = block_id,
+	})
+
+	assert(rex.session.new_layer{
+		window_id = assert(pane.block.window_id),
+		bounds = { 0.1, 0.1, 0.8, 0.8 },
+		focus = true,
+		layout = rex.layout.block{
+			flavor = "com.superlogical.terminal.shell",
+			options = { cwd = cwd },
+		},
+	})
+	return true
+end)
+
 rex.bind("ctrl+d", "pane.send_key", { key = "ctrl+d" })
 rex.bind("ctrl+shift+d", "pane.send_key", { key = "ctrl+shift+d" })
