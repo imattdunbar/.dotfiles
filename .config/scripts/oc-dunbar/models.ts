@@ -11,9 +11,10 @@ export const models: ModelPreference[] = [
   { providerID: 'openai', id: 'gpt-6-luna' },
   { providerID: 'openai', id: 'gpt-6-astra' },
 
-  // Anthropic
-  { providerID: 'anthropic', id: 'claude-opus-5-5', bind: 'ctrl+2' },
-  { providerID: 'anthropic', id: 'claude-haiku-5-5' },
+  // Claude Agent
+  { providerID: 'claude-agent', id: 'opus', bind: 'ctrl+2' },
+  { providerID: 'claude-agent', id: 'sonnet' },
+  { providerID: 'claude-agent', id: 'haiku' },
 
   // Github CoPilot
   { providerID: 'github-copilot', id: 'claude-opus-5.5' },
