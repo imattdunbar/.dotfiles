@@ -17,6 +17,11 @@
         "type": "local",
         "disabled": false,
         "command": ["{env:HOME}/.paper/bin/paper", "mcp"]
+      },
+      "doop": {
+        "type": "remote",
+        "disabled": false,
+        "url": "https://doop.design/mcp"
       }
     }
   }

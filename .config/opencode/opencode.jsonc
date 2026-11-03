@@ -36,30 +36,16 @@
     { "action": "read", "resource": "**/.env*", "effect": "deny" }
   ],
   "plugins": [
-    // "opencode-with-claude",
     {
       "package": "{env:HOME}/.config/scripts/oc-dunbar"
     }
   ],
-  // "providers": {
-  //   "anthropic": {
-  //     "settings": {
-  //       "baseURL": "http://127.0.0.1:3456/v1",
-  //       "apiKey": "dummy"
-  //     }
-  //   }
-  // },
   "mcp": {
     "servers": {
       "playwriter": {
         "type": "local",
         "command": ["playwriter"]
         // https://github.com/remorses/playwriter
-      },
-      "paper": {
-        "type": "local",
-        "disabled": true,
-        "command": ["{env:HOME}/.paper/bin/paper", "mcp"]
       },
       "dbhub": {
         "type": "local",
@@ -71,6 +57,16 @@
         "type": "remote",
         "disabled": true,
         "url": "https://mcp.figma.com/mcp"
+      },
+      "paper": {
+        "type": "local",
+        "disabled": true,
+        "command": ["{env:HOME}/.paper/bin/paper", "mcp"]
+      },
+      "doop": {
+        "type": "remote",
+        "disabled": true,
+        "url": "https://doop.design/mcp"
       }
     }
   }
