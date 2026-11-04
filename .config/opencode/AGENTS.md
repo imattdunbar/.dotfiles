@@ -103,7 +103,7 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Before the first use, run `agent-browser skills get core`.
 - Follow the returned instructions.
 - Use a dedicated session for each task.
-- When website auth is required, use `--profile Default` to copy my Chrome profile.
+- For every headless Chrome session, use `--profile Default --args "--mute-audio"` to copy my Chrome profile without audio.
 - Do not attach to my personal Chrome instance without explicit permission.
 - If copied auth fails, report the failure before you switch to Playwriter MCP.
 - Use Playwriter MCP when I request access to an existing Chrome tab or its live state.
