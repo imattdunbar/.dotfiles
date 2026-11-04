@@ -17,7 +17,7 @@ const globals = {
     'wrangler'
   ],
   // Packages with install scripts that Bun must trust
-  trusted: ['@opencode/cli']
+  trusted: ['@opencode/cli', 'agent-browser']
 }
 
 spaceLog('Running bun global package updates...')
