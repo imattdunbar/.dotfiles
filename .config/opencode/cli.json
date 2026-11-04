@@ -3,6 +3,9 @@
   "keybinds": {
     "agent.cycle": "tab",
     "agent.cycle.reverse": "shift+tab",
+    "session.delete": "alt+d",
+    "input.delete": "alt+d,delete,shift+delete",
+    "input.delete.word.forward": "alt+delete,ctrl+delete",
     "session.background": "<leader>b",
     "session.sidebar.toggle": "<leader>p",
     "session.tab.select.1": "<leader>1",
