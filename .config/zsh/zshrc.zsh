@@ -9,6 +9,8 @@ else
   source "$HOME/.config/zsh/linux.zsh"
 fi
 
+source "$HOME/.config/zsh/paths.zsh"
+
 # Starship
 eval "$(starship init zsh)"
 
@@ -31,15 +33,6 @@ source $HOME/.config/zsh/worktrunk.zsh
 if [[ -f $HOME/.config/zsh/local.zsh ]]; then
     source $HOME/.config/zsh/local.zsh
 fi
-
-# Plannotator
-export PATH="$HOME/.local/bin:$PATH"
-
-# bun global bin
-export PATH="$PATH:$HOME/.bun/bin"
-
-# Go
-export PATH="$PATH:$HOME/go/bin"
 
 # Mise
 eval "$(mise activate zsh)"
