@@ -77,6 +77,7 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 ## Code
 
 - Prefer `const`, early returns, and `async`/`await`.
+- Do not prefix function calls with `void` to discard return values or promises.
 - Prefer TypeScript types over interfaces and enums.
 - Avoid chained ternaries and `.reduce()`.
 - Follow existing naming conventions.
