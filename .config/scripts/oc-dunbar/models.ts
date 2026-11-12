@@ -23,6 +23,7 @@ export const models: ModelPreference[] = [
   // { providerID: 'openrouter', id: 'anthropic/claude-opus-5.5' },
 
   // OpenCode Go
+  { providerID: 'opencode-go', id: 'deepseek-v4.1-flash' },
   { providerID: 'opencode-go', id: 'gemini-4-argon-contributor' },
   { providerID: 'opencode-go', id: 'claude-haiku-5-5' }
   // { providerID: 'opencode-go', id: 'muse-spark-1.3-contributor' },
