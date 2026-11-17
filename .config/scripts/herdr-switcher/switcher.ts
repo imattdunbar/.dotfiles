@@ -11,28 +11,6 @@ import {
 
 const herdr = process.env.HERDR_BIN_PATH ?? 'herdr'
 
-const MRU_PATH = `${import.meta.dir}/mru-tabs.json`
-const MRU_MAX = 5
-
-function loadMru(): string[] {
-  try {
-    const v = JSON.parse(readFileSync(MRU_PATH, 'utf-8'))
-    if (!Array.isArray(v)) return []
-    return v.filter((x) => typeof x === 'string')
-  } catch {
-    return []
-  }
-}
-
-function touchMru(tabId: string) {
-  const next = [tabId, ...loadMru().filter((x) => x !== tabId)].slice(0, MRU_MAX)
-  try {
-    writeFileSync(MRU_PATH, JSON.stringify(next))
-  } catch {
-    // ignore write errors
-  }
-}
-
 type Ws = { workspace_id: string; label: string; focused: boolean }
 type Tab = { tab_id: string; workspace_id: string; label: string; pane_count: number; focused: boolean }
 
@@ -64,9 +42,6 @@ for (const t of tabs) {
   list.push(t)
   tabsByWs.set(t.workspace_id, list)
 }
-// Log current focus on open to catch manual nav since last use.
-const current = tabs.find((t) => t.focused)
-if (current) touchMru(current.tab_id)
 
 const renderer = await createCliRenderer({ exitOnCtrlC: true })
 
@@ -98,7 +73,6 @@ const SEL_FG = '#FFFF00'
 
 type Section = { ws: Ws; tabs: Tab[] }
 let sections: Section[] = []
-let recent: Tab[] = []
 let flat: Tab[] = []
 let selected = 0
 let nodes: TextRenderable[] = []
@@ -121,7 +95,6 @@ function doSwitch() {
     // ignore teardown errors
   }
   spawnSync(herdr, ['tab', 'focus', target.tab_id], { stdio: 'ignore' })
-  touchMru(target.tab_id)
   process.exit(0)
 }
 
@@ -142,16 +115,7 @@ function render() {
   for (const n of nodes) list.content.remove(n)
   nodes = []
   let tabIdx = 0
-  if (recent.length > 0) {
-    const h = new TextRenderable(renderer, { content: 'RECENT', fg: HEADER_FG })
-    list.content.add(h)
-    nodes.push(h)
-    recent.forEach((t) => {
-      const wsLabel = workspaces.find((w) => w.workspace_id === t.workspace_id)?.label ?? ''
-      tabRow({ ...t, label: `${t.label} — ${wsLabel}` }, '  ', tabIdx)
-      tabIdx++
-    })
-  }
+
   for (const s of sections) {
     const h = new TextRenderable(renderer, {
       content: `${s.ws.label} (${s.tabs.length})`,
@@ -179,17 +143,8 @@ function render() {
 
 function rebuild(filter: string) {
   const f = filter.trim().toLowerCase()
-  const matchTab = (t: Tab, wsLabel: string) =>
-    !f || t.label.toLowerCase().includes(f) || wsLabel.toLowerCase().includes(f)
-  recent = loadMru()
-    .map((id) => tabById.get(id))
-    .filter((t): t is Tab => !!t)
-    .filter((t) => {
-      const wsLabel = workspaces.find((w) => w.workspace_id === t.workspace_id)?.label ?? ''
-      return matchTab(t, wsLabel)
-    })
   sections = []
-  flat = [...recent]
+  flat = []
   for (const ws of workspaces) {
     const wsTabs = tabsByWs.get(ws.workspace_id) ?? []
     const wsHit = !f || ws.label.toLowerCase().includes(f)

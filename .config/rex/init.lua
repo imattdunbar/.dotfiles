@@ -14,6 +14,39 @@ rex.action{
 	name = "setup",
 	title = "Set Up Main Session",
 	run = function(ctx, args)
+		local settings = {
+			{ "interface.appearance.scheme", "dark" },
+			{ "interface.toolbar.layout", "left" },
+			{ "interface.toolbar.auto_hide_toolbar", "hidden" },
+			{ "interface.tab_behavior.fill", true },
+			{ "interface.tabs.color", "never" },
+			{ "interface.tabs.count", 1 },
+			{ "interface.panes.headers", "on_hover" },
+			{ "interface.active_panes.fade", "both" },
+			{ "interface.animation.style", "snappy" },
+			{ "interface.app_icon.show_app_icon", "dock_only" },
+
+			{ "themes.light.palette", "merino-light" },
+			{ "themes.dark.palette", "merino-dark" },
+
+			{ "terminal.typography.font", "FiraCode Nerd Font Mono" },
+			{ "terminal.typography.size", 14 },
+			{ "terminal.advanced_fonts.ligatures", false },
+			{ "terminal.advanced_fonts.smoothing", true },
+			{ "terminal.colors.contrast", true },
+
+			{ "remote_hosts.ssh.agent", "system" },
+
+			{ "developer.mode.enabled", true },
+			{ "developer.experimental.new_quick_switcher", true },
+		}
+
+		for _, setting in ipairs(settings) do
+			rex.client.queue("client.setting." .. setting[1], {
+				value = setting[2],
+			})
+		end
+
 		-- Preserve all names if main already exists.
 		local result = assert(rex.call("session.list"))
 		local sessions = result.sessions or {}
