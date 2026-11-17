@@ -9,6 +9,8 @@ rex.bind("cmd+shift+d", "pane.split", { direction = "down" })
 rex.bind("cmd+shift+r", "client.config.reload")
 rex.bind("cmd+shift+x", "client.palette.toggle")
 rex.bind("cmd+o", "session.switch")
+rex.unbind("cmd+/", "client.sidebar.toggle")
+rex.bind("cmd+`", "client.sidebar.toggle")
 
 rex.action{
 	name = "setup",
