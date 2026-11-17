@@ -99,4 +99,47 @@ wtl() {
     column -t -s $'\t'
 }
 
-alias wtd="wt remove"
+unalias wtd 2>/dev/null
+wtd() {
+  if [[ $# -eq 0 ]]; then
+    wt remove --foreground
+    return
+  fi
+
+  if [[ "$1" == -* ]]; then
+    print -u2 'Usage: wtd [worktree-name] [options]'
+    return 1
+  fi
+
+  local name="$1"
+  shift
+  local worktrees primary_worktree worktree_path slug expected_path
+  worktrees=$(wt list --format=json) || return
+  primary_worktree=$(print -r -- "$worktrees" |
+    jq -er '.items[] | select(.worktree.main) | .worktree.path') || return
+
+  slug=${name//\//-}
+  slug=${slug//\\/-}
+  expected_path="${primary_worktree:h}/${primary_worktree:t}.${slug}"
+  worktree_path=$(print -r -- "$worktrees" |
+    jq -r --arg name "$name" --arg expected "$expected_path" '
+      [.items[] | select(.worktree) | .worktree.path |
+        select(. == $expected or . == $name or
+          (split("/") | last) == $name)]
+      | unique
+      | if length > 1 then error("Ambiguous worktree name")
+        else .[0] // empty end
+    ') || return
+
+  if [[ "$name" == main || "$worktree_path" == "$primary_worktree" ]]; then
+    print -u2 'Cannot remove the primary worktree.'
+    return 1
+  fi
+
+  if [[ -z "$worktree_path" ]]; then
+    print -u2 "No worktree folder found for '$name'."
+    return 1
+  fi
+
+  wt remove --foreground "$@" -- "$worktree_path"
+}
