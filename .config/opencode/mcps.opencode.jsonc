@@ -6,7 +6,13 @@
       "dbhub": {
         "type": "local",
         "disabled": false,
-        "command": ["dbhub", "--transport", "stdio", "--config", "{env:HOME}/.config/opencode/dbhub.toml"]
+        "command": [
+          "dbhub",
+          "--transport",
+          "stdio",
+          "--config",
+          "{env:HOME}/.config/opencode/dbhub.toml" // .opencode/dbhub.toml -- is the path for project/folder specific dbhub.toml config
+        ]
       },
       "figma": {
         "type": "remote",
