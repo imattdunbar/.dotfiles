@@ -1,18 +1,18 @@
 type ModelPreference = {
   providerID: string
   id: string
-  bind?: string
 }
 
 export const models: ModelPreference[] = [
   // OpenAI
-  { providerID: 'openai', id: 'gpt-6.1-sol', bind: 'ctrl+1' },
+  { providerID: 'openai', id: 'gpt-6.2-sol' },
+  { providerID: 'openai', id: 'gpt-6.1-sol' },
   { providerID: 'openai', id: 'gpt-6.1-terra' },
   { providerID: 'openai', id: 'gpt-6-luna' },
   { providerID: 'openai', id: 'gpt-6-astra' },
 
   // Claude Agent
-  { providerID: 'claude-agent', id: 'opus', bind: 'ctrl+2' },
+  { providerID: 'claude-agent', id: 'opus' },
   { providerID: 'claude-agent', id: 'sonnet' },
   { providerID: 'claude-agent', id: 'haiku' },
 
