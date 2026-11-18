@@ -84,6 +84,10 @@ When I say "per the standard", "check compliance", or "my preferences", review a
 - Validate external input with Zod when Zod is available.
 - Never commit secrets.
 - Use parameterized database queries.
+- If the project has an ORM, use the ORM query API for all database access.
+- DO NOT WRITE RAW SQL when an ORM exists, even for complex queries.
+- For Prisma, do not use `$queryRaw`, `$executeRaw`, `$queryRawUnsafe`, or new `prisma/sql` files.
+- For Drizzle, do not use `` sql`...` `` templates for full queries.
 - Do not use empty `catch` blocks.
 - Write comments that explain why, not what.
 
