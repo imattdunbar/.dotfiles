@@ -8,7 +8,6 @@ const globals = {
     '@bytebase/dbhub',
     '@google/gemini-cli',
     '@types/bun',
-    'opencode-with-claude',
     'oxfmt',
     'playwriter',
     'pnpm',
@@ -17,7 +16,7 @@ const globals = {
     'wrangler'
   ],
   // Packages with install scripts that Bun must trust
-  trusted: ['@opencode/cli', 'agent-browser']
+  trusted: ['@opencode/cli', 'agent-browser', 'hunkdiff']
 }
 
 spaceLog('Running bun global package updates...')
