@@ -1,6 +1,6 @@
 {
   "default_agent": "plan",
-  "model": "openai/gpt-6.1-sol",
+  "model": "openai/gpt-6.2-sol",
   "agents": {
     "plan": {
       "mode": "primary",
