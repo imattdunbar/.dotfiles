@@ -16,8 +16,11 @@ export const models: ModelPreference[] = [
   { providerID: 'claude-agent', id: 'sonnet' },
   { providerID: 'claude-agent', id: 'haiku' },
 
+  // Antigravity ACP (through plugin - https://github.com/system1970/opencode-antigravity-acp)
+  { providerID: 'antigravity-acp', id: 'gemini-4-neon' }
+
   // Gemini API
-  { providerID: 'google', id: 'gemini-4-neon' }
+  // { providerID: 'google', id: 'gemini-4-neon' },
 
   // Github CoPilot
   // { providerID: 'github-copilot', id: 'claude-opus-5.5' },
@@ -28,11 +31,6 @@ export const models: ModelPreference[] = [
   // { providerID: 'opencode-go', id: 'claude-haiku-5-5' },
   // { providerID: 'opencode-go', id: 'muse-spark-1.3-contributor' },
   // { providerID: 'opencode-go', id: 'glm-5.3-flash' },
-
-  // Antigravity - through custom plugin (risky, technically against TOS I think?)
-  // { providerID: 'antigravity', id: 'gemini-4-neon' },
-  // { providerID: 'antigravity', id: 'gemini-4-argon' },
-  // { providerID: 'antigravity', id: 'gemini-4-hydrogen' },
 
   // OpenRouter
   // { providerID: 'openrouter', id: 'anthropic/claude-opus-5.5' },

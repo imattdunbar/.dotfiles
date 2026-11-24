@@ -38,7 +38,8 @@
   "plugins": [
     {
       "package": "{env:HOME}/.config/scripts/oc-dunbar"
-    }
+    },
+    "opencode-antigravity-acp"
   ],
   "mcp": {
     "servers": {
