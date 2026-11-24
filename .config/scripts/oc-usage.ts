@@ -118,6 +118,31 @@ async function fetchClaudeUsage(): Promise<string[]> {
   return lines
 }
 
+async function fetchGitHubCopilotUsage(): Promise<string[]> {
+  const cookies = getChromeCookies('github.com')
+  if (!cookies?.logged_in) return []
+
+  const cookieHeader = Object.entries(cookies)
+    .map(([key, value]) => `${key}=${value}`)
+    .join('; ')
+  const response = await fetch('https://github.com/settings/copilot/features', {
+    headers: { Cookie: cookieHeader, 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)' },
+    signal: AbortSignal.timeout(15_000)
+  })
+  if (!response.ok) throw new Error(`Usage request failed with HTTP ${response.status}`)
+
+  const html = await response.text()
+  const limitMatch = html.match(/([\d,]+) of ([\d,]+) AI credits used/)
+  const usedMatch = html.match(/([\d,]+) AI credits used/)
+  const cycle = html.match(
+    /(January|February|March|April|May|June|July|August|September|October|November|December) \d+-\d+, \d{4}/
+  )?.[0]
+  if (!usedMatch) return []
+
+  const used = limitMatch ? `${usedMatch[1]} of ${limitMatch[2]} AI credits used` : `${usedMatch[1]} AI credits used`
+  return [`GitHub Copilot\n${used} | Cycle: ${cycle}`]
+}
+
 // async function fetchGoUsage(): Promise<string[]> {
 //   const credential = readCredential('opencode-go')
 //   if (credential.type !== 'key') throw new Error('OpenCode Go API key is absent')
@@ -148,35 +173,15 @@ async function fetchClaudeUsage(): Promise<string[]> {
 //   return lines
 // }
 
-async function fetchGitHubCopilotUsage(): Promise<string[]> {
-  const cookies = getChromeCookies('github.com')
-  if (!cookies?.logged_in) return []
-
-  const cookieHeader = Object.entries(cookies)
-    .map(([key, value]) => `${key}=${value}`)
-    .join('; ')
-  const response = await fetch('https://github.com/settings/copilot/features', {
-    headers: { Cookie: cookieHeader, 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)' },
-    signal: AbortSignal.timeout(15_000)
-  })
-  if (!response.ok) throw new Error(`Usage request failed with HTTP ${response.status}`)
-
-  const html = await response.text()
-  const limitMatch = html.match(/([\d,]+) of ([\d,]+) AI credits used/)
-  const usedMatch = html.match(/([\d,]+) AI credits used/)
-  const cycle = html.match(
-    /(January|February|March|April|May|June|July|August|September|October|November|December) \d+-\d+, \d{4}/
-  )?.[0]
-  if (!usedMatch) return []
-
-  const used = limitMatch ? `${usedMatch[1]} of ${limitMatch[2]} AI credits used` : `${usedMatch[1]} AI credits used`
-  return [`GitHub Copilot\n${used} | Cycle: ${cycle}`]
+async function fetchGoogleUsage() {
+  return ['Google', 'https://aistudio.google.com/usage']
 }
 
 async function getUsage(): Promise<string> {
   const providers = [
     ['Codex', fetchCodexUsage],
     ['Claude', fetchClaudeUsage],
+    ['Google', fetchGoogleUsage],
     // ['OpenCode Go', fetchGoUsage],
     ['GitHub Copilot', fetchGitHubCopilotUsage]
   ] as const
