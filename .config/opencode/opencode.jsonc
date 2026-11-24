@@ -42,6 +42,10 @@
   ],
   "mcp": {
     "servers": {
+      "t3": {
+        "type": "remote",
+        "url": "http://127.0.0.1:3773/mcp"
+      },
       "playwriter": {
         "type": "local",
         "command": ["playwriter"]

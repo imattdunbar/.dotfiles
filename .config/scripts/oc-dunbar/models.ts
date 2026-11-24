@@ -16,6 +16,11 @@ export const models: ModelPreference[] = [
   { providerID: 'claude-agent', id: 'sonnet' },
   { providerID: 'claude-agent', id: 'haiku' },
 
+  // Antigravity
+  { providerID: 'antigravity', id: 'gemini-4-neon' },
+  { providerID: 'antigravity', id: 'gemini-4-argon' },
+  { providerID: 'antigravity', id: 'gemini-4-hydrogen' },
+
   // Github CoPilot
   { providerID: 'github-copilot', id: 'claude-opus-5.5' },
 
