@@ -118,35 +118,35 @@ async function fetchClaudeUsage(): Promise<string[]> {
   return lines
 }
 
-async function fetchGoUsage(): Promise<string[]> {
-  const credential = readCredential('opencode-go')
-  if (credential.type !== 'key') throw new Error('OpenCode Go API key is absent')
+// async function fetchGoUsage(): Promise<string[]> {
+//   const credential = readCredential('opencode-go')
+//   if (credential.type !== 'key') throw new Error('OpenCode Go API key is absent')
 
-  const response = await fetch('https://opencode.ai/zen/go/v1/usage', {
-    headers: { Authorization: `Bearer ${credential.key}`, 'User-Agent': 'oc-usage' },
-    signal: AbortSignal.timeout(15_000)
-  })
-  if (!response.ok) throw new Error(`Usage request failed with HTTP ${response.status}`)
+//   const response = await fetch('https://opencode.ai/zen/go/v1/usage', {
+//     headers: { Authorization: `Bearer ${credential.key}`, 'User-Agent': 'oc-usage' },
+//     signal: AbortSignal.timeout(15_000)
+//   })
+//   if (!response.ok) throw new Error(`Usage request failed with HTTP ${response.status}`)
 
-  const windowSchema = z.object({ percent: z.number(), resetsAt: z.string() }).optional()
-  const { usage } = z
-    .object({ usage: z.object({ rolling: windowSchema, weekly: windowSchema, monthly: windowSchema }) })
-    .parse(await response.json())
-  const windows = [
-    ['rolling', '5 hour'],
-    ['weekly', 'Weekly'],
-    ['monthly', 'Monthly']
-  ] as const
-  const lines = ['OpenCode Go']
+//   const windowSchema = z.object({ percent: z.number(), resetsAt: z.string() }).optional()
+//   const { usage } = z
+//     .object({ usage: z.object({ rolling: windowSchema, weekly: windowSchema, monthly: windowSchema }) })
+//     .parse(await response.json())
+//   const windows = [
+//     ['rolling', '5 hour'],
+//     ['weekly', 'Weekly'],
+//     ['monthly', 'Monthly']
+//   ] as const
+//   const lines = ['OpenCode Go']
 
-  for (const [key, label] of windows) {
-    const window = usage[key]
-    if (!window) continue
-    const remainingPercent = Math.max(0, Math.round((100 - window.percent) * 10) / 10)
-    lines.push(`${label}: ${remainingPercent}% remaining | Reset: ${formatReset(window.resetsAt)}`)
-  }
-  return lines
-}
+//   for (const [key, label] of windows) {
+//     const window = usage[key]
+//     if (!window) continue
+//     const remainingPercent = Math.max(0, Math.round((100 - window.percent) * 10) / 10)
+//     lines.push(`${label}: ${remainingPercent}% remaining | Reset: ${formatReset(window.resetsAt)}`)
+//   }
+//   return lines
+// }
 
 async function fetchGitHubCopilotUsage(): Promise<string[]> {
   const cookies = getChromeCookies('github.com')
@@ -169,9 +169,7 @@ async function fetchGitHubCopilotUsage(): Promise<string[]> {
   )?.[0]
   if (!usedMatch) return []
 
-  const used = limitMatch
-    ? `${usedMatch[1]} of ${limitMatch[2]} AI credits used`
-    : `${usedMatch[1]} AI credits used`
+  const used = limitMatch ? `${usedMatch[1]} of ${limitMatch[2]} AI credits used` : `${usedMatch[1]} AI credits used`
   return [`GitHub Copilot\n${used} | Cycle: ${cycle}`]
 }
 
@@ -179,7 +177,7 @@ async function getUsage(): Promise<string> {
   const providers = [
     ['Codex', fetchCodexUsage],
     ['Claude', fetchClaudeUsage],
-    ['OpenCode Go', fetchGoUsage],
+    // ['OpenCode Go', fetchGoUsage],
     ['GitHub Copilot', fetchGitHubCopilotUsage]
   ] as const
   const results = await Promise.allSettled(providers.map(([, fetchUsage]) => fetchUsage()))

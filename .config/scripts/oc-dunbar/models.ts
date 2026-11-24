@@ -16,21 +16,24 @@ export const models: ModelPreference[] = [
   { providerID: 'claude-agent', id: 'sonnet' },
   { providerID: 'claude-agent', id: 'haiku' },
 
-  // Antigravity
-  { providerID: 'antigravity', id: 'gemini-4-neon' },
-  { providerID: 'antigravity', id: 'gemini-4-argon' },
-  { providerID: 'antigravity', id: 'gemini-4-hydrogen' },
+  // Gemini API
+  { providerID: 'google', id: 'gemini-4-neon' }
 
   // Github CoPilot
-  { providerID: 'github-copilot', id: 'claude-opus-5.5' },
+  // { providerID: 'github-copilot', id: 'claude-opus-5.5' },
+
+  // OpenCode Go - https://opencode.ai/console/models
+  // { providerID: 'opencode-go', id: 'deepseek-v4.1-flash' },
+  // { providerID: 'opencode-go', id: 'gemini-4-argon-contributor' },
+  // { providerID: 'opencode-go', id: 'claude-haiku-5-5' },
+  // { providerID: 'opencode-go', id: 'muse-spark-1.3-contributor' },
+  // { providerID: 'opencode-go', id: 'glm-5.3-flash' },
+
+  // Antigravity - through custom plugin (risky, technically against TOS I think?)
+  // { providerID: 'antigravity', id: 'gemini-4-neon' },
+  // { providerID: 'antigravity', id: 'gemini-4-argon' },
+  // { providerID: 'antigravity', id: 'gemini-4-hydrogen' },
 
   // OpenRouter
   // { providerID: 'openrouter', id: 'anthropic/claude-opus-5.5' },
-
-  // OpenCode Go
-  { providerID: 'opencode-go', id: 'deepseek-v4.1-flash' },
-  { providerID: 'opencode-go', id: 'gemini-4-argon-contributor' },
-  { providerID: 'opencode-go', id: 'claude-haiku-5-5' }
-  // { providerID: 'opencode-go', id: 'muse-spark-1.3-contributor' },
-  // { providerID: 'opencode-go', id: 'glm-5.3-flash' },
 ]
